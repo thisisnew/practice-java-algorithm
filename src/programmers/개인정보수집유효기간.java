@@ -13,10 +13,15 @@ public class 개인정보수집유효기간 {
 }
 
 class Privacy {
-    int[] solution(String today, String[] terms, String[] privacies) {
+   public int[] solution(String today, String[] terms, String[] privacies) {
 
         Map<String,Integer> termsMap = getValidityMap(terms);
 
+        for(String privacy : privacies) {
+
+
+
+        }
 
 
         int[] answer = {};
