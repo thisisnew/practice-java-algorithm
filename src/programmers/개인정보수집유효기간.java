@@ -21,6 +21,7 @@ class Privacy {
         List<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < privacies.length; i++) {
+            String[] entities = getPrivacyEntities(privacies[i]);
 
 
             result.add(i + 1);
@@ -35,7 +36,7 @@ class Privacy {
         return answer;
     }
 
-    public Map<String, Integer> getValidityMap(String[] terms) {
+    private Map<String, Integer> getValidityMap(String[] terms) {
 
         Map<String, Integer> result = new HashMap<>();
 
@@ -45,6 +46,10 @@ class Privacy {
         }
 
         return result;
+    }
+
+    private String[] getPrivacyEntities(String privacy) {
+        return privacy.split(" ");
     }
 
 }
