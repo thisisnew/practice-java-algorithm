@@ -22,7 +22,8 @@ class Privacy {
 
         for (int i = 0; i < privacies.length; i++) {
             String[] entities = getPrivacyEntities(privacies[i]);
-
+            String collectionDate = entities[0];
+            String termsType = entities[1];
 
             result.add(i + 1);
         }
