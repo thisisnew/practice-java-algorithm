@@ -22,8 +22,7 @@ public class 출석부 {
             infos.put(height, name);
             heights.add(height);
         }
-
-        Collections.sort(heights);
+        
         Double ans = heights.get(k - 1);
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
