@@ -11,22 +11,22 @@ public class 출석부 {
         int N = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
 
-        Map<Double, String> infos = new HashMap<>();
-        List<Double> heights = new ArrayList<>();
+        Map<String, String> infos = new HashMap<>();
+        List<Map<String, String>> heights = new ArrayList<>();
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
 
             String name = st.nextToken();
-            Double height = Double.parseDouble(st.nextToken());
-            infos.put(height, name);
-            heights.add(height);
+            String height = st.nextToken();
+            infos.put(name, height);
+            heights.add(infos);
         }
-        
-        Double ans = heights.get(k - 1);
+
+        Map<String, String> result = heights.get(k - 1);
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        bw.write(infos.get(ans) + "\t" + ans);
+        bw.write(result + "\t" + infos.get(result));
         bw.flush();
         bw.close();
     }
