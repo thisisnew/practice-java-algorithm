@@ -26,7 +26,7 @@ public class 출석부 {
         Map<String, String> result = heights.get(k - 1);
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        bw.write(result + "\t" + infos.get(result));
+        bw.write(result + " " + infos.get(result));
         bw.flush();
         bw.close();
     }
