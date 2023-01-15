@@ -11,11 +11,12 @@ public class 철자분리집합 {
         int n = Integer.parseInt(br.readLine());
         String input = br.readLine();
 
-        Character s = input.charAt(0);
+        char s = input.charAt(0);
         int result = 1;
 
         for (int i = 1; i < n; i++) {
-            Character c = input.charAt(i);
+            char c = input.charAt(i);
+
             if (s == c) {
                 continue;
             }
