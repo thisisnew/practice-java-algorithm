@@ -25,7 +25,7 @@ public class 별찍기 {
                 sb.append("*");
             }
 
-            System.out.println(sb.toString());
+            System.out.println(sb);
             sb = new StringBuilder();
 
             if (isMiddle) {
