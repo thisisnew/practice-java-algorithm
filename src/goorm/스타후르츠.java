@@ -23,11 +23,15 @@ public class 스타후르츠 {
 class StarFruit {
 
     public int solution(int n, int t, int c, int p) {
-        return getPrice(getTotalCount(n, t, c), p);
+        return getPrice(getTotalCount(getAvailableDays(n, t), c), p);
     }
 
-    private int getTotalCount(int n, int t, int c) {
-        return ((n - 1) / t) * c;
+    private int getAvailableDays(int n, int t) {
+        return ((n - 1) / t);
+    }
+
+    private int getTotalCount(int availableDays, int c) {
+        return availableDays * c;
     }
 
     public int getPrice(int count, int price) {
