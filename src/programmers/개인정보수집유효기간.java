@@ -1,5 +1,7 @@
 package programmers;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.Map;
 public class 개인정보수집유효기간 {
     public static void main(String[] args) {
         Privacy privacy = new Privacy();
-        System.out.println(privacy.solution("", new String[]{}, new String[]{}));
+        System.out.println(privacy.solution("2022.05.19", new String[]{"A 6", "B 12", "C 3"}, new String[]{"2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"}));
     }
 }
 
@@ -21,9 +23,9 @@ class Privacy {
         for (int i = 0; i < privacies.length; i++) {
             String[] entities = getPrivacyEntities(privacies[i]);
             String collectionDate = entities[0];
-            String termsType = entities[1];
+            int duration = termsMap.get(entities[1]);
 
-            if (isAbrogateDate(today, "")) {
+            if (isAbrogateDate(today, getExpirationDate(collectionDate, duration))) {
                 result.add(i + 1);
             }
         }
@@ -43,16 +45,19 @@ class Privacy {
         return result;
     }
 
-//    private String getExpirationDate() {
-//
-//    }
+    private String getExpirationDate(String collectionDate, int termsDuration) {
+        LocalDate localDate = LocalDate.parse(collectionDate.replaceAll("[.]", "-"), DateTimeFormatter.ISO_LOCAL_DATE);
+        localDate.plusMonths(termsDuration);
+
+        return DateTimeFormatter.ISO_LOCAL_DATE.format(localDate);
+    }
 
     private String[] getPrivacyEntities(String privacy) {
         return privacy.split(" ");
     }
 
     private int[] getDayEntities(String day) {
-        String[] entities = day.split("[.]");
+        String[] entities = day.split("-");
 
         int[] result = new int[entities.length];
 
