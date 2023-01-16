@@ -1,9 +1,9 @@
 package goorm;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
 
 public class 출석부 {
     public static void main(String[] args) throws IOException {
@@ -13,17 +13,41 @@ public class 출석부 {
         int N = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
 
-
-        List<String> heights = new ArrayList<>();
+        List<String> names = new ArrayList<>();
+        Map<String, List<Double>> infos = new HashMap<>();
 
         for (int i = 0; i < N; i++) {
-            heights.add(br.readLine());
+            st = new StringTokenizer(br.readLine());
+            String name = st.nextToken();
+            double height = Double.parseDouble(st.nextToken());
+
+            names.add(name);
+
+            if (!infos.containsKey(name)) {
+                infos.put(name, Arrays.asList(height));
+                continue;
+            }
+
+            List<Double> heights = infos.get(name);
+            heights.add(height);
+            Collections.sort(heights);
+
+            infos.put(name, heights);
         }
 
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        bw.write(heights.get(k - 1));
-        bw.flush();
-        bw.close();
-    }
+        Collections.sort(names);
 
+        int idx = 0;
+        for (String name : names) {
+            List<Double> heights = infos.get(name);
+
+            for (double height : heights) {
+                idx++;
+
+                if (idx == k) {
+                    System.out.println(name + " " + height);
+                }
+            }
+        }
+    }
 }
