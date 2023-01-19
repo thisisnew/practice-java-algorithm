@@ -11,10 +11,19 @@ public class 두부자르기 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        Map<Integer, Integer> slice = new HashMap<>();
+        Map<Integer, Boolean> slice = new HashMap<>();
 
         for (int i = 1; i <= n; i++) {
 
+            int cnt = n / i;
+
+            if (slice.containsKey(cnt)) {
+                continue;
+            }
+
+            slice.put(cnt, true);
         }
+
+        System.out.println(slice.size());
     }
 }
