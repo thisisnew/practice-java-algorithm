@@ -1,5 +1,6 @@
 package programmers;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,16 +9,17 @@ public class 같은숫자는싫어 {
     public static void main(String[] args) {
         int[] arr = {1, 1, 3, 3, 0, 1, 1};
 
-        같은숫자는싫어solution(arr);
+        System.out.println(Arrays.toString(같은숫자는싫어solution(arr)));
     }
 
     private static int[] 같은숫자는싫어solution(int[] arr) {
-        List<Integer> list = Arrays.asList(arr[0]);
+        List<Integer> list = new ArrayList<>(Arrays.asList(arr[0]));
 
         int std = list.get(0);
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] != std) {
                 list.add(arr[i]);
+                std = arr[i];
             }
         }
 
