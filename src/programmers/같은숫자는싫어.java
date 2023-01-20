@@ -1,6 +1,5 @@
 package programmers;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,14 +16,14 @@ public class 같은숫자는싫어 {
 
         int std = list.get(0);
         for (int i = 1; i < arr.length; i++) {
-`           if(arr[i] != std ){
+            if (arr[i] != std) {
                 list.add(arr[i]);
             }
         }
 
         int[] result = new int[list.size()];
 
-        for(int i=0; i<list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             result[i] = list.get(i);
         }
 
