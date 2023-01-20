@@ -9,10 +9,10 @@ public class 같은숫자는싫어 {
     public static void main(String[] args) {
         int[] arr = {1, 1, 3, 3, 0, 1, 1};
 
-        System.out.println(Arrays.toString(같은숫자는싫어solution(arr)));
+        System.out.println(Arrays.toString(solution(arr)));
     }
 
-    private static int[] 같은숫자는싫어solution(int[] arr) {
+    private static int[] solution(int[] arr) {
         List<Integer> list = new ArrayList<>(Arrays.asList(arr[0]));
 
         int std = list.get(0);
