@@ -35,7 +35,7 @@ public class 비밀지도 {
 class SecretMap {
     public String[] solution(int n, int[] arr1, int[] arr2) {
 
-        String[][] secretMap = new String[n][n];
+        String[][] secretMap = mark(unionBetweenTwoArrays(arr1,arr2),n);
 
         String[] answer = {};
         return answer;
@@ -58,17 +58,21 @@ class SecretMap {
         return result;
     }
 
-    private void mark(String[][] secretMap, int[] arr) {
-        int idx = 0;
+    private String[][] mark(int[] arr, int n) {
 
+        String[][] result = new String[n][n];
+
+        int idx = 0;
         for (int i = 0; i < arr.length; i++) {
             String bin = Integer.toBinaryString(arr[i]);
 
             for (int j = 0; j < bin.length(); j++) {
-                secretMap[idx][i] = String.valueOf(bin.charAt(j));
+                result[idx][i] = String.valueOf(bin.charAt(j));
             }
 
             idx++;
         }
+
+        return result;
     }
 }
