@@ -48,11 +48,11 @@ class SecretMap {
         int[] result = new int[len];
 
         for(int i=0; i<arr1.length; i++){
-            result[i] = arr1[i];
+            result[i] = result[i]==1 ? result[i] : arr1[i];
         }
 
         for(int i=0; i<arr2.length; i++){
-
+            result[i] = result[i]==1 ? result[i] : arr1[i];
         }
 
         return result;
