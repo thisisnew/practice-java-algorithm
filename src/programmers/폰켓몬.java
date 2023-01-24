@@ -10,7 +10,7 @@ public class 폰켓몬 {
     }
 
     private static int solution(int[] nums) {
-        
+
         Map<Integer, Boolean> map = new HashMap<>();
 
         for (int num : nums) {
@@ -21,7 +21,7 @@ public class 폰켓몬 {
             map.put(num, true);
         }
 
-        return map.size();
+        return map.size() > (nums.length / 2) ? nums.length / 2 : map.size();
     }
 
 }
