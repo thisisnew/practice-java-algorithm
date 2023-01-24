@@ -17,7 +17,6 @@ public class 비밀지도 {
 
 class SecretMap {
     public String[] solution(int n, int[] arr1, int[] arr2) {
-
         String[][] result = new String[n][n];
         mark(result, arr1, n);
         mark(result, arr2, n);
