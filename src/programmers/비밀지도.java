@@ -31,7 +31,7 @@ class SecretMap {
         }
 
         for (int i = 0; i < arr2.length; i++) {
-            result[i] = result[i] == 1 ? result[i] : arr1[i];
+            result[i] = result[i] == 1 ? result[i] : arr2[i];
         }
 
         return result;
