@@ -17,42 +17,25 @@ public class 비밀지도 {
 
 class SecretMap {
     public String[] solution(int n, int[] arr1, int[] arr2) {
-        return getSecretMapProperty(mark(unionBetweenTwoArrays(arr1, arr2), n));
-    }
-
-    private int[] unionBetweenTwoArrays(int[] arr1, int[] arr2) {
-
-        int len = Math.max(arr1.length, arr2.length);
-
-        int[] result = new int[len];
-
-        for (int i = 0; i < arr1.length; i++) {
-            result[i] = result[i] == 1 ? result[i] : arr1[i];
-        }
-
-        for (int i = 0; i < arr2.length; i++) {
-            result[i] = result[i] == 1 ? result[i] : arr2[i];
-        }
-
-        return result;
-    }
-
-    private String[][] mark(int[] arr, int n) {
 
         String[][] result = new String[n][n];
+        mark(result, arr1, n);
+        mark(result, arr2, n);
 
+        return getSecretMapProperty(result);
+    }
+
+    private void mark(String[][] result, int[] arr, int n) {
         int idx = 0;
         for (int i = 0; i < arr.length; i++) {
             String bin = paddingZero(Integer.toBinaryString(arr[i]), n);
 
             for (int j = 0; j < bin.length(); j++) {
-                result[idx][j] = bin.charAt(j) == '1' ? "#" : " ";
+                result[idx][j] = bin.charAt(j) == '1' || result[idx][j] == "#" ? "#" : " ";
             }
 
             idx++;
         }
-
-        return result;
     }
 
     private String paddingZero(String bin, int n) {
@@ -61,7 +44,8 @@ class SecretMap {
             return bin;
         }
 
-        for (int i = 0; i < n - bin.length(); i++) {
+        int len = n - bin.length();
+        for (int i = 0; i < len; i++) {
             bin = "0" + bin;
         }
 
