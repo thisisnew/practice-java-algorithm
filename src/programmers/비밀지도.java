@@ -1,23 +1,23 @@
 package programmers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class 비밀지도 {
     public static void main(String[] args) {
         int n = 5;
         int[] arr1 = {9, 20, 28, 18, 11};
         int[] arr2 = {30, 1, 21, 17, 28};
-        
+
         SecretMap scMap = new SecretMap();
-        System.out.println(scMap.solution(n, arr1, arr2));
+        System.out.println(Arrays.toString(scMap.solution(n, arr1, arr2)));
     }
 }
 
 class SecretMap {
     public String[] solution(int n, int[] arr1, int[] arr2) {
-
-        String[][] secretMap = mark(unionBetweenTwoArrays(arr1, arr2), n);
-
-        String[] answer = {};
-        return answer;
+        return getSecretMapProperty(mark(unionBetweenTwoArrays(arr1, arr2), n));
     }
 
     private int[] unionBetweenTwoArrays(int[] arr1, int[] arr2) {
@@ -53,5 +53,26 @@ class SecretMap {
         }
 
         return result;
+    }
+
+    private String[] getSecretMapProperty(String[][] secretMap) {
+        List<String> list = new ArrayList<>();
+
+        for (String[] sc : secretMap) {
+            StringBuilder sb = new StringBuilder();
+
+            for (String n : sc) {
+                if (n == null) {
+                    sb.append(0);
+                } else {
+                    sb.append(n);
+                }
+            }
+
+            list.add(String.valueOf(Integer.parseInt(sb.toString(), 2)));
+        }
+
+
+        return list.toArray(new String[list.size()]);
     }
 }
