@@ -46,7 +46,7 @@ class SecretMap {
             String bin = paddingZero(Integer.toBinaryString(arr[i]), n);
 
             for (int j = 0; j < bin.length(); j++) {
-                result[idx][i] = String.valueOf(bin.charAt(j));
+                result[idx][j] = bin.charAt(j) == '1' ? "#" : " ";
             }
 
             idx++;
@@ -75,16 +75,11 @@ class SecretMap {
             StringBuilder sb = new StringBuilder();
 
             for (String n : sc) {
-                if (n == null) {
-                    sb.append(0);
-                } else {
-                    sb.append(n);
-                }
+                sb.append(n);
             }
 
-            list.add(String.valueOf(Integer.parseInt(sb.toString(), 2)));
+            list.add(sb.toString());
         }
-
 
         return list.toArray(new String[list.size()]);
     }
