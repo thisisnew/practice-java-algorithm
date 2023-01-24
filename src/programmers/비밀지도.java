@@ -43,7 +43,7 @@ class SecretMap {
 
         int idx = 0;
         for (int i = 0; i < arr.length; i++) {
-            String bin = Integer.toBinaryString(arr[i]);
+            String bin = paddingZero(Integer.toBinaryString(arr[i]), n);
 
             for (int j = 0; j < bin.length(); j++) {
                 result[idx][i] = String.valueOf(bin.charAt(j));
@@ -53,6 +53,19 @@ class SecretMap {
         }
 
         return result;
+    }
+
+    private String paddingZero(String bin, int n) {
+
+        if (bin.length() == n) {
+            return bin;
+        }
+
+        for (int i = 0; i < n - bin.length(); i++) {
+            bin = "0" + bin;
+        }
+
+        return bin;
     }
 
     private String[] getSecretMapProperty(String[][] secretMap) {
