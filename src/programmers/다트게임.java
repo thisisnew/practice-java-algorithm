@@ -36,7 +36,7 @@ class DartGame {
                     points[idx] = getPowNum(p, 3);
                     break;
                 case "*":
-                    attachDoubleAllPoints(points);
+                    attachDoubleAllPoints(points, idx);
                     break;
                 case "#":
                     points[idx] = attachMinusPoints(points[idx]);
@@ -62,22 +62,16 @@ class DartGame {
     private int getPowNum(int n, int cnt) {
         int result = n;
 
-        for (int i = 0; i < cnt; i++) {
+        for (int i = 0; i < cnt - 1; i++) {
             result *= n;
         }
 
         return result;
     }
 
-    private void attachDoubleAllPoints(int[] points) {
-        int cnt = 0;
-
-        for (int i = points.length - 1; i >= 0; i--) {
-            cnt++;
+    private void attachDoubleAllPoints(int[] points, int idx) {
+        for (int i = idx; i > idx - 2 || i > 0; i--) {
             points[i] *= 2;
-            if (cnt == 2) {
-                break;
-            }
         }
     }
 
