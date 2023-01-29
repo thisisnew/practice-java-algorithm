@@ -3,7 +3,7 @@ package programmers;
 public class 다트게임 {
     public static void main(String[] args) {
         DartGame dart = new DartGame();
-        System.out.println(dart.solution("1S2D*3T"));
+        System.out.println(dart.solution("1D2S#10S"));
     }
 }
 
@@ -12,15 +12,21 @@ class DartGame {
 
         int[] points = new int[3];
         int idx = -1;
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < dartResult.length(); i++) {
 
             String s = Character.toString(dartResult.charAt(i));
 
             if (isNumeric(s)) {
-                idx++;
-                points[idx] = Integer.parseInt(s);
+                sb.append(s);
                 continue;
+            }
+
+            if (sb.toString().length() > 0) {
+                idx++;
+                points[idx] = Integer.parseInt(sb.toString());
+                sb = new StringBuilder();
             }
 
             int p = points[idx];
@@ -36,7 +42,7 @@ class DartGame {
                     points[idx] = getPowNum(p, 3);
                     break;
                 case "*":
-                    attachDoubleAllPoints(points, idx);
+                    points = powerAllPoints(points, idx);
                     break;
                 case "#":
                     points[idx] = attachMinusPoints(points[idx]);
@@ -58,7 +64,6 @@ class DartGame {
         return true;
     }
 
-
     private int getPowNum(int n, int cnt) {
         int result = n;
 
@@ -69,10 +74,14 @@ class DartGame {
         return result;
     }
 
-    private void attachDoubleAllPoints(int[] points, int idx) {
-        for (int i = idx; i > idx - 2 || i > 0; i--) {
-            points[i] *= 2;
+    private int[] powerAllPoints(int[] points, int idx) {
+        int[] result = points;
+
+        for (int i = idx; i > idx - 2 && i >= 0; i--) {
+            result[i] *= 2;
         }
+
+        return result;
     }
 
     private int attachMinusPoints(int p) {
