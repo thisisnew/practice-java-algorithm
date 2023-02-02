@@ -10,13 +10,13 @@ public class 둘만의암호 {
 class PassWord {
     public String solution(String s, String skip, int index) {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < s.length(); i++) {
-            sb.append(getCharacterAfterIndex(s.charAt(i), index, skip));
+            result.append(getCharacterAfterIndex(s.charAt(i), index, skip));
         }
 
-        return sb.toString();
+        return result.toString();
     }
 
     private String getCharacterAfterIndex(char c, int index, String skip) {
@@ -24,7 +24,7 @@ class PassWord {
         int cnt = 0;
 
         while (cnt < index) {
-            result += 1;
+            result++;
 
             if (result > 'z') {
                 result = 'a';
