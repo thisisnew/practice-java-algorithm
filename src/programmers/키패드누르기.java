@@ -11,7 +11,19 @@ public class 키패드누르기 {
 
 class KeyPad {
     public String solution(int[] numbers, String hand) {
-        String answer = "";
-        return answer;
+
+        StringBuilder result = new StringBuilder(numbers.length);
+
+        for (int i = 0; i < numbers.length; i++) {
+            result.append(getHand(numbers[i]));
+        }
+
+        return result.toString();
+    }
+
+    private String getHand(int number) {
+        String result = "";
+
+        return result;
     }
 }
