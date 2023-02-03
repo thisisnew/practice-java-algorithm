@@ -13,15 +13,17 @@ class KeyPad {
     public String solution(int[] numbers, String hand) {
 
         StringBuilder result = new StringBuilder(numbers.length);
+        int position = 0;
 
         for (int i = 0; i < numbers.length; i++) {
-            result.append(getHand(numbers[i]));
+            result.append(getHand(numbers[i], position));
+            position = numbers[i];
         }
 
         return result.toString();
     }
 
-    private String getHand(int number) {
+    private String getHand(int number, int position) {
         String result = "";
 
         return result;
