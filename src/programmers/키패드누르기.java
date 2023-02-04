@@ -26,6 +26,27 @@ class KeyPad {
     private String getHand(int number, int position) {
         String result = "";
 
+        switch (number) {
+            case 1:
+            case 4:
+            case 7:
+                result = "L";
+                break;
+            case 3:
+            case 6:
+            case 9:
+                result = "R";
+                break;
+            default:
+                result = getNearestPositionFrom(number, position);
+                break;
+        }
+
+        return result;
+    }
+
+    private String getNearestPositionFrom(int number, int position) {
+        String result = "";
         return result;
     }
 }
