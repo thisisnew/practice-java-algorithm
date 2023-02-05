@@ -16,14 +16,14 @@ class KeyPad {
         int position = 0;
 
         for (int i = 0; i < numbers.length; i++) {
-            result.append(getHand(numbers[i], position));
+            result.append(getHand(numbers[i], position, hand));
             position = numbers[i];
         }
 
         return result.toString();
     }
 
-    private String getHand(int number, int position) {
+    private String getHand(int number, int position, String hand) {
         String result = "";
 
         switch (number) {
@@ -38,14 +38,14 @@ class KeyPad {
                 result = "R";
                 break;
             default:
-                result = getNearestPositionFrom(number, position);
+                result = getNearestPositionFrom(number, position, hand);
                 break;
         }
 
         return result;
     }
 
-    private String getNearestPositionFrom(int number, int position) {
+    private String getNearestPositionFrom(int number, int position, String hand) {
         String result = "";
         return result;
     }
