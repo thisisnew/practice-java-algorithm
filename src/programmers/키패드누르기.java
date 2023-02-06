@@ -1,5 +1,8 @@
 package programmers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class 키패드누르기 {
     public static void main(String[] args) {
         KeyPad keyPad = new KeyPad();
@@ -13,17 +16,18 @@ class KeyPad {
     public String solution(int[] numbers, String hand) {
 
         StringBuilder result = new StringBuilder(numbers.length);
-        int position = 0;
+        Map<String, Integer> position = new HashMap<>();
 
         for (int i = 0; i < numbers.length; i++) {
-            result.append(getHand(numbers[i], position, hand));
-            position = numbers[i];
+            String clickHand = getClickHand(numbers[i], position, hand);
+            position.put(clickHand, numbers[i]);
+            result.append(clickHand);
         }
 
         return result.toString();
     }
 
-    private String getHand(int number, int position, String hand) {
+    private String getClickHand(int number, Map<String, Integer> position, String hand) {
         String result = "";
 
         switch (number) {
@@ -45,7 +49,7 @@ class KeyPad {
         return result;
     }
 
-    private String getNearestPositionFrom(int number, int position, String hand) {
+    private String getNearestPositionFrom(int number, Map<String, Integer> position, String hand) {
         String result = "";
         return result;
     }
