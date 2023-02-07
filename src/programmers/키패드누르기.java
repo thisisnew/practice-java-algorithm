@@ -50,7 +50,34 @@ class KeyPad {
     }
 
     private String getNearestPositionFrom(int number, Map<String, Integer> position, String hand) {
+
         String result = "";
+
+        int left = position.get("L");
+        int right = position.get("R");
+        int distanceFromLeft = 0;
+        int distanceFromRight = 0;
+
+        if (number == 2) {
+
+        }
+
+        if (number == 5) {
+
+        }
+
+        if (number == 8) {
+
+        }
+
+        if (number == 0) {
+
+        }
+
+        if (distanceFromLeft == distanceFromRight) {
+            result = hand;
+        }
+
         return result;
     }
 }
