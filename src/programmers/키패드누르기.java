@@ -13,10 +13,16 @@ public class 키패드누르기 {
 }
 
 class KeyPad {
+
+    private static final String RIGHT = "R";
+    private static final String LEFT = "L";
+
     public String solution(int[] numbers, String hand) {
 
         StringBuilder result = new StringBuilder(numbers.length);
         Map<String, Integer> position = new HashMap<>();
+        position.put(RIGHT, 0);
+        position.put(LEFT, 0);
 
         for (int i = 0; i < numbers.length; i++) {
             String clickHand = getClickHand(numbers[i], position, hand);
@@ -34,12 +40,12 @@ class KeyPad {
             case 1:
             case 4:
             case 7:
-                result = "L";
+                result = LEFT;
                 break;
             case 3:
             case 6:
             case 9:
-                result = "R";
+                result = RIGHT;
                 break;
             default:
                 result = getNearestPositionFrom(number, position, hand);
@@ -51,12 +57,16 @@ class KeyPad {
 
     private String getNearestPositionFrom(int number, Map<String, Integer> position, String hand) {
 
-        String result = "";
+        String result = hand;
 
         int left = position.get("L");
         int right = position.get("R");
         int distanceFromLeft = 0;
         int distanceFromRight = 0;
+
+        if (left == right) {
+            return result;
+        }
 
         if (number == 2) {
 
@@ -75,7 +85,7 @@ class KeyPad {
         }
 
         if (distanceFromLeft == distanceFromRight) {
-            result = hand;
+            return result;
         }
 
         return result;
