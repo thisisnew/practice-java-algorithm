@@ -66,10 +66,6 @@ class KeyPad {
             return result;
         }
 
-        if (number == 0) {
-
-        }
-
         int distanceFromLeft = 0;
         int distanceFromRight = 0;
 
