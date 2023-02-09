@@ -21,8 +21,8 @@ class KeyPad {
 
         StringBuilder result = new StringBuilder(numbers.length);
         Map<String, Integer> position = new HashMap<>();
-        position.put(RIGHT, 0);
-        position.put(LEFT, 0);
+        position.put(RIGHT, -1);
+        position.put(LEFT, -1);
 
         for (int i = 0; i < numbers.length; i++) {
             String clickHand = getClickHand(numbers[i], position, hand);
@@ -61,28 +61,21 @@ class KeyPad {
 
         int left = position.get("L");
         int right = position.get("R");
-        int distanceFromLeft = 0;
-        int distanceFromRight = 0;
 
-        if (left == right) {
+        if (left == -1 && right == -1) {
             return result;
-        }
-
-        if (number == 2) {
-
-        }
-
-        if (number == 5) {
-
-        }
-
-        if (number == 8) {
-
         }
 
         if (number == 0) {
 
         }
+
+        int distanceFromLeft = 0;
+        int distanceFromRight = 0;
+
+        int leftNumber = number - 1;
+        int rightNumber = number + 1;
+
 
         if (distanceFromLeft == distanceFromRight) {
             return result;
