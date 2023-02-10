@@ -20,7 +20,7 @@ class FailureRatio {
         Map<Float, List<Integer>> stageFailuresMap = new HashMap<>();
         List<Float> ratio = new ArrayList<>();
 
-        for (int stage = 1; stage <= N + 1; stage++) {
+        for (int stage = 1; stage <= N; stage++) {
             int failureCnt = 0;
             int totalCnt = 0;
 
@@ -36,11 +36,14 @@ class FailureRatio {
                 totalCnt++;
             }
 
-            float failureRatio = failureCnt / totalCnt;
+            float failureRatio = (float) failureCnt / totalCnt;
             ratio.add(failureRatio);
 
             if (!stageFailuresMap.containsKey(failureRatio)) {
-                stageFailuresMap.put(failureRatio, new ArrayList<>(stage));
+                List<Integer> stageList = new ArrayList<>();
+                stageList.add(stage);
+                stageFailuresMap.put(failureRatio, stageList);
+                continue;
             }
 
             List<Integer> stageList = stageFailuresMap.get(failureRatio);
@@ -48,8 +51,8 @@ class FailureRatio {
             stageFailuresMap.put(failureRatio, stageList);
         }
 
-        Collections.reverse(ratio);
-
+        Collections.sort(ratio, Collections.reverseOrder());
+        
         List<Integer> result = new ArrayList<>();
 
         for (float failureRatio : stageFailuresMap.keySet()) {
