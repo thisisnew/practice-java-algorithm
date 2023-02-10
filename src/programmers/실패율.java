@@ -37,7 +37,7 @@ class FailureRatio {
             }
 
             float failureRatio = (float) failureCnt / totalCnt;
-            ratio.add(failureRatio);
+
 
             if (!stageFailuresMap.containsKey(failureRatio)) {
                 List<Integer> stageList = new ArrayList<>();
@@ -49,6 +49,10 @@ class FailureRatio {
             List<Integer> stageList = stageFailuresMap.get(failureRatio);
             stageList.add(stage);
             stageFailuresMap.put(failureRatio, stageList);
+        }
+
+        for (float failureRatio : stageFailuresMap.keySet()) {
+            ratio.add(failureRatio);
         }
 
         Collections.sort(ratio, Collections.reverseOrder());
