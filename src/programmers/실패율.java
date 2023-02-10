@@ -52,11 +52,11 @@ class FailureRatio {
         }
 
         Collections.sort(ratio, Collections.reverseOrder());
-        
+
         List<Integer> result = new ArrayList<>();
 
-        for (float failureRatio : stageFailuresMap.keySet()) {
-            List<Integer> stageList = stageFailuresMap.get(failureRatio);
+        for (float r : ratio) {
+            List<Integer> stageList = stageFailuresMap.get(r);
 
             if (stageList.size() > 1) {
                 Collections.sort(stageList);
