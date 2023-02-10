@@ -16,9 +16,17 @@ public class 실패율 {
 class FailureRatio {
 
     public int[] solution(int N, int[] stages) {
+        Map<Float, List<Integer>> stageFailuresMap = getStageFailuresMap(N, stages);
+        List<Float> ratio = getFailureRatioListReverseOrder(stageFailuresMap);
 
-        Map<Float, List<Integer>> stageFailuresMap = new HashMap<>();
-        List<Float> ratio = new ArrayList<>();
+        return getFailureStageList(ratio, stageFailuresMap)
+                .stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
+    }
+
+    private Map<Float, List<Integer>> getStageFailuresMap(int N, int[] stages) {
+        Map<Float, List<Integer>> result = new HashMap<>();
 
         for (int stage = 1; stage <= N; stage++) {
             int failureCnt = 0;
@@ -39,24 +47,34 @@ class FailureRatio {
             float failureRatio = (float) failureCnt / totalCnt;
 
 
-            if (!stageFailuresMap.containsKey(failureRatio)) {
+            if (!result.containsKey(failureRatio)) {
                 List<Integer> stageList = new ArrayList<>();
                 stageList.add(stage);
-                stageFailuresMap.put(failureRatio, stageList);
+                result.put(failureRatio, stageList);
                 continue;
             }
 
-            List<Integer> stageList = stageFailuresMap.get(failureRatio);
+            List<Integer> stageList = result.get(failureRatio);
             stageList.add(stage);
-            stageFailuresMap.put(failureRatio, stageList);
+            result.put(failureRatio, stageList);
         }
+
+        return result;
+    }
+
+    private List<Float> getFailureRatioListReverseOrder(Map<Float, List<Integer>> stageFailuresMap) {
+        List<Float> result = new ArrayList<>();
 
         for (float failureRatio : stageFailuresMap.keySet()) {
-            ratio.add(failureRatio);
+            result.add(failureRatio);
         }
 
-        Collections.sort(ratio, Collections.reverseOrder());
+        Collections.sort(result, Collections.reverseOrder());
 
+        return result;
+    }
+
+    private List<Integer> getFailureStageList(List<Float> ratio, Map<Float, List<Integer>> stageFailuresMap) {
         List<Integer> result = new ArrayList<>();
 
         for (float r : ratio) {
@@ -71,6 +89,6 @@ class FailureRatio {
             }
         }
 
-        return result.stream().mapToInt(Integer::intValue).toArray();
+        return result;
     }
 }
