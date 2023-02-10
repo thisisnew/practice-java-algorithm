@@ -18,7 +18,7 @@ class FailureRatio {
     public int[] solution(int N, int[] stages) {
 
         int[] answer = {};
-        Map<Float, Integer> stageFailuresMap = new HashMap<>();
+        Map<Float, List<Integer>> stageFailuresMap = new HashMap<>();
         List<Float> ratio = new ArrayList<>();
 
         for (int stage = 1; stage <= N + 1; stage++) {
@@ -41,7 +41,13 @@ class FailureRatio {
             float failureRatio = failureCnt / totalCnt;
             ratio.add(failureRatio);
 
-            stageFailuresMap.put(failureRatio, stage);
+            if (!stageFailuresMap.containsKey(failureRatio)) {
+                stageFailuresMap.put(failureRatio, new ArrayList<>(stage));
+            }
+
+            List<Integer> stageList = stageFailuresMap.get(failureRatio);
+            stageList.add(stage);
+            stageFailuresMap.put(failureRatio, stageList);
         }
 
         Collections.reverse(ratio);
