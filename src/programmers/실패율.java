@@ -46,7 +46,6 @@ class FailureRatio {
 
             float failureRatio = (float) failureCnt / totalCnt;
 
-
             if (!result.containsKey(failureRatio)) {
                 List<Integer> stageList = new ArrayList<>();
                 stageList.add(stage);
