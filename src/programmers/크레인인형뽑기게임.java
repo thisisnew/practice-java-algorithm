@@ -23,6 +23,7 @@ class ToyCraneGame {
 
             if (!basket.isEmpty() && basket.get(basket.size() - 1) == doll) {
                 basket.remove(basket.size() - 1);
+                continue;
             }
 
             basket.add(doll);
