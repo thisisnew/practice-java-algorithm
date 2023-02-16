@@ -15,7 +15,6 @@ public class 크레인인형뽑기게임 {
 
 class ToyCraneGame {
     public int solution(int[][] board, int[] moves) {
-        int result = 0;
         List<Integer> basket = new ArrayList<>();
 
         for (int move : moves) {
@@ -29,7 +28,7 @@ class ToyCraneGame {
             basket.add(doll);
         }
 
-        return result;
+        return basket.size();
     }
 
     private int getDoll(int[][] board, int index) {
