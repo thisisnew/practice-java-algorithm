@@ -19,9 +19,10 @@ class ToyCraneGame {
 
         for (int move : moves) {
             int doll = getDoll(board, move);
-
-            if (!basket.isEmpty() && basket.get(basket.size() - 1) == doll) {
-                basket.remove(basket.size() - 1);
+            
+            int top = basket.size() - 1;
+            if (!basket.isEmpty() && basket.get(top) == doll) {
+                basket.remove(top);
                 continue;
             }
 
