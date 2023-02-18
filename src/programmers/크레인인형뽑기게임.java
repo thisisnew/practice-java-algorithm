@@ -18,9 +18,9 @@ class ToyCraneGame {
         List<Integer> basket = new ArrayList<>();
 
         for (int move : moves) {
-            int doll = getDoll(board, move);
-            
-            int top = basket.size() - 1;
+            int doll = getDoll(board, move - 1);
+
+            int top = getTopIndexOfBasket(basket);
             if (!basket.isEmpty() && basket.get(top) == doll) {
                 basket.remove(top);
                 continue;
@@ -44,6 +44,20 @@ class ToyCraneGame {
             result = dolls[i];
             dolls[i] = 0;
             break;
+        }
+
+        return result;
+    }
+
+    private int getTopIndexOfBasket(List<Integer> basket) {
+
+        int result = 0;
+
+        for (int i = basket.size() - 1; i >= 0; i--) {
+            if (basket.get(i) != 0) {
+                result = i;
+                break;
+            }
         }
 
         return result;
