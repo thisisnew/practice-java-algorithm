@@ -29,7 +29,7 @@ class ToyCraneGame {
             basket.add(doll);
         }
 
-        return basket.size();
+        return getBasketSize(basket);
     }
 
     private int getDoll(int[][] board, int index) {
@@ -58,6 +58,21 @@ class ToyCraneGame {
                 result = i;
                 break;
             }
+        }
+
+        return result;
+    }
+
+    private int getBasketSize(List<Integer> basket) {
+
+        int result = 0;
+
+        for (int v : basket) {
+            if (v == 0) {
+                continue;
+            }
+
+            result++;
         }
 
         return result;
