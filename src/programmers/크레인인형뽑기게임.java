@@ -51,6 +51,10 @@ class ToyCraneGame {
 
     private int getTopIndexOfBasket(List<Integer> basket) {
 
+        if (basket.isEmpty()) {
+            return 0;
+        }
+
         int result = 0;
 
         for (int i = basket.size() - 1; i >= 0; i--) {
