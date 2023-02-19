@@ -53,10 +53,6 @@ class ToyCraneGame {
 
         int result = 0;
 
-        if (basket.isEmpty()) {
-            return result;
-        }
-
         for (int i = basket.size() - 1; i >= 0; i--) {
             if (basket.get(i) != 0) {
                 result = i;
