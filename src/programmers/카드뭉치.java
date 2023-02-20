@@ -68,7 +68,7 @@ class Deck {
                 continue;
             }
 
-            result[index] = cards[idx];
+            result[index] = cards[i];
             index++;
         }
 
