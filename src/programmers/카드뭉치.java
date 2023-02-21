@@ -21,18 +21,18 @@ class Deck {
         String answer = YES;
 
         for (String g : goal) {
-            int idx = findIndexIfHasSameProperty(cards1, g);
+            int idx1 = findIndexIfHasSameProperty(cards1, g);
 
-            if (idx >= 0) {
-                cards1 = removePropInArray(cards1, idx);
+            if (idx1 >= 0) {
+                cards1 = removePropInArray(cards1, idx1);
                 continue;
             }
 
 
-            idx = findIndexIfHasSameProperty(cards2, g);
+            int idx2 = findIndexIfHasSameProperty(cards2, g);
 
-            if (idx >= 0) {
-                cards2 = removePropInArray(cards2, idx);
+            if (idx2 >= 0) {
+                cards2 = removePropInArray(cards2, idx2);
                 continue;
             }
 
