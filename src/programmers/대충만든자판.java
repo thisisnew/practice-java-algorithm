@@ -1,6 +1,7 @@
 package programmers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class 대충만든자판 {
@@ -10,7 +11,7 @@ public class 대충만든자판 {
         String[] keymap = {"ABACD", "BCEFD"};
         String[] targets = {"ABCD", "AABB"};
 
-        System.out.println(keyboard.solution(keymap, targets));
+        System.out.println(Arrays.toString(keyboard.solution(keymap, targets)));
     }
 }
 
@@ -41,10 +42,18 @@ class Keyboard {
 
         }
 
-        if (result == 0) {
+        if (hasNotFound(result)) {
             result = -1;
         }
 
         return result;
+    }
+
+    private boolean hasNotFound(int result) {
+        if (result == 0) {
+            return true;
+        }
+
+        return false;
     }
 }
