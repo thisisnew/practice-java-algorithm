@@ -32,6 +32,19 @@ class Keyboard {
     private int countKeyboardClick(String[] keymap, String target) {
         int result = 0;
 
+        for (int i = 0; i < target.length(); i++) {
+            String token = String.valueOf(target.charAt(i));
+
+            if (true) { /// token ==
+                result += 0; //카운팅값
+            }
+
+        }
+
+        if (result == 0) {
+            result = -1;
+        }
+
         return result;
     }
 }
