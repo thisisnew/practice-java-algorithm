@@ -38,8 +38,12 @@ class Keyboard {
 
         for (int i = 0; i < target.length(); i++) {
             String token = String.valueOf(target.charAt(i));
+            int idx1 = NOT_FOUND;
+            int idx2 = NOT_FOUND;
 
             for (String key : keymap) {
+
+
                 if (true) { /// token ==
                     result += 0; //카운팅값
                 }
