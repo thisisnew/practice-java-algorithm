@@ -38,15 +38,27 @@ class Keyboard {
 
         for (int i = 0; i < target.length(); i++) {
             String token = String.valueOf(target.charAt(i));
-            int idx1 = NOT_FOUND;
-            int idx2 = NOT_FOUND;
+            int cnt = NOT_FOUND;
 
             for (String key : keymap) {
+                int c = findIndexTokenCharInKey(token, key);
 
-
-                if (true) { /// token ==
-                    result += 0; //카운팅값
+                if (c == NOT_FOUND) {
+                    continue;
                 }
+
+                if (cnt == NOT_FOUND && c > cnt) {
+                    cnt = c;
+                    continue;
+                }
+
+                if (cnt != NOT_FOUND && c < cnt) {
+                    cnt = c;
+                }
+            }
+
+            if (!hasNotFound(cnt)) {
+                result += cnt;
             }
         }
 
@@ -70,8 +82,8 @@ class Keyboard {
         return result;
     }
 
-    private boolean hasNotFound(int result) {
-        if (result == 0) {
+    private boolean hasNotFound(int v) {
+        if (v <= 0) {
             return true;
         }
 
