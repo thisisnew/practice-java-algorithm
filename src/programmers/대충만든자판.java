@@ -16,7 +16,7 @@ public class 대충만든자판 {
 }
 
 class Keyboard {
-    
+
     private static final int NOT_FOUND = -1;
 
     public int[] solution(String[] keymap, String[] targets) {
@@ -47,14 +47,14 @@ class Keyboard {
         }
 
         if (hasNotFound(result)) {
-            result = -1;
+            result = NOT_FOUND;
         }
 
         return result;
     }
 
     private int findIndexTokenCharInKey(String token, String key) {
-        int result = -1;
+        int result = NOT_FOUND;
 
         return result;
     }
