@@ -56,6 +56,13 @@ class Keyboard {
     private int findIndexTokenCharInKey(String token, String key) {
         int result = NOT_FOUND;
 
+        for (int i = 0; i < key.length(); i++) {
+            if (token.equals(String.valueOf(key.charAt(i)))) {
+                result = i + 1;
+                break;
+            }
+        }
+
         return result;
     }
 
