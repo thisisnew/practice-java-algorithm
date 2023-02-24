@@ -16,6 +16,9 @@ public class 대충만든자판 {
 }
 
 class Keyboard {
+    
+    private static final int NOT_FOUND = -1;
+
     public int[] solution(String[] keymap, String[] targets) {
 
         List<Integer> result = new ArrayList<>();
@@ -36,15 +39,22 @@ class Keyboard {
         for (int i = 0; i < target.length(); i++) {
             String token = String.valueOf(target.charAt(i));
 
-            if (true) { /// token ==
-                result += 0; //카운팅값
+            for (String key : keymap) {
+                if (true) { /// token ==
+                    result += 0; //카운팅값
+                }
             }
-
         }
 
         if (hasNotFound(result)) {
             result = -1;
         }
+
+        return result;
+    }
+
+    private int findIndexTokenCharInKey(String token, String key) {
+        int result = -1;
 
         return result;
     }
