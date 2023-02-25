@@ -47,12 +47,7 @@ class Keyboard {
                     continue;
                 }
 
-                if (cnt == NOT_FOUND && c > cnt) {
-                    cnt = c;
-                    continue;
-                }
-
-                if (cnt != NOT_FOUND && c < cnt) {
+                if ((cnt == NOT_FOUND && c > cnt) || (cnt != NOT_FOUND && c < cnt)) {
                     cnt = c;
                 }
             }
