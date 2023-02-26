@@ -38,23 +38,13 @@ class Keyboard {
 
         for (int i = 0; i < target.length(); i++) {
             String token = String.valueOf(target.charAt(i));
-            int cnt = NOT_FOUND;
+            int cnt = getCnt(keymap, token);
 
-            for (String key : keymap) {
-                int c = findIndexTokenCharInKey(token, key);
-
-                if (c == NOT_FOUND) {
-                    continue;
-                }
-
-                if ((cnt == NOT_FOUND && c > cnt) || (cnt != NOT_FOUND && c < cnt)) {
-                    cnt = c;
-                }
+            if (hasNotFound(cnt)) {
+                continue;
             }
 
-            if (!hasNotFound(cnt)) {
-                result += cnt;
-            }
+            result += cnt;
         }
 
         if (hasNotFound(result)) {
@@ -62,6 +52,24 @@ class Keyboard {
         }
 
         return result;
+    }
+
+    private int getCnt(String[] keymap, String token) {
+        int cnt = NOT_FOUND;
+
+        for (String key : keymap) {
+            int c = findIndexTokenCharInKey(token, key);
+
+            if (c == NOT_FOUND) {
+                continue;
+            }
+
+            if ((cnt == NOT_FOUND && c > cnt) || (cnt != NOT_FOUND && c < cnt)) {
+                cnt = c;
+            }
+        }
+
+        return cnt;
     }
 
     private int findIndexTokenCharInKey(String token, String key) {
