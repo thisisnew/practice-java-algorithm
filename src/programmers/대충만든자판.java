@@ -47,11 +47,7 @@ class Keyboard {
             result += cnt;
         }
 
-        if (hasNotFound(result)) {
-            result = NOT_FOUND;
-        }
-
-        return result;
+        return hasNotFound(result) ? NOT_FOUND : result;
     }
 
     private int getCnt(String[] keymap, String token) {
