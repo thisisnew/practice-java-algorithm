@@ -8,8 +8,8 @@ public class 대충만든자판 {
     public static void main(String[] args) {
         Keyboard keyboard = new Keyboard();
 
-        String[] keymap = {"ABACD", "BCEFD"};
-        String[] targets = {"ABCD", "AABB"};
+        String[] keymap = {"AGZ", "BSSS"};
+        String[] targets = {"ASA", "BGZ"};
 
         System.out.println(Arrays.toString(keyboard.solution(keymap, targets)));
     }
@@ -54,14 +54,14 @@ class Keyboard {
         int cnt = NOT_FOUND;
 
         for (String key : keymap) {
-            int c = findIndexTokenCharInKey(token, key);
+            int idx = findIndexTokenCharInKey(token, key);
 
-            if (c == NOT_FOUND) {
+            if (idx == NOT_FOUND) {
                 continue;
             }
 
-            if ((cnt == NOT_FOUND && c > cnt) || (cnt != NOT_FOUND && c < cnt)) {
-                cnt = c;
+            if ((cnt == NOT_FOUND && idx > cnt) || (cnt != NOT_FOUND && idx < cnt)) {
+                cnt = idx;
             }
         }
 
