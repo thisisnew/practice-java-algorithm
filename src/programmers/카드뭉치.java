@@ -21,20 +21,15 @@ class Deck {
         String answer = YES;
 
         for (String g : goal) {
-//            int idx1 = findIndexIfHasSameProperty(cards1, g);
-//
-//            if (idx1 >= 0) {
-//                cards1 = removePropInArray(cards1, idx1);
-//                continue;
-//            }
-//
-//
-//            int idx2 = findIndexIfHasSameProperty(cards2, g);
-//
-//            if (idx2 >= 0) {
-//                cards2 = removePropInArray(cards2, idx2);
-//                continue;
-//            }
+            if (isTopPropAsSameAsThisProp(cards1, g)) {
+                cards1 = removePropInArray(cards1);
+                continue;
+            }
+            
+            if (isTopPropAsSameAsThisProp(cards2, g)) {
+                cards2 = removePropInArray(cards2);
+                continue;
+            }
 
             answer = NO;
             break;
@@ -43,31 +38,16 @@ class Deck {
         return answer;
     }
 
-    private int findIndexIfHasSameProperty(String[] cards, String g) {
-
-        int result = -1;
-
-        for (int i = 0; i < cards.length; i++) {
-            if (cards[i] == g) {
-                result = i;
-                break;
-            }
-        }
-
-        return result;
+    private boolean isTopPropAsSameAsThisProp(String[] cards, String g) {
+        return cards[0] == g;
     }
 
-    private String[] removePropInArray(String[] cards, int idx) {
+    private String[] removePropInArray(String[] cards) {
 
         String[] result = new String[cards.length - 1];
         int index = 0;
 
-        for (int i = 0; i < cards.length; i++) {
-
-            if (i == idx) {
-                continue;
-            }
-
+        for (int i = 1; i < cards.length; i++) {
             result[index] = cards[i];
             index++;
         }
