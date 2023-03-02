@@ -12,7 +12,6 @@ public class 바탕화면정리 {
 
 class WallPaper {
     public int[] solution(String[] wallpaper) {
-
         int minIndex = 0;
 
         for (String w : wallpaper) {
@@ -27,7 +26,6 @@ class WallPaper {
                 }
             }
         }
-
 
         int[] answer = {};
         return answer;
