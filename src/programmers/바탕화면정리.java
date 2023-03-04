@@ -12,14 +12,14 @@ public class 바탕화면정리 {
 
 class WallPaper {
     public int[] solution(String[] wallpaper) {
-        int pointOfLine = getPointOfLine(wallpaper);
-        int pointOfRow = getPointOfRow(wallpaper);
+        int pointOfLine = getStartPointOfLine(wallpaper);
+        int pointOfRow = getStartPointOfRow(wallpaper);
 
         int[] answer = {};
         return answer;
     }
 
-    private int getPointOfLine(String[] wallpaper) {
+    private int getStartPointOfLine(String[] wallpaper) {
 
         int result = 0;
 
@@ -39,7 +39,7 @@ class WallPaper {
         return result;
     }
 
-    private int getPointOfRow(String[] wallpaper) {
+    private int getStartPointOfRow(String[] wallpaper) {
 
         int result = 0;
 
