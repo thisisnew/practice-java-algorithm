@@ -12,8 +12,8 @@ public class 바탕화면정리 {
 
 class WallPaper {
     public int[] solution(String[] wallpaper) {
-        int pointOfLine = getStartPointOfLine(wallpaper);
-        int pointOfRow = getStartPointOfRow(wallpaper);
+        int startPointOfLine = getStartPointOfLine(wallpaper);
+        int startPointOfRow = getStartPointOfRow(wallpaper);
 
         int[] answer = {};
         return answer;
@@ -40,6 +40,46 @@ class WallPaper {
     }
 
     private int getStartPointOfRow(String[] wallpaper) {
+
+        int result = 0;
+
+        for (String w : wallpaper) {
+            for (int i = 0; i < w.length(); i++) {
+                if (w.charAt(i) != '#') {
+                    continue;
+                }
+
+                if (i <= result) {
+                    result = i;
+                    break;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    private int getEndPointOfLine(String[] wallpaper) {
+
+        int result = 0;
+
+        for (String w : wallpaper) {
+            for (int i = 0; i < w.length(); i++) {
+                if (w.charAt(i) != '#') {
+                    continue;
+                }
+
+                if (i <= result) {
+                    result = i;
+                    break;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    private int getEndPointOfRow(String[] wallpaper) {
 
         int result = 0;
 
