@@ -12,11 +12,11 @@ public class 바탕화면정리 {
 
 class WallPaper {
     public int[] solution(String[] wallpaper) {
-        int startPointOfLine = getStartPointOfLine(wallpaper);
-        int startPointOfRow = getStartPointOfRow(wallpaper);
+        int luy = getStartPointOfLine(wallpaper);
+        int lux = getStartPointOfRow(wallpaper);
 
-        int endPointOfLine = getEndPointOfLine(wallpaper);
-        int endPointOfRow = getEndPointOfRow(wallpaper);
+        int rdy = getEndPointOfLine(wallpaper);
+        int rdx = getEndPointOfRow(wallpaper);
 
         int[] answer = {};
         return answer;
