@@ -15,6 +15,9 @@ class WallPaper {
         int startPointOfLine = getStartPointOfLine(wallpaper);
         int startPointOfRow = getStartPointOfRow(wallpaper);
 
+        int endPointOfLine = getEndPointOfLine(wallpaper);
+        int endPointOfRow = getEndPointOfRow(wallpaper);
+
         int[] answer = {};
         return answer;
     }
