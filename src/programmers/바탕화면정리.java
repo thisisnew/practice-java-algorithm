@@ -12,9 +12,12 @@ public class 바탕화면정리 {
 
 class WallPaper {
     public int[] solution(String[] wallpaper) {
+
+        //통합
         int lux = getLux(wallpaper);
         int luy = getLuy(wallpaper);
 
+        //통합
         int rdx = getRdx(wallpaper);
         int rdy = getRdy(wallpaper);
 
