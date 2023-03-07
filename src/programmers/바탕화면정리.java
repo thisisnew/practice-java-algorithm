@@ -21,7 +21,7 @@ class WallPaper {
         int rdx = getRdx(wallpaper);
         int rdy = getRdy(wallpaper);
 
-        return new int[]{lux, luy, rdx, rdy};
+        return new int[]{getLux(wallpaper), getLuy(wallpaper), getRdx(wallpaper), getRdy(wallpaper)};
     }
 
     private int getLux(String[] wallpaper) {
