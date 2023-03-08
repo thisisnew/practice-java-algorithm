@@ -14,14 +14,19 @@ class WallPaper {
     public int[] solution(String[] wallpaper) {
 
         //통합
-        int lux = getLux(wallpaper);
-        int luy = getLuy(wallpaper);
+        int[] luValues = getLuValues(wallpaper);
+        int lux = luValues[0];
+        int luy = luValues[1];
 
         //통합
         int rdx = getRdx(wallpaper);
         int rdy = getRdy(wallpaper);
 
         return new int[]{lux, luy, rdx, rdy};
+    }
+
+    private int[] getLuValues(String[] wallpaper) {
+        return new int[]{};
     }
 
     private int getLux(String[] wallpaper) {
