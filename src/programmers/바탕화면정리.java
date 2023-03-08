@@ -19,13 +19,18 @@ class WallPaper {
         int luy = luValues[1];
 
         //통합
-        int rdx = getRdx(wallpaper);
-        int rdy = getRdy(wallpaper);
+        int[] rdValues = getRdValues(wallpaper);
+        int rdx = rdValues[0];
+        int rdy = rdValues[1];
 
         return new int[]{lux, luy, rdx, rdy};
     }
 
     private int[] getLuValues(String[] wallpaper) {
+        return new int[]{};
+    }
+
+    private int[] getRdValues(String[] wallpaper) {
         return new int[]{};
     }
 
