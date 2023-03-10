@@ -51,14 +51,36 @@ class WallPaper {
                     y = j;
                 }
             }
-
         }
 
         return new int[]{x, y};
     }
 
     private int[] getRdValues(String[] wallpaper) {
-        return new int[]{};
+
+        int x = 0;
+        int y = 0;
+
+        for (int i = wallpaper.length - 1; i >= 0; i--) {
+
+            String w = wallpaper[i];
+
+            for (int j = w.length() - 1; j >= 0; j--) {
+                if (!file.equals(String.valueOf(w.charAt(j)))) {
+                    continue;
+                }
+
+                if (i >= x) {
+                    x = i;
+                }
+
+                if (j >= y) {
+                    y = j;
+                }
+            }
+        }
+
+        return new int[]{x, y};
     }
 
 }
