@@ -11,6 +11,9 @@ public class 바탕화면정리 {
 }
 
 class WallPaper {
+
+    private static final String file = "#";
+
     public int[] solution(String[] wallpaper) {
 
         //통합
@@ -27,11 +30,35 @@ class WallPaper {
     }
 
     private int[] getLuValues(String[] wallpaper) {
-        return new int[]{};
+
+        int x = 0;
+        int y = 0;
+
+        for (int i = 0; i < wallpaper.length; i++) {
+
+            String w = wallpaper[i];
+
+            for (int j = 0; j < w.length(); j++) {
+                if (!file.equals(String.valueOf(w.charAt(j)))) {
+                    continue;
+                }
+
+                if (i <= x) {
+                    x = i;
+                }
+
+                if (j <= y) {
+                    y = j;
+                }
+            }
+
+        }
+
+        return new int[]{x, y};
     }
 
     private int[] getRdValues(String[] wallpaper) {
         return new int[]{};
     }
-    
+
 }
