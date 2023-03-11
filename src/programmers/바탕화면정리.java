@@ -16,12 +16,10 @@ class WallPaper {
 
     public int[] solution(String[] wallpaper) {
 
-        //통합
         int[] luValues = getLuValues(wallpaper);
         int lux = luValues[0];
         int luy = luValues[1];
 
-        //통합
         int[] rdValues = getRdValues(wallpaper);
         int rdx = rdValues[0];
         int rdy = rdValues[1];
@@ -33,23 +31,28 @@ class WallPaper {
 
         int x = 0;
         int y = 0;
+        boolean isXPointed = false;
+        boolean isYPointed = false;
 
         for (int i = 0; i < wallpaper.length; i++) {
 
             String w = wallpaper[i];
 
             for (int j = 0; j < w.length(); j++) {
+
+                if (isXPointed && isYPointed) {
+                    break;
+                }
+
                 if (!file.equals(String.valueOf(w.charAt(j)))) {
                     continue;
                 }
 
-                if (i <= x) {
-                    x = i;
-                }
+                x = i;
+                isXPointed = true;
 
-                if (j <= y) {
-                    y = j;
-                }
+                y = j;
+                isYPointed = true;
             }
         }
 
@@ -60,23 +63,28 @@ class WallPaper {
 
         int x = 0;
         int y = 0;
+        boolean isXPointed = false;
+        boolean isYPointed = false;
 
         for (int i = wallpaper.length - 1; i >= 0; i--) {
 
             String w = wallpaper[i];
 
             for (int j = w.length() - 1; j >= 0; j--) {
+
+                if (isXPointed && isYPointed) {
+                    break;
+                }
+
                 if (!file.equals(String.valueOf(w.charAt(j)))) {
                     continue;
                 }
 
-                if (i >= x) {
-                    x = i;
-                }
+                x = i + 1;
+                isXPointed = true;
 
-                if (j >= y) {
-                    y = j;
-                }
+                y = j + 1;
+                isYPointed = true;
             }
         }
 
