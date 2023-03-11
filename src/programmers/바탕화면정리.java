@@ -41,7 +41,7 @@ class WallPaper {
             for (int j = 0; j < w.length(); j++) {
 
                 if (isXPointed && isYPointed) {
-                    break;
+                    return new int[]{x, y};
                 }
 
                 if (!file.equals(String.valueOf(w.charAt(j)))) {
@@ -73,7 +73,7 @@ class WallPaper {
             for (int j = w.length() - 1; j >= 0; j--) {
 
                 if (isXPointed && isYPointed) {
-                    break;
+                    return new int[]{x, y};
                 }
 
                 if (!file.equals(String.valueOf(w.charAt(j)))) {
