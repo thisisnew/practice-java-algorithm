@@ -23,7 +23,6 @@ class RunningRace {
         for (String calling : callings) {
             int rank = playersRankMap.get(calling);
             overtake(players, rank);
-
         }
 
         return players;
@@ -41,12 +40,12 @@ class RunningRace {
 
     private void overtake(String[] players, int rank) {
         String calling = players[rank];
-        String overTaken = players[rank - 1];
+        String overTakenPlayer = players[rank - 1];
 
-        players[rank] = overTaken;
+        players[rank] = overTakenPlayer;
         players[rank - 1] = calling;
 
-        playersRankMap.put(overTaken, rank);
+        playersRankMap.put(overTakenPlayer, rank);
         playersRankMap.put(calling, rank - 1);
     }
 }
