@@ -30,7 +30,6 @@ class RunningRace {
     }
 
     private Map<String, Integer> getPlayersRankMap(String[] players) {
-
         Map<String, Integer> playersRank = new HashMap<>();
 
         for (int i = 0; i < players.length; i++) {
@@ -46,7 +45,7 @@ class RunningRace {
 
         players[rank] = overTaken;
         players[rank - 1] = calling;
-        
+
         playersRankMap.put(overTaken, rank);
         playersRankMap.put(calling, rank - 1);
     }
