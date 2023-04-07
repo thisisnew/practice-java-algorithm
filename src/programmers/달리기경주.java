@@ -15,15 +15,18 @@ public class 달리기경주 {
 }
 
 class RunningRace {
+    private Map<String, Integer> playersRankMap;
+
     public String[] solution(String[] players, String[] callings) {
-        Map<String, Integer> playersRankMap = getPlayersRankMap(players);
+        playersRankMap = getPlayersRankMap(players);
 
         for (String calling : callings) {
+            int rank = playersRankMap.get(calling);
+            overtake(players, rank);
 
         }
 
-        String[] answer = {};
-        return answer;
+        return players;
     }
 
     private Map<String, Integer> getPlayersRankMap(String[] players) {
@@ -35,5 +38,16 @@ class RunningRace {
         }
 
         return playersRank;
+    }
+
+    private void overtake(String[] players, int rank) {
+        String calling = players[rank];
+        String overTaken = players[rank - 1];
+
+        players[rank] = overTaken;
+        players[rank - 1] = calling;
+        
+        playersRankMap.put(overTaken, rank);
+        playersRankMap.put(calling, rank - 1);
     }
 }
