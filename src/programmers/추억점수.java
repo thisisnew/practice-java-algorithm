@@ -1,6 +1,8 @@
 package programmers;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class 추억점수 {
     public static void main(String[] args) {
@@ -14,7 +16,39 @@ public class 추억점수 {
 
 class MemorialPoint {
     public int[] solution(String[] name, int[] yearning, String[][] photo) {
-        int[] answer = {};
-        return answer;
+        return getResult(photo, getMemorialPointMap(name, yearning));
+    }
+
+    private Map<String, Integer> getMemorialPointMap(String[] name, int[] yearning) {
+
+        Map<String, Integer> result = new HashMap<>();
+
+        for (int i = 0; i < name.length; i++) {
+            result.put(name[i], yearning[i]);
+        }
+
+        return result;
+    }
+
+    private int[] getResult(String[][] photo, Map<String, Integer> memorialPointMap) {
+        int[] result = new int[photo.length];
+
+        for (int i = 0; i < photo.length; i++) {
+            result[i] = sumPoint(photo[i], memorialPointMap);
+        }
+
+        return result;
+    }
+
+    private int sumPoint(String[] p, Map<String, Integer> memorialPointMap) {
+        int result = 0;
+
+        for (int j = 0; j < p.length; j++) {
+            if (memorialPointMap.containsKey(p[j])) {
+                result += memorialPointMap.get(p[j]);
+            }
+        }
+
+        return result;
     }
 }
