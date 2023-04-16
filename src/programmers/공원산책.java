@@ -12,12 +12,13 @@ public class 공원산책 {
 class WalkingPark {
     public int[] solution(String[] park, String[] routes) {
 
-        for (String p : park) {
+        for (String route : routes) {
 
         }
 
         int[] answer = {};
         return answer;
     }
+
 
 }
