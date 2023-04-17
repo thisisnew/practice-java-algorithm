@@ -16,8 +16,6 @@ class WalkingPark {
     public int[] solution(String[] park, String[] routes) {
 
         for (String route : routes) {
-
-
         }
 
         int[] answer = {};
