@@ -18,6 +18,8 @@ class WalkingPark {
 
     public int[] solution(String[] park, String[] routes) {
 
+        boolean[][] twoDimensionsPark = getTwoDimensionsPark(park);
+
         for (String route : routes) {
             goStep(park, route);
         }
