@@ -13,6 +13,9 @@ public class 공원산책 {
 
 class WalkingPark {
 
+    int wStart = 0;
+    int hStart = 0;
+
     public int[] solution(String[] park, String[] routes) {
 
         for (String route : routes) {
@@ -32,14 +35,15 @@ class WalkingPark {
 
         for (int i = 0; i < park.length; i++) {
             for (int j = 0; j < park[i].length(); j++) {
-
                 if (park[i].charAt(j) == 'S') {
-
+                    wStart = i;
+                    hStart = j;
+                    result[i][j] = true;
                 }
-
             }
         }
 
+        return result;
     }
 
     private void goStep(String[] park, String route) {
