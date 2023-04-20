@@ -20,6 +20,10 @@ class WalkingPark {
 
         boolean[][] twoDimensionsPark = getTwoDimensionsPark(park);
 
+        for (boolean[] p : twoDimensionsPark) {
+
+        }
+
         for (String route : routes) {
             goStep(park, route);
         }
