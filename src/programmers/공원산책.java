@@ -45,6 +45,10 @@ class WalkingPark {
                     hStart = j;
                     result[i][j] = true;
                 }
+
+                if (park[i].charAt(j) == 'X') {
+                    result[i][j] = true;
+                }
             }
         }
 
