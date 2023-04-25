@@ -88,7 +88,6 @@ class WalkingPark {
 
         if (operator == "+") {
 
-
         } else {
 
         }
