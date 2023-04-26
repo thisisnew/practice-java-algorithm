@@ -19,7 +19,7 @@ class WalkingPark {
     int width = 0;
     int height = 0;
 
-    boolean[][] twoDimensionsPark = null;
+    String[][] twoDimensionsPark = null;
 
     public int[] solution(String[] park, String[] routes) {
         twoDimensionsPark = getTwoDimensionsPark(park);
@@ -31,23 +31,21 @@ class WalkingPark {
         return new int[]{wStart, hStart};
     }
 
-    private boolean[][] getTwoDimensionsPark(String[] park) {
+    private String[][] getTwoDimensionsPark(String[] park) {
 
         width = park[0].length();
         height = park.length;
 
-        boolean[][] result = new boolean[width][height];
+        String[][] result = new String[width][height];
 
         for (int i = 0; i < park.length; i++) {
             for (int j = 0; j < park[i].length(); j++) {
-                if (park[i].charAt(j) == 'S') {
+                String v = String.valueOf(park[i].charAt(j));
+                result[i][j] = v;
+
+                if (v == "S") {
                     wStart = i;
                     hStart = j;
-                    result[i][j] = true;
-                }
-
-                if (park[i].charAt(j) == 'X') {
-                    result[i][j] = true;
                 }
             }
         }
