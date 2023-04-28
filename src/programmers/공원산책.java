@@ -86,7 +86,9 @@ class WalkingPark {
 
         if (operator == "+") {
 
-        } else {
+        }
+
+        if (operator == "-") {
 
         }
 
