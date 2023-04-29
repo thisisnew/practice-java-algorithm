@@ -25,7 +25,7 @@ class WalkingPark {
         twoDimensionsPark = getTwoDimensionsPark(park);
 
         for (String route : routes) {
-            goStep(route);
+            goStep(route, twoDimensionsPark);
         }
 
         return new int[]{wStart, hStart};
@@ -53,7 +53,7 @@ class WalkingPark {
         return result;
     }
 
-    private void goStep(String route) {
+    private void goStep(String route, String[][] twoDimensionsPark) {
         StringTokenizer st = new StringTokenizer(route);
         String direction = st.nextToken();
         int steps = Integer.parseInt(st.nextToken());
