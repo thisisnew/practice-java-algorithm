@@ -60,21 +60,41 @@ class WalkingPark {
 
         switch (direction) {
             case "E":
+
+                if (hasObstacle(wStart, steps, "+")) {
+                    break;
+                }
+
                 if (isOverLimit(wStart, steps, "+")) {
                     wStart += steps;
                 }
                 break;
             case "W":
+
+                if (hasObstacle(wStart, steps, "-")) {
+                    break;
+                }
+
                 if (isOverLimit(wStart, steps, "-")) {
                     wStart -= steps;
                 }
                 break;
             case "S":
+
+                if (hasObstacle(hStart, steps, "+")) {
+                    break;
+                }
+
                 if (isOverLimit(hStart, steps, "+")) {
                     hStart += steps;
                 }
                 break;
             case "N":
+
+                if (hasObstacle(hStart, steps, "-")) {
+                    break;
+                }
+
                 if (isOverLimit(hStart, steps, "-")) {
                     hStart -= steps;
                 }
