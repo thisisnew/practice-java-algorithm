@@ -84,15 +84,29 @@ class WalkingPark {
 
     private boolean hasObstacle(int start, int steps, String operator) {
 
-        if (operator == "+") {
+        if (operator.equals("+")) {
 
         }
 
-        if (operator == "-") {
+        if (operator.equals("-")) {
 
         }
 
 
         return false;
+    }
+
+    private boolean isOverLimit(int start, int steps, String operator) {
+        boolean result = false;
+
+        if (operator.equals("+")) {
+            result = start + steps <= steps - 1;
+        }
+
+        if (operator.equals("-")) {
+            result = start - steps >= 0;
+        }
+
+        return result;
     }
 }
