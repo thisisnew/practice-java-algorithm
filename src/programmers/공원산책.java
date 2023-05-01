@@ -60,22 +60,22 @@ class WalkingPark {
 
         switch (direction) {
             case "E":
-                if (wStart + steps <= width - 1) {
+                if (isOverLimit(wStart, steps, "+")) {
                     wStart += steps;
                 }
                 break;
             case "W":
-                if (wStart - steps >= 0) {
+                if (isOverLimit(wStart, steps, "-")) {
                     wStart -= steps;
                 }
                 break;
             case "S":
-                if (hStart + steps >= height - 1) {
+                if (isOverLimit(hStart, steps, "+")) {
                     hStart += steps;
                 }
                 break;
             case "N":
-                if (hStart - steps >= 0) {
+                if (isOverLimit(hStart, steps, "-")) {
                     hStart -= steps;
                 }
                 break;
