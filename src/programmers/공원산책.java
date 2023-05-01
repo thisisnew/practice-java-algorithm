@@ -61,48 +61,52 @@ class WalkingPark {
         switch (direction) {
             case "E":
 
-                if (hasObstacle(wStart, steps, "+")) {
+                if (hasObstacle(wStart, steps, "+", twoDimensionsPark)) {
                     break;
                 }
 
                 if (isOverLimit(wStart, steps, "+")) {
                     wStart += steps;
                 }
+
                 break;
             case "W":
 
-                if (hasObstacle(wStart, steps, "-")) {
+                if (hasObstacle(wStart, steps, "-", twoDimensionsPark)) {
                     break;
                 }
 
                 if (isOverLimit(wStart, steps, "-")) {
                     wStart -= steps;
                 }
+
                 break;
             case "S":
 
-                if (hasObstacle(hStart, steps, "+")) {
+                if (hasObstacle(hStart, steps, "+", twoDimensionsPark)) {
                     break;
                 }
 
                 if (isOverLimit(hStart, steps, "+")) {
                     hStart += steps;
                 }
+
                 break;
             case "N":
 
-                if (hasObstacle(hStart, steps, "-")) {
+                if (hasObstacle(hStart, steps, "-", twoDimensionsPark)) {
                     break;
                 }
 
                 if (isOverLimit(hStart, steps, "-")) {
                     hStart -= steps;
                 }
+
                 break;
         }
     }
 
-    private boolean hasObstacle(int start, int steps, String operator) {
+    private boolean hasObstacle(int start, int steps, String operator, String[][] twoDimensionsPark) {
 
         if (operator.equals("+")) {
 
