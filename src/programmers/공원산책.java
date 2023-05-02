@@ -62,10 +62,6 @@ class WalkingPark {
             case "E":
 
                 if (hasObstacle(wStart, steps, "+", twoDimensionsPark)) {
-                    break;
-                }
-
-                if (isOverLimit(wStart, steps, "+")) {
                     wStart += steps;
                 }
 
@@ -73,10 +69,6 @@ class WalkingPark {
             case "W":
 
                 if (hasObstacle(wStart, steps, "-", twoDimensionsPark)) {
-                    break;
-                }
-
-                if (isOverLimit(wStart, steps, "-")) {
                     wStart -= steps;
                 }
 
@@ -84,10 +76,6 @@ class WalkingPark {
             case "S":
 
                 if (hasObstacle(hStart, steps, "+", twoDimensionsPark)) {
-                    break;
-                }
-
-                if (isOverLimit(hStart, steps, "+")) {
                     hStart += steps;
                 }
 
@@ -95,10 +83,6 @@ class WalkingPark {
             case "N":
 
                 if (hasObstacle(hStart, steps, "-", twoDimensionsPark)) {
-                    break;
-                }
-
-                if (isOverLimit(hStart, steps, "-")) {
                     hStart -= steps;
                 }
 
