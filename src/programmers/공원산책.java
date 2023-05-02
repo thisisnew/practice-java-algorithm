@@ -98,7 +98,6 @@ class WalkingPark {
             return true;
         }
 
-
         return false;
     }
 
