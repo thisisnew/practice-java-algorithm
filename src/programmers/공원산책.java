@@ -108,12 +108,10 @@ class WalkingPark {
 
     private boolean hasObstacle(int start, int steps, String operator, String[][] twoDimensionsPark) {
 
-        if (operator.equals("+")) {
+        String[] park = twoDimensionsPark[start];
 
-        }
-
-        if (operator.equals("-")) {
-
+        if (isOverLimit(start, steps, operator)) {
+            return true;
         }
 
 
