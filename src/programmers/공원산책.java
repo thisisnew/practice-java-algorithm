@@ -91,7 +91,7 @@ class WalkingPark {
     }
 
     private boolean hasObstacle(int start, int steps, String operator, String[][] twoDimensionsPark) {
-        String[] park = twoDimensionsPark[start];
+        //String[] park = twoDimensionsPark[start];
 
         if (isOverLimit(start, steps, operator)) {
             return true;
