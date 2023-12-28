@@ -13,14 +13,51 @@ public class No28255 { //3단 초콜릿 아이스크림
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         for (int i=0; i<n; i++) {
+            String word = st.nextToken();
+            String prefix = word.substring(0, (word.length()/3)-1);
 
+            if (word.equals(case1(prefix))) {
+                System.out.println(1);
+                continue;
+            }
 
+            if (word.equals(case2(prefix))) {
+                System.out.println(1);
+                continue;
+            }
 
+            if (word.equals(case3(prefix))) {
+                System.out.println(1);
+                continue;
+            }
+
+            if (word.equals(case4(prefix))) {
+                System.out.println(1);
+                continue;
+            }
+
+            System.out.println(0);
         }
 
     }
 
-    private String rev(String word) {
+    private static String case1(String prefix) {
+        return prefix + rev(prefix) + prefix;
+    }
+
+    private static String case2(String prefix) {
+        return prefix + tail(rev(prefix)) + prefix;
+    }
+
+    private static String case3(String prefix) {
+        return prefix + rev(prefix) + tail(prefix);
+    }
+
+    private static String case4(String prefix) {
+        return prefix + tail(rev(prefix)) + tail(prefix);
+    }
+
+    private static String rev(String word) {
 
         StringBuilder result = new StringBuilder(word.length());
 
@@ -31,8 +68,8 @@ public class No28255 { //3단 초콜릿 아이스크림
         return result.toString();
     }
 
-    private String tail() {
-
+    private static String tail(String word) {
+        return word.substring(1, word.length()-1);
     }
 
 }
