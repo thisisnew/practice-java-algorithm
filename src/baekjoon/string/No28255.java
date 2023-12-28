@@ -10,11 +10,10 @@ public class No28255 { //3단 초콜릿 아이스크림
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
         for (int i=0; i<n; i++) {
-            String word = st.nextToken();
-            String prefix = word.substring(0, (word.length()/3)-1);
+            String word = br.readLine();
+            String prefix = word.substring(0, (word.length()/3));
 
             if (word.equals(case1(prefix))) {
                 System.out.println(1);
@@ -69,7 +68,7 @@ public class No28255 { //3단 초콜릿 아이스크림
     }
 
     private static String tail(String word) {
-        return word.substring(1, word.length()-1);
+        return word.substring(1, word.length());
     }
 
 }
