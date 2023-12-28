@@ -13,31 +13,36 @@ public class No28255 { //3단 초콜릿 아이스크림
 
         for (int i=0; i<n; i++) {
             String word = br.readLine();
-            String prefix = word.substring(0, (word.length()/3));
 
-            if (word.equals(case1(prefix))) {
+            if (isThirdGradeIceCream(word)) {
                 System.out.println(1);
-                continue;
+            } else {
+                System.out.println(0);
             }
-
-            if (word.equals(case2(prefix))) {
-                System.out.println(1);
-                continue;
-            }
-
-            if (word.equals(case3(prefix))) {
-                System.out.println(1);
-                continue;
-            }
-
-            if (word.equals(case4(prefix))) {
-                System.out.println(1);
-                continue;
-            }
-
-            System.out.println(0);
         }
 
+    }
+
+    private static boolean isThirdGradeIceCream(String word) {
+        String prefix = word.substring(0, (word.length()/3));
+
+        if (word.equals(case1(prefix))) {
+            return true;
+        }
+
+        if (word.equals(case2(prefix))) {
+            return true;
+        }
+
+        if (word.equals(case3(prefix))) {
+            return true;
+        }
+
+        if (word.equals(case4(prefix))) {
+            return true;
+        }
+
+        return false;
     }
 
     private static String case1(String prefix) {
