@@ -37,7 +37,11 @@ public class No28255 { //3단 초콜릿 아이스크림
             return true;
         }
 
-        return word.equals(case4(prefix));
+        if (word.equals(case4(prefix))) {
+            return true;
+        }
+
+        return false;
     }
 
     private static String case1(String prefix) {
@@ -68,7 +72,7 @@ public class No28255 { //3단 초콜릿 아이스크림
     }
 
     private static String tail(String word) {
-        return word.substring(1, word.length());
+        return word.substring(1);
     }
 
 }
