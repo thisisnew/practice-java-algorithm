@@ -15,9 +15,10 @@ public class No28255 { //3단 초콜릿 아이스크림
 
             if (isThirdGradeIceCream(word)) {
                 System.out.println(1);
-            } else {
-                System.out.println(0);
+                continue;
             }
+
+            System.out.println(0);
         }
 
     }
