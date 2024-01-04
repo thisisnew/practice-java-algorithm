@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 
 public class No28255 { //3단 초콜릿 아이스크림
 
+    private static final int THIRD_GRADE = 3;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -48,11 +50,11 @@ public class No28255 { //3단 초콜릿 아이스크림
 
         int len = word.length();
 
-        if (len % 3 == 0) {
-            return word.substring(0, len/3);
+        if (len % THIRD_GRADE == 0) {
+            return word.substring(0, len/THIRD_GRADE);
         }
 
-        return word.substring(0, len/3+1);
+        return word.substring(0, len/THIRD_GRADE + 1);
     }
 
     private static String case1(String prefix) {
