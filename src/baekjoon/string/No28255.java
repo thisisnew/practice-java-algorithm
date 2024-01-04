@@ -23,7 +23,7 @@ public class No28255 { //3단 초콜릿 아이스크림
     }
 
     private static boolean isThirdGradeIceCream(String word) {
-        String prefix = word.substring(0, (word.length()/3+1));
+        String prefix = getPrefix(word);
 
         if (word.equals(case1(prefix))) {
             return true;
@@ -44,7 +44,7 @@ public class No28255 { //3단 초콜릿 아이스크림
         return false;
     }
 
-    private String getPrefix(String word) {
+    private static String getPrefix(String word) {
 
         int len = word.length();
 
@@ -53,7 +53,6 @@ public class No28255 { //3단 초콜릿 아이스크림
         }
 
         return word.substring(0, len/3+1);
-
     }
 
     private static String case1(String prefix) {
