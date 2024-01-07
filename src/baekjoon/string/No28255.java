@@ -51,14 +51,7 @@ public class No28255 { //3단 초콜릿 아이스크림
     }
 
     private static String getPrefix(String word) {
-
-        int len = word.length();
-
-        if (len % THIRD_GRADE == 0) {
-            return word.substring(0, len/THIRD_GRADE);
-        }
-
-        return word.substring(0, len/THIRD_GRADE + 1);
+        return word.substring(0, (int)Math.ceil(word.length()/3.0));
     }
 
     private static String case1(String prefix) {
