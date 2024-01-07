@@ -27,10 +27,6 @@ public class No28255 { //3단 초콜릿 아이스크림
     private static boolean isThirdGradeIceCream(String word) {
         String prefix = getPrefix(word);
 
-        if (prefix.length() <= 1) {
-            return false;
-        }
-
         if (word.equals(case1(prefix))) {
             return true;
         }
