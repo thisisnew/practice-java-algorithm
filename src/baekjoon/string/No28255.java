@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 
 public class No28255 { //3단 초콜릿 아이스크림
 
-    private static final int THIRD_GRADE = 3;
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -26,6 +24,10 @@ public class No28255 { //3단 초콜릿 아이스크림
 
     private static boolean isThirdGradeIceCream(String word) {
         String prefix = getPrefix(word);
+
+        String rev = rev(prefix);
+        String tail = tail(prefix);
+        String tailAndRev = tail(rev);
 
         if (word.equals(case1(prefix))) {
             return true;
@@ -78,7 +80,8 @@ public class No28255 { //3단 초콜릿 아이스크림
     }
 
     private static String tail(String word) {
-        return word.substring(1);
+        String result = word;
+        return result.substring(1);
     }
 
 }
