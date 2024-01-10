@@ -29,19 +29,19 @@ public class No28255 { //3단 초콜릿 아이스크림
         String tail = tail(prefix);
         String tailAndRev = tail(rev);
 
-        if (word.equals(case1(prefix))) {
+        if (word.equals(case1(prefix))) { //prefix + rev + prefix
             return true;
         }
 
-        if (word.equals(case2(prefix))) {
+        if (word.equals(case2(prefix))) { //prefix + tailAndRev + prefix
             return true;
         }
 
-        if (word.equals(case3(prefix))) {
+        if (word.equals(case3(prefix))) { //prefix + rev + tail
             return true;
         }
 
-        if (word.equals(case4(prefix))) {
+        if (word.equals(case4(prefix))) { //prefix + tailAndRev + tail
             return true;
         }
 
