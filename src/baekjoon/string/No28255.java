@@ -37,7 +37,7 @@ public class No28255 { //3단 초콜릿 아이스크림
             return true;
         }
 
-        if (word.equals(case3(prefix))) { //prefix + rev + tail
+        if ((prefix + rev + tail).equals(word)) {
             return true;
         }
 
