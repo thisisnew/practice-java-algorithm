@@ -64,8 +64,7 @@ public class No28255 { //3단 초콜릿 아이스크림
     }
 
     private static String tail(String word) {
-        String result = word;
-        return result.substring(1);
+        return word.substring(1);
     }
 
 }
