@@ -23,8 +23,8 @@ public class No28255 { //3단 초콜릿 아이스크림
     }
 
     private static boolean isThirdGradeIceCream(String word) {
-        String prefix = getPrefix(word);
 
+        String prefix = getPrefix(word);
         String rev = rev(prefix);
         String tail = tail(prefix);
         String tailAndRev = tail(rev);
