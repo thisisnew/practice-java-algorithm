@@ -52,22 +52,6 @@ public class No28255 { //3단 초콜릿 아이스크림
         return word.substring(0, (int)Math.ceil(word.length()/3.0));
     }
 
-    private static String case1(String prefix) {
-        return prefix + rev(prefix) + prefix;
-    }
-
-    private static String case2(String prefix) {
-        return prefix + tail(rev(prefix)) + prefix;
-    }
-
-    private static String case3(String prefix) {
-        return prefix + rev(prefix) + tail(prefix);
-    }
-
-    private static String case4(String prefix) {
-        return prefix + tail(rev(prefix)) + tail(prefix);
-    }
-
     private static String rev(String word) {
 
         StringBuilder result = new StringBuilder(word.length());
