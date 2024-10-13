@@ -27,6 +27,9 @@ public class No1120 {
             for (int j=0; j<aLen; j++) {
                 if (a.charAt(j) != sub.charAt(j)) {
                     dif++;
+                    if (dif > result) {
+                        break;
+                    }
                 }
             }
 
