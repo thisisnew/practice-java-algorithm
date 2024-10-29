@@ -9,7 +9,10 @@ public class No25314 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
+        if (n%8 == 0) {
 
-        
+        } else {
+
+        }
     }
 }
