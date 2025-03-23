@@ -9,10 +9,9 @@ public class No25314 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        if (n%8 == 0) {
+        String str = "long ";
+        int cycle = n / 4;
 
-        } else {
-
-        }
+        System.out.print(str.repeat(cycle) + "int");
     }
 }
