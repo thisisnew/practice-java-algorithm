@@ -9,20 +9,21 @@ public class No20528 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         int n = Integer.parseInt(br.readLine());
 
-        String[] words = br.readLine().split(" ");
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        String firstWord = words[0].substring(0,1);
+        char firstChar = st.nextToken().charAt(0);
+        boolean allSame = true;
 
-        int flag = 1;
-        for (int i=1; i<words.length; i++) {
-            if (!firstWord.equals(words[i].substring(0,1))) {
-                flag = 0;
+        for (int i = 1; i < n; i++) {
+            if (st.nextToken().charAt(0) != firstChar) {
+                allSame = false;
                 break;
             }
         }
 
-        System.out.println(flag);
+        System.out.println(allSame ? 1 : 0);
     }
 }
