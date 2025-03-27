@@ -14,10 +14,31 @@ public class No30999 {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        int count = 0;
+        boolean[][] oxArr = new boolean[n][m];
 
         for (int i = 0; i < n; i++) {
+            String s = br.readLine();
 
+            for(int j = 0; j < s.length(); j++) {
+                oxArr[i][j] = s.charAt(j) == 'O';
+            }
+        }
+
+        int count = 0;
+
+        for (int j = 0; j < m; j++) {
+            boolean allO = true;
+
+            for (int i = 0; i < n; i++) {
+                if (!oxArr[i][j]) {
+                    allO = false;
+                    break;
+                }
+            }
+
+            if (allO) {
+                count++;
+            }
         }
 
         System.out.println(count);
