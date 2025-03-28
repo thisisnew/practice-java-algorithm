@@ -26,19 +26,16 @@ public class No30999 {
 
         int count = 0;
 
-        for (int j = 0; j < m; j++) {
-            boolean allO = true;
+        for (int i = 0; i < m; i++) {
+            boolean value = oxArr[i][0];
 
-            for (int i = 0; i < n; i++) {
-                if (!oxArr[i][j]) {
-                    allO = false;
+            for (int j = 1; j < n; j++) {
+                if (value != oxArr[i][j]) {
                     break;
                 }
             }
 
-            if (allO) {
-                count++;
-            }
+            count++;
         }
 
         System.out.println(count);
