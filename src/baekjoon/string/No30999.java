@@ -27,15 +27,23 @@ public class No30999 {
         int count = 0;
 
         for (int i = 0; i < m; i++) {
-            boolean value = oxArr[i][0];
+            boolean allMatch = true;
+            boolean value = oxArr[0][i];
+
+            if (!value) {
+                continue;
+            }
 
             for (int j = 1; j < n; j++) {
-                if (value != oxArr[i][j]) {
+                if (value != oxArr[j][i]) {
+                    allMatch = false;
                     break;
                 }
             }
 
-            count++;
+            if (allMatch) {
+                count++;
+            }
         }
 
         System.out.println(count);
