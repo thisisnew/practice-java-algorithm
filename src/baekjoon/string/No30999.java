@@ -11,41 +11,27 @@ public class No30999 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-
-        boolean[][] oxArr = new boolean[n][m];
+        int n = Integer.parseInt(st.nextToken());   // 문제 수
+        int m = Integer.parseInt(st.nextToken());   // 출제위원
+        int half = (m + 1) / 2;
+        int result = 0;
 
         for (int i = 0; i < n; i++) {
             String s = br.readLine();
+            int count = 0;
 
-            for(int j = 0; j < s.length(); j++) {
-                oxArr[i][j] = s.charAt(j) == 'O';
-            }
-        }
+            for(char c : s.toCharArray()) {
+                if(c == 'O') {
+                    count++;
 
-        int count = 0;
-
-        for (int i = 0; i < m; i++) {
-            boolean allMatch = true;
-            boolean value = oxArr[0][i];
-
-            if (!value) {
-                continue;
-            }
-
-            for (int j = 1; j < n; j++) {
-                if (value != oxArr[j][i]) {
-                    allMatch = false;
-                    break;
+                    if (count == half) {
+                        result++;
+                        break;
+                    }
                 }
             }
-
-            if (allMatch) {
-                count++;
-            }
         }
 
-        System.out.println(count);
+        System.out.println(result);
     }
 }
