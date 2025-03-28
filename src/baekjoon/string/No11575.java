@@ -10,7 +10,7 @@ public class No11575 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int t = Integer.parseInt(br.readLine());   // 테스트케이스 수
+        int t = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < t; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
@@ -23,15 +23,15 @@ public class No11575 {
     }
 
     private static String encrypt(int a, int b, String plainText) {
+        char[] result = new char[plainText.length()];
 
-        StringBuilder result = new StringBuilder();
-
-        for(char c : plainText.toCharArray()) {
-            int x = c - 'A';
+        for (int i = 0; i < plainText.length(); i++) {
+            int x = plainText.charAt(i) - 'A';
             int encrypted = (a * x + b) % 26;
-            result.append((char) ('A' + encrypted));;
+            result[i] = (char) ('A' + encrypted);
         }
 
-        return result.toString();
+        return new String(result);
     }
+
 }
