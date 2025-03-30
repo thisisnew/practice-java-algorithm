@@ -11,7 +11,7 @@ public class No30402 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        if (st.hasMoreTokens()) {
+        if (st.hasMoreElements()) {
             String s = st.nextToken();
 
             if (s.equals("w")) {
