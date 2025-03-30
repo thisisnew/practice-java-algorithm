@@ -10,27 +10,29 @@ public class No30402 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+        boolean find = false;
 
-        if (st.hasMoreElements()) {
+        while (st.hasMoreTokens()) {
             String s = st.nextToken();
 
-            if (s.equals("w")) {
-                System.out.println("chunbae");
-                return;
+            switch (s) {
+                case "w" -> {
+                    System.out.println("chunbae");
+                    find = true;
+                }
+                case "b" -> {
+                    System.out.println("nabi");
+                    find = true;
+                }
+                case "g" -> {
+                    System.out.println("yeongcheol");
+                    find = true;
+                }
             }
 
-            if (s.equals("b")) {
-                System.out.println("nabi");
-                return;
+            if (find) {
+                break;
             }
-
-            if (s.equals("g")) {
-                System.out.println("yeongcheol");
-                return;
-            }
-
-        } else {
-            st = new StringTokenizer(br.readLine());
         }
     }
 }
