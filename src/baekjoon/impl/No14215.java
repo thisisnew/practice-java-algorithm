@@ -22,7 +22,7 @@ public class No14215 {
         int b = pq.poll();
         int c = pq.poll();
 
-        while (a + b <= c){
+        while (a + b <= c) {
             c--;
         }
 
