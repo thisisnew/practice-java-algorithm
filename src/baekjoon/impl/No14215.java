@@ -23,10 +23,10 @@ public class No14215 {
         int b = pq.poll();
         int c = pq.poll();
 
-        while(c*c != a*b){
+        while (a + b <= c){
             c--;
         }
 
-        System.out.println(a+b+c);
+        System.out.println(a + b + c);
     }
 }
