@@ -19,18 +19,14 @@ public class No2161 {
         }
 
         StringBuilder sb = new StringBuilder();
-        int count = 0;
-        while (!q.isEmpty()) {
-            if (count % 2 == 0) {
-                sb.append(q.poll()).append(" ");
-            } else {
-                int polled = q.poll();
-                q.offer(polled);
-            }
 
-            count++;
+        while (q.size() > 1) {
+            sb.append(q.poll()).append(" ");
+            q.offer(q.poll());
         }
 
-        System.out.println(sb.toString().trim());
+        sb.append(q.poll());
+
+        System.out.println(sb);
     }
 }
