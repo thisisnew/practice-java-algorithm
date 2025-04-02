@@ -12,20 +12,20 @@ public class No2161 {
 
         int n = Integer.parseInt(br.readLine());
 
-        Queue<Integer> q = new LinkedList<>();
+        Deque<Integer> dq = new ArrayDeque<>();
 
         for (int i = 1; i <= n; i++) {
-            q.offer(i);
+            dq.offer(i);
         }
 
         StringBuilder sb = new StringBuilder();
 
-        while (q.size() > 1) {
-            sb.append(q.poll()).append(" ");
-            q.offer(q.poll());
+        while (dq.size() > 1) {
+            sb.append(dq.poll()).append(" ");
+            dq.offer(dq.poll());
         }
 
-        sb.append(q.poll());
+        sb.append(dq.poll());
 
         System.out.println(sb);
     }
