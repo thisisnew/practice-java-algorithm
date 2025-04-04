@@ -13,6 +13,10 @@ public class No9655 {
 
         int n = Integer.parseInt(br.readLine());
 
-        System.out.println();
+        if (n%2 == 0) {
+            System.out.println("CY");
+        } else {
+            System.out.println("SK");
+        }
     }
 }
