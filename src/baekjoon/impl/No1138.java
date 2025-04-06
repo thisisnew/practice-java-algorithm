@@ -13,8 +13,6 @@ public class No1138 {
         int n = Integer.parseInt(br.readLine());
         int[] result = new int[n];
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
         for (int i = 0; i < n; i++) {
             int bigger = Integer.parseInt(st.nextToken());
             result[bigger] = i+1;
