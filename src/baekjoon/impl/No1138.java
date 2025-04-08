@@ -13,17 +13,20 @@ public class No1138 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        int[] leftHigher = new int[n + 1]; // 키가 i인 사람의 왼쪽에 있는 키 큰 사람 수
+        int[] leftCount = new int[n + 1]; // 인덱스가 키, 값이 왼쪽에 있는 키 큰 사람 수
         
         StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 1; i <= n; i++) {
-            leftHigher[i] = Integer.parseInt(st.nextToken());
+            leftCount[i] = Integer.parseInt(st.nextToken());
         }
-
+        
+        // 결과 리스트 (처음에는 비어있음)
         List<Integer> result = new ArrayList<>();
-
-        for (int i = 1; i <= n; i++) {
-            result.add(leftHigher[i], i);
+        
+        // 키가 큰 사람부터 작은 사람 순으로 처리 (역순)
+        for (int height = n; height >= 1; height--) {
+            // 키가 height인 사람을 leftCount[height] 위치에 삽입
+            result.add(leftCount[height], height);
         }
         
         // 결과 출력
