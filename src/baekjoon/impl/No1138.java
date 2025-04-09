@@ -13,9 +13,10 @@ public class No1138 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        int[] leftCount = new int[n + 1]; // 인덱스가 키, 값이 왼쪽에 있는 키 큰 사람 수
+        int[] leftCount = new int[n + 1];
         
         StringTokenizer st = new StringTokenizer(br.readLine());
+
         for (int i = 1; i <= n; i++) {
             leftCount[i] = Integer.parseInt(st.nextToken());
         }
