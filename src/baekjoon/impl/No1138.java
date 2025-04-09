@@ -19,18 +19,15 @@ public class No1138 {
         for (int i = 1; i <= n; i++) {
             leftCount[i] = Integer.parseInt(st.nextToken());
         }
-        
-        // 결과 리스트 (처음에는 비어있음)
+
         List<Integer> result = new ArrayList<>();
-        
-        // 키가 큰 사람부터 작은 사람 순으로 처리 (역순)
+
         for (int height = n; height >= 1; height--) {
-            // 키가 height인 사람을 leftCount[height] 위치에 삽입
             result.add(leftCount[height], height);
         }
-        
-        // 결과 출력
+
         StringBuilder sb = new StringBuilder();
+
         for (int height : result) {
             sb.append(height).append(" ");
         }
