@@ -14,25 +14,7 @@ public class No1138 {
 
         int n = Integer.parseInt(br.readLine());
         int[] leftCount = new int[n + 1];
-        
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        for (int i = 1; i <= n; i++) {
-            leftCount[i] = Integer.parseInt(st.nextToken());
-        }
-
-        List<Integer> result = new ArrayList<>();
-
-        for (int height = n; height >= 1; height--) {
-            result.add(leftCount[height], height);
-        }
-
-        StringBuilder sb = new StringBuilder();
-
-        for (int height : result) {
-            sb.append(height).append(" ");
-        }
-        
-        System.out.println(sb.toString().trim());
+        System.out.println();
     }
 }
