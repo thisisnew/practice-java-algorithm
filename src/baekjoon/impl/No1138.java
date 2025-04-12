@@ -15,6 +15,9 @@ public class No1138 {
         int n = Integer.parseInt(br.readLine());
         int[] leftCount = new int[n + 1];
 
+
+
+
         System.out.println();
     }
 }
