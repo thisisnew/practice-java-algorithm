@@ -13,7 +13,7 @@ public class No1138 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        int[] leftCount = new int[n + 1];
+
 
 
 
