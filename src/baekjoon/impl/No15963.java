@@ -16,8 +16,10 @@ public class No15963 {
         long n = Long.parseLong(st.nextToken());
         long m = Long.parseLong(st.nextToken());
 
-        int result = n == m ? 1 : 0;
-
-        System.out.println(result);
+        if (n == m) {
+            System.out.println(1);
+        } else {
+            System.out.println(0);
+        }
     }
 }
