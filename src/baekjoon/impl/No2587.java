@@ -16,8 +16,7 @@ public class No2587 {
             sum += n;
         }
 
-
-        System.out.println(sum/5);
+        System.out.println(sum / 5);
 
 
     }
