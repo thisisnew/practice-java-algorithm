@@ -13,6 +13,11 @@ public class No10996 {
 
         int n = Integer.parseInt(br.readLine());
 
+        for (int i = 0; i < n; i++) {
 
+
+
+
+        }
     }
 }
