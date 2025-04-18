@@ -17,7 +17,9 @@ public class No10996 {
 
 
 
-
+            if (i < n-1) {
+                System.out.println();
+            }
         }
     }
 }
