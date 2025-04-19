@@ -13,7 +13,7 @@ public class No10996 {
 
         int n = Integer.parseInt(br.readLine());
 
-        int first = n/2;
+        int first = Math.max(n / 2, n - (n / 2));
         int second = n - first;
 
         for (int i = 0; i < n; i++) {
@@ -43,6 +43,6 @@ public class No10996 {
             }
         }
 
-        System.out.println(sb);
+        System.out.print(sb);
     }
 }
