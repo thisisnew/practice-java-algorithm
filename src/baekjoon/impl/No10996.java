@@ -8,6 +8,9 @@ import java.util.StringTokenizer;
 
 public class No10996 {
 
+    private static final String SPACE = " ";
+    private static final String ASTER = "*";
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -29,14 +32,14 @@ public class No10996 {
 
     private static void draw(int n, boolean isTab) {
         if (isTab) {
-            System.out.print(" ");
+            System.out.print(SPACE);
         }
 
         for (int i = 0; i < n; i++) {
-            System.out.print("*");
+            System.out.print(ASTER);
 
             if (i < n-1) {
-                System.out.print(" ");
+                System.out.print(SPACE);
             }
         }
     }
