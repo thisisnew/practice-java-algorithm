@@ -16,18 +16,30 @@ public class No10996 {
 
         int n = Integer.parseInt(br.readLine());
 
-        int first = Math.max(n / 2, n - (n / 2));
-        int second = n - first;
+        int[] count = count(n);
 
         for (int i = 0; i < n; i++) {
-            draw(first, false);
+            draw(count[0], false);
             System.out.println();
-            draw(second, true);
+            draw(count[1], true);
 
             if (i < n-1) {
                 System.out.println();
             }
         }
+    }
+
+    private static int[] count(int n) {
+
+        int first = n / 2;
+        int second = n - first;
+
+        if (n % 2 != 0) {
+            first = n - (n / 2);
+            second = n - first;
+        }
+
+        return new int[]{ first, second };
     }
 
     private static void draw(int n, boolean isTab) {
