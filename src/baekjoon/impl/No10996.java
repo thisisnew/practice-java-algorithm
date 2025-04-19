@@ -28,21 +28,16 @@ public class No10996 {
     }
 
     private static void draw(int n, boolean isTab) {
-
-        StringBuilder sb = new StringBuilder();
-
         if (isTab) {
-            sb.append(" ");
+            System.out.print(" ");
         }
 
         for (int i = 0; i < n; i++) {
-            sb.append("*");
+            System.out.print("*");
 
             if (i < n-1) {
-                sb.append(" ");
+                System.out.print(" ");
             }
         }
-
-        System.out.print(sb);
     }
 }
