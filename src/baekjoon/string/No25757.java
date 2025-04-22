@@ -12,9 +12,19 @@ public class No25757 {
 
         int n = Integer.parseInt(st.nextToken());
         String game = st.nextToken();
+        int players = player(game);
 
         for (int i = 0; i < n; i++) {
 
         }
+    }
+
+    private static int player(String game) {
+        return switch (game) {
+            case "Y" -> 2;
+            case "F" -> 3;
+            case "O" -> 4;
+            default -> throw new IllegalArgumentException();
+        };
     }
 }
