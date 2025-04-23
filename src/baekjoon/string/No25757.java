@@ -26,11 +26,11 @@ public class No25757 {
     }
 
     private static int requiredNumberOfPlay(String game) {
-        return switch (game) {
-            case "Y" -> 2;
-            case "F" -> 3;
-            case "O" -> 4;
-            default -> throw new IllegalArgumentException();
-        };
+        switch (game) {
+            case "Y": return 2;
+            case "F": return 3;
+            case "O": return 4;
+            default: throw new IllegalArgumentException();
+        }
     }
 }
