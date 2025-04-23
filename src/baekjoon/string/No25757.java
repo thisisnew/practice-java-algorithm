@@ -14,23 +14,23 @@ public class No25757 {
 
         int n = Integer.parseInt(st.nextToken());
         String game = st.nextToken();
-        int numberOfPlay = requiredNumberOfPlay(game);
+        int requiredPlayers = getRequiredPlayers(game);
 
         Set<String> players = new HashSet<>();
-
         for (int i = 0; i < n; i++) {
             players.add(br.readLine());
         }
 
-        System.out.println(players.size() / (numberOfPlay-1));
+        System.out.println(players.size() / (requiredPlayers - 1));
+        br.close();
     }
 
-    private static int requiredNumberOfPlay(String game) {
-        switch (game) {
-            case "Y": return 2;
-            case "F": return 3;
-            case "O": return 4;
-            default: throw new IllegalArgumentException();
-        }
+    private static int getRequiredPlayers(String gameType) {
+        return switch (gameType) {
+            case "Y" -> 2;
+            case "F" -> 3;
+            case "O" -> 4;
+            default -> throw new IllegalArgumentException();
+        };
     }
 }
