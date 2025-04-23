@@ -3,6 +3,8 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 public class No25757 {
@@ -12,14 +14,18 @@ public class No25757 {
 
         int n = Integer.parseInt(st.nextToken());
         String game = st.nextToken();
-        int players = player(game);
+        int numberOfPlay = requiredNumberOfPlay(game);
+
+        Set<String> players = new HashSet<>();
 
         for (int i = 0; i < n; i++) {
-
+            players.add(br.readLine());
         }
+
+        players.forEach(System.out::println);
     }
 
-    private static int player(String game) {
+    private static int requiredNumberOfPlay(String game) {
         return switch (game) {
             case "Y" -> 2;
             case "F" -> 3;
