@@ -22,7 +22,7 @@ public class No25757 {
             players.add(br.readLine());
         }
 
-        players.forEach(System.out::println);
+        System.out.println(players.size() / (numberOfPlay-1));
     }
 
     private static int requiredNumberOfPlay(String game) {
