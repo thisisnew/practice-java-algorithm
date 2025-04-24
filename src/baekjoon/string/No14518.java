@@ -18,13 +18,4 @@ public class No14518 {
 
         br.close();
     }
-
-    private static int getRequiredPlayers(String gameType) {
-        return switch (gameType) {
-            case "Y" -> 2;
-            case "F" -> 3;
-            case "O" -> 4;
-            default -> throw new IllegalArgumentException();
-        };
-    }
 }
