@@ -30,14 +30,14 @@ public class No23841 {
             int len = arr.length;
             char[] ch = new char[len];
 
-            for (int i = 0; i < len; i++) {
-                if (arr[i] == '.') {
-                    ch[i] = '.';
+            for (int j = 0; j < len; j++) {
+                if (arr[j] == '.') {
+                    ch[j] = '.';
                     continue;
                 }
 
-                ch[i] = arr[i];
-                ch[len-i-1] = arr[i];
+                ch[j] = arr[j];
+                ch[len-j-1] = arr[j];
             }
 
             result[i] = ch;
