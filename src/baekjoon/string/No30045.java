@@ -14,7 +14,7 @@ public class No30045 {
         for (int i = 0; i < n; i++) {
             String s = br.readLine();
 
-            if (containsTargetPattern(s)) {
+            if (hasTargetPattern(s)) {
                 count++;
             }
         }
@@ -23,7 +23,29 @@ public class No30045 {
         br.close();
     }
 
-    private static boolean containsTargetPattern(String s) {
-        return s.contains("01") || s.contains("OI");
+    private static boolean hasTargetPattern(String s) {
+
+        if (s.length() < 2) {
+            return false;
+        }
+
+        for (int i = 0; i < s.length() - 1; i++) {
+            char current = s.charAt(i);
+            char next = s.charAt(i + 1);
+
+            if (current != '0' && current != 'O') {
+                continue;
+            }
+
+            if (current == '0' && next == '1') {
+                return true;
+            }
+
+            if (current == 'O' && next == 'I') {
+                return true;
+            }
+        }
+        
+        return false;
     }
 }
