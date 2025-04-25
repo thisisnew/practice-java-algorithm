@@ -3,6 +3,7 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class No23841 {
@@ -13,11 +14,22 @@ public class No23841 {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        for (int i = 0; i < n; i++) {
+        char[][] arr = new char[n][m];
 
+        for (int i = 0; i < n; i++) {
+            char[] ch = br.readLine().toCharArray();
+
+            for(int j = 0; j < ch.length; j++) {
+                arr[i][j] = ch[j];
+            }
         }
 
-        br.readLine();
+        for(char[] ch : arr) {
+
+
+
+
+        }
         br.close();
     }
 }
