@@ -3,7 +3,6 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class No23841 {
@@ -14,21 +13,40 @@ public class No23841 {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        char[][] arr = new char[n][m];
+        char[][] inputs = new char[n][m];
 
         for (int i = 0; i < n; i++) {
-            char[] ch = br.readLine().toCharArray();
+            char[] arr = br.readLine().toCharArray();
 
-            for(int j = 0; j < ch.length; j++) {
-                arr[i][j] = ch[j];
+            for(int j = 0; j < arr.length; j++) {
+                inputs[i][j] = arr[j];
             }
         }
 
-        for(char[] ch : arr) {
+        char[][] result = new char[n][m];
 
+        for (int i = 0; i < n; i++) {
+            char[] arr = inputs[i];
+            int len = arr.length;
+            char[] ch = new char[len];
 
+            for (int i = 0; i < len; i++) {
+                if (arr[i] == '.') {
+                    ch[i] = '.';
+                    continue;
+                }
 
+                ch[i] = arr[i];
+                ch[len-i-1] = arr[i];
+            }
 
+            result[i] = ch;
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(result[i][j]);
+            }
         }
         br.close();
     }
