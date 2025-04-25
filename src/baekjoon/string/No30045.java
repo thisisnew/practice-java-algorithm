@@ -23,10 +23,18 @@ public class No30045 {
     }
 
     private static int count(String s) {
-        if (s.length() < 2) {
-            return 0;
+        int result = 0;
+
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s.charAt(i) == '0' && s.charAt(i + 1) == '1') {
+                result++;
+            }
+
+            if (s.charAt(i) == 'O' && s.charAt(i + 1) == 'I') {
+                result++;
+            }
         }
 
-
+        return result;
     }
 }
