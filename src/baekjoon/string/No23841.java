@@ -17,10 +17,7 @@ public class No23841 {
 
         for (int i = 0; i < n; i++) {
             char[] arr = br.readLine().toCharArray();
-
-            for(int j = 0; j < arr.length; j++) {
-                inputs[i][j] = arr[j];
-            }
+            System.arraycopy(arr, 0, inputs[i], 0, arr.length);
         }
 
         char[][] result = new char[n][m];
@@ -47,6 +44,7 @@ public class No23841 {
             for (int j = 0; j < m; j++) {
                 System.out.print(result[i][j]);
             }
+            System.out.println();
         }
         br.close();
     }
