@@ -11,14 +11,14 @@ public class No30045 {
 
         int n = Integer.parseInt(br.readLine());
 
-        int result = 0;
+        int sum = 0;
 
         for (int i = 0; i < n; i++) {
             String s = br.readLine();
-            result += count(s);
+            sum += count(s);
         }
 
-        System.out.println(result);
+        System.out.println(sum);
         br.close();
     }
 
