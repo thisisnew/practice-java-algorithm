@@ -20,34 +20,31 @@ public class No23841 {
             System.arraycopy(arr, 0, inputs[i], 0, arr.length);
         }
 
-        char[][] result = new char[n][m];
-
         for (int i = 0; i < n; i++) {
-            char[] arr = inputs[i];
-            int len = arr.length;
-            char[] ch = new char[len];
+            char[] current = inputs[i];
+            int len = current.length;
+            char[] next = new char[len];
 
             for (int j = 0; j < len; j++) {
-                if (arr[j] == '.') {
-                    if (ch[j] == 0) {
-                        ch[j] = '.';
+                if (current[j] == '.') {
+                    if (next[j] == 0) {
+                        next[j] = '.';
                     }
 
                     continue;
                 }
 
-                ch[j] = arr[j];
-                ch[len-j-1] = arr[j];
+                next[j] = current[j];
+                next[len-j-1] = current[j];
             }
 
-            result[i] = ch;
-        }
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                System.out.print(result[i][j]);
+            for (char c : next) {
+                System.out.print(c);
             }
-            System.out.println();
+
+            if (i < n -1) {
+                System.out.println();
+            }
         }
 
         br.close();
