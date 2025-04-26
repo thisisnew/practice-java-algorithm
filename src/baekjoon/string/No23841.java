@@ -49,6 +49,7 @@ public class No23841 {
             }
             System.out.println();
         }
+
         br.close();
     }
 }
