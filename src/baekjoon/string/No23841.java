@@ -22,10 +22,9 @@ public class No23841 {
 
         for (int i = 0; i < n; i++) {
             char[] current = inputs[i];
-            int len = current.length;
-            char[] next = new char[len];
+            char[] next = new char[current.length];
 
-            for (int j = 0; j < len; j++) {
+            for (int j = 0; j < current.length; j++) {
                 if (current[j] == '.') {
                     if (next[j] == 0) {
                         next[j] = '.';
@@ -35,7 +34,7 @@ public class No23841 {
                 }
 
                 next[j] = current[j];
-                next[len-j-1] = current[j];
+                next[current.length-j-1] = current[j];
             }
 
             System.out.print(new String(next));
