@@ -29,7 +29,10 @@ public class No23841 {
 
             for (int j = 0; j < len; j++) {
                 if (arr[j] == '.') {
-                    ch[j] = '.';
+                    if (ch[j] == 0) {
+                        ch[j] = '.';
+                    }
+
                     continue;
                 }
 
