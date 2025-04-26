@@ -38,13 +38,8 @@ public class No23841 {
                 next[len-j-1] = current[j];
             }
 
-            for (char c : next) {
-                System.out.print(c);
-            }
-
-            if (i < n -1) {
-                System.out.println();
-            }
+            System.out.print(new String(next));
+            if (i < n -1) System.out.println();
         }
 
         br.close();
