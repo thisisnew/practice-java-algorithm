@@ -15,6 +15,7 @@ public class No25641 {
 
         int sCount = 0;
         int tCount = 0;
+
         for (int i = 0; i < n; i++) {
             if (input.charAt(i) == 's') {
                 sCount++;
@@ -26,6 +27,7 @@ public class No25641 {
         }
 
         int idx = 0;
+
         while (sCount != tCount) {
             if (input.charAt(idx) == 's') {
                 sCount--;
@@ -39,7 +41,6 @@ public class No25641 {
         }
 
         System.out.println(input.substring(idx));
-        
         br.close();
     }
 }
