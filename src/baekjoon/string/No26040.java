@@ -8,23 +8,19 @@ import java.util.Set;
 import java.util.StringTokenizer;
 
 public class No26040 {
-
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String input = br.readLine();
 
         Set<Character> charSet = new HashSet<>();
-        StringTokenizer st = new StringTokenizer(input);
-
+        StringTokenizer st = new StringTokenizer(br.readLine());
         while (st.hasMoreTokens()) {
             char c = st.nextToken().charAt(0);
             charSet.add(c);
         }
 
-        StringBuilder sb = new StringBuilder();
-
+        StringBuilder sb = new StringBuilder(input.length());
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
 
@@ -35,7 +31,7 @@ public class No26040 {
 
             sb.append(c);
         }
-
+        
         System.out.println(sb);
         br.close();
     }
