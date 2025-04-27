@@ -25,12 +25,11 @@ public class No25641 {
 
         int idx = 0;
         while (sCount != tCount) {
-            char removed = input.charAt(idx);
-            if (removed == 's') {
+            if (input.charAt(idx) == 's') {
                 sCount--;
             }
 
-            if (removed == 't') {
+            if (input.charAt(idx) == 't') {
                 tCount--;
             }
 
