@@ -16,13 +16,11 @@ public class No32288 {
 
         StringBuilder sb = new StringBuilder(n);
         for (int i = 0; i < n; i++) {
-            char c = input.charAt(i);
-
-            if (c == 'I') {
+            if (input.charAt(i) == 'I') {
                 sb.append('i');
             }
 
-            if (c == 'l') {
+            if (input.charAt(i) == 'l') {
                 sb.append('L');
             }
         }
