@@ -29,10 +29,11 @@ public class No26040 {
             char c = input.charAt(i);
 
             if (charSet.contains(c)) {
-                sb.append(String.valueOf(c).toLowerCase());
-            } else {
-                sb.append(c);
+                sb.append(Character.toLowerCase(c));
+                continue;
             }
+
+            sb.append(c);
         }
 
         System.out.println(sb);
