@@ -8,28 +8,22 @@ import java.util.*;
 public class No23813 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
+        long n = Long.parseLong(br.readLine());
 
-        List<Long> list = new ArrayList<>();
+        long sum = n;
         int m = 10;
 
         while (n% m != n) {
-            int front = n/ m;
-            int back = n% m;
+            long front = n/m;
+            long back = n%m;
 
             String s = back + String.valueOf(front);
-            list.add(Long.parseLong(s));
+            sum += Long.parseLong(s);
 
             m *= 10;
         }
 
-        long result = 0;
-
-        for (long v : list) {
-            result += v;
-        }
-
-        System.out.println(result + n);
+        System.out.println(sum);
         br.close();
     }
 }
