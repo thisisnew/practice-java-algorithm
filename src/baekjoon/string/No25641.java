@@ -3,9 +3,7 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class No25641 {
     public static void main(String[] args) throws IOException {
@@ -20,7 +18,6 @@ public class No25641 {
         Queue<Character> q = new LinkedList<>();
 
         for (char c : chars) {
-
             if (c == 's') {
                 sCnt++;
             }
@@ -33,7 +30,7 @@ public class No25641 {
         }
 
         while(tCnt != sCnt) {
-            char c = q.poll();
+            char c = Objects.requireNonNull(q.poll());
 
             if (c == 's') {
                 sCnt--;
