@@ -10,7 +10,7 @@ public class No23813 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        List<Integer> list = new ArrayList<>();
+        List<Long> list = new ArrayList<>();
         int m = 10;
 
         while (n% m != n) {
@@ -18,14 +18,14 @@ public class No23813 {
             int back = n% m;
 
             String s = back + String.valueOf(front);
-            list.add(Integer.parseInt(s));
+            list.add(Long.parseLong(s));
 
             m *= 10;
         }
 
-        int result = 0;
+        long result = 0;
 
-        for (int v : list) {
+        for (long v : list) {
             result += v;
         }
 
