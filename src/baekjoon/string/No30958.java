@@ -12,6 +12,7 @@ public class No30958 {
         int n = Integer.parseInt(br.readLine());
 
         String s = br.readLine();
+        int max = 0;
 
         Map<Character, Integer> charMap = new HashMap<>();
 
@@ -20,19 +21,13 @@ public class No30958 {
                 continue;
             }
 
-            if (charMap.containsKey(c)) {
-                charMap.put(c, charMap.get(c) + 1);
-            } else {
-                charMap.put(c, 1);
-            }
-        }
+            int count = charMap.getOrDefault(c, 0) + 1;
 
-        int max = 0;
-
-        for (Map.Entry<Character, Integer> entry : charMap.entrySet()) {
-            if (entry.getValue() > max) {
-                max = entry.getValue();
+            if (count > max) {
+                max = count;
             }
+
+            charMap.put(c, count);
         }
 
         System.out.println(max);
