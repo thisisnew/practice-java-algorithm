@@ -16,6 +16,14 @@ public class No20114 {
         int h = Integer.parseInt(st.nextToken());
         int w = Integer.parseInt(st.nextToken());
 
+        for (int i=0; i<h; i++) {
+            String input = br.readLine();
+
+
+
+
+        }
+
         br.close();
     }
 }
