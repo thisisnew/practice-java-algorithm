@@ -26,7 +26,11 @@ public class No20114 {
         for (int i=0; i<arr.length; i++) {
             char[] chars = arr[i];
 
-            System.out.println(chars.toString());
+            for(char ch : chars) {
+                System.out.print(ch);
+            }
+
+            System.out.println();
         }
 
         br.close();
