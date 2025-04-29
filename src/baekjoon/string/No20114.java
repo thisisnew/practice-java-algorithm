@@ -16,12 +16,17 @@ public class No20114 {
         int h = Integer.parseInt(st.nextToken());
         int w = Integer.parseInt(st.nextToken());
 
+        char[][] arr = new char[h][n*w];
+
         for (int i=0; i<h; i++) {
-            String input = br.readLine();
+            char[] characters = br.readLine().toCharArray();
+            System.arraycopy(characters, 0, arr[i], 0, characters.length);
+        }
 
+        for (int i=0; i<arr.length; i++) {
+            char[] chars = arr[i];
 
-
-
+            System.out.println(chars.toString());
         }
 
         br.close();
