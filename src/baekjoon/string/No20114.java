@@ -3,8 +3,6 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 
 public class No20114 {
@@ -16,18 +14,19 @@ public class No20114 {
         int h = Integer.parseInt(st.nextToken());
         int w = Integer.parseInt(st.nextToken());
 
-        char[][] arr = new char[h][n*w];
+        char[][] inputArr = new char[h][n*w];
 
         for (int i=0; i<h; i++) {
             char[] characters = br.readLine().toCharArray();
-            System.arraycopy(characters, 0, arr[i], 0, characters.length);
+            System.arraycopy(characters, 0, inputArr[i], 0, characters.length);
         }
 
-        for (int i=0; i<arr.length; i++) {
-            char[] chars = arr[i];
+        //char[] arr = new char[];
+        for (int i = 0; i< inputArr.length; i++) {
+            char[] chars = inputArr[i];
 
-            for(char ch : chars) {
-                System.out.print(ch);
+            for (int j=0; j<inputArr[i].length; j++) {
+                System.out.print(inputArr[i][j]);
             }
 
             System.out.println();
