@@ -21,9 +21,12 @@ public class No20114 {
             System.arraycopy(characters, 0, inputArr[i], 0, characters.length);
         }
 
+        int idx = 0;
+
         //char[] arr = new char[];
         for (char[] chars : inputArr) {
             for (char ch : chars) {
+                idx++;
                 System.out.print(ch);
             }
 
