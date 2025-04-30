@@ -22,11 +22,9 @@ public class No20114 {
         }
 
         //char[] arr = new char[];
-        for (int i = 0; i< inputArr.length; i++) {
-            char[] chars = inputArr[i];
-
-            for (int j=0; j<inputArr[i].length; j++) {
-                System.out.print(inputArr[i][j]);
+        for (char[] chars : inputArr) {
+            for (char ch : chars) {
+                System.out.print(ch);
             }
 
             System.out.println();
