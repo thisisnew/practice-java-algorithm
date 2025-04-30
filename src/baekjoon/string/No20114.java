@@ -24,7 +24,9 @@ public class No20114 {
         char[] result = new char[n];
         int letterIdx = 0;
 
-        for (char[] chars : inputArr) {
+        for (int i=0; i<inputArr.length; i++) {
+            char[] chars = inputArr[i];
+
             int idx = 0;
 
             for (char ch : chars) {
@@ -40,7 +42,10 @@ public class No20114 {
                 }
             }
 
-            System.out.println();
+            if (i < inputArr.length -1) {
+                System.out.println();
+            }
+
             letterIdx = 0;
         }
 
