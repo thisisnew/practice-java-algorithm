@@ -21,16 +21,31 @@ public class No20114 {
             System.arraycopy(characters, 0, inputArr[i], 0, characters.length);
         }
 
-        int idx = 0;
+        char[] result = new char[n];
+        int letterIdx = 0;
 
-        //char[] arr = new char[];
         for (char[] chars : inputArr) {
+            int idx = 0;
+
             for (char ch : chars) {
                 idx++;
-                System.out.print(ch);
+
+                if (ch != '?') {
+                    result[letterIdx] = ch;
+                }
+
+                if (idx == w) {
+                    letterIdx++;
+                    idx = 0;
+                }
             }
 
             System.out.println();
+            letterIdx = 0;
+        }
+
+        for (char c: result) {
+            System.out.print(c);
         }
 
         br.close();
