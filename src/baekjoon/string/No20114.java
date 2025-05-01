@@ -22,13 +22,13 @@ public class No20114 {
         }
 
         String[] result = new String[n];
+        Arrays.fill(result, "?");
 
-        for (int i=0; i<inputArr.length; i++) {
+        for (String input : inputArr) {
             int resultIdx = 0;
-            String input = inputArr[i];
             int inputStartIdx = 0;
 
-            while(inputStartIdx + w <= input.length() - 1) {
+            while (inputStartIdx + w <= input.length()) {
                 String substring = input.substring(inputStartIdx, inputStartIdx + w);
 
                 for (char c : substring.toCharArray()) {
@@ -37,16 +37,12 @@ public class No20114 {
                     }
                 }
 
-                if (result[resultIdx] == null || result[resultIdx].isEmpty()) {
-                    result[resultIdx] = "?";
-                }
-
                 resultIdx++;
                 inputStartIdx += w;
             }
         }
 
-        System.out.println(Arrays.toString(result));
+        System.out.println(String.join("", result));
 
         br.close();
     }
