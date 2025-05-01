@@ -34,6 +34,7 @@ public class No20114 {
                 for (char c : substring.toCharArray()) {
                     if (c != '?') {
                         result[resultIdx] = String.valueOf(c);
+                        break;
                     }
                 }
 
@@ -43,7 +44,6 @@ public class No20114 {
         }
 
         System.out.println(String.join("", result));
-
         br.close();
     }
 }
