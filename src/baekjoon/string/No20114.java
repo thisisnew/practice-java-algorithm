@@ -21,7 +21,7 @@ public class No20114 {
             inputArr[i] = br.readLine();
         }
 
-        String[] result = {"?", "?", "?"};
+        String[] result = new String[n];
 
         for (int i=0; i<inputArr.length; i++) {
             int resultIdx = 0;
