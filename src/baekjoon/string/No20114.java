@@ -37,6 +37,10 @@ public class No20114 {
                     }
                 }
 
+                if (result[resultIdx] == null || result[resultIdx].isEmpty()) {
+                    result[resultIdx] = "?";
+                }
+
                 resultIdx++;
                 inputStartIdx += w;
             }
