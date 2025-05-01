@@ -39,6 +39,7 @@ public class No20114 {
 
                 if (idx == w) {
                     result[letterIdx] = c;
+                    c = '?';
                     letterIdx++;
                     idx = 0;
                 }
