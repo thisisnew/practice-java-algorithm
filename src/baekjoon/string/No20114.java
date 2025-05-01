@@ -28,15 +28,17 @@ public class No20114 {
             char[] chars = inputArr[i];
 
             int idx = 0;
+            char c = '?';
 
             for (char ch : chars) {
                 idx++;
 
                 if (ch != '?') {
-                    result[letterIdx] = ch;
+                    c = ch;
                 }
 
                 if (idx == w) {
+                    result[letterIdx] = c;
                     letterIdx++;
                     idx = 0;
                 }
