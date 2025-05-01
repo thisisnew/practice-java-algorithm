@@ -3,6 +3,7 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class No20114 {
@@ -14,47 +15,34 @@ public class No20114 {
         int h = Integer.parseInt(st.nextToken());
         int w = Integer.parseInt(st.nextToken());
 
-        char[][] inputArr = new char[h][n*w];
+        String[] inputArr = new String[h];
 
         for (int i=0; i<h; i++) {
-            char[] characters = br.readLine().toCharArray();
-            System.arraycopy(characters, 0, inputArr[i], 0, characters.length);
+            inputArr[i] = br.readLine();
         }
 
-        char[] result = new char[n];
-        int letterIdx = 0;
+        String[] result = {"?", "?", "?"};
 
         for (int i=0; i<inputArr.length; i++) {
-            char[] chars = inputArr[i];
+            int resultIdx = 0;
+            String input = inputArr[i];
+            int inputStartIdx = 0;
 
-            int idx = 0;
-            char c = '?';
+            while(inputStartIdx + w <= input.length() - 1) {
+                String substring = input.substring(inputStartIdx, inputStartIdx + w);
 
-            for (char ch : chars) {
-                idx++;
-
-                if (ch != '?') {
-                    c = ch;
+                for (char c : substring.toCharArray()) {
+                    if (c != '?') {
+                        result[resultIdx] = String.valueOf(c);
+                    }
                 }
 
-                if (idx == w) {
-                    result[letterIdx] = c;
-                    c = '?';
-                    letterIdx++;
-                    idx = 0;
-                }
+                resultIdx++;
+                inputStartIdx += w;
             }
-
-            if (i < inputArr.length -1) {
-                System.out.println();
-            }
-
-            letterIdx = 0;
         }
 
-        for (char c: result) {
-            System.out.print(c);
-        }
+        System.out.println(Arrays.toString(result));
 
         br.close();
     }
