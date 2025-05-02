@@ -12,6 +12,7 @@ public class No2460 {
 
         int current = 0;
         int max = 0;
+
         for (int i=0; i<10; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             current -= Integer.parseInt(st.nextToken());
