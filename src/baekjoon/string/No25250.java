@@ -12,8 +12,8 @@ public class No25250 {
 
         char[] arr = {'r', 's', 'e', 'f', 'a', 'q', 't', 'd', 'w', 'c', 'z', 'x', 'v', 'g'};
 
-        boolean find = false;
         char last = s[n-1];
+        boolean find = false;
         for (char c : arr) {
             if (c == last) {
                 System.out.println(1);
