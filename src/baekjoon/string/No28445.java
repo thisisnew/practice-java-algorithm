@@ -30,7 +30,11 @@ public class No28445 {
             }
         }
 
-        colorCombos.stream().sorted().forEach(System.out::println);
+        colorCombos
+                .stream()
+                .sorted()
+                .forEach(System.out::println);
+
         br.close();
     }
 }
