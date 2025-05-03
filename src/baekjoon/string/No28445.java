@@ -21,7 +21,7 @@ public class No28445 {
         String mBodyColor = st.nextToken();
         String mTailColor = st.nextToken();
 
-        String[] colors = {fBodyColor, fTailColor, mBodyColor, mTailColor};
+        String[] colors = { fBodyColor, fTailColor, mBodyColor, mTailColor };
         Set<String> colorCombos = new HashSet<>();
 
         for (String color1 : colors) {
