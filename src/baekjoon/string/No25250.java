@@ -8,11 +8,11 @@ public class No25250 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        char[] s = br.readLine().toCharArray();
+        String s = br.readLine();
 
         char[] arr = {'r', 's', 'e', 'f', 'a', 'q', 't', 'd', 'w', 'c', 'z', 'x', 'v', 'g'};
 
-        char last = s[n-1];
+        char last = s.toCharArray()[n-1];
         boolean find = false;
         for (char c : arr) {
             if (c == last) {
