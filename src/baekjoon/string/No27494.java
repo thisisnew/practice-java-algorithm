@@ -12,10 +12,12 @@ public class No27494 {
         if (n < 2023) {
             System.out.println(0);
         } else {
-
             int result  = 0;
 
             for (int i = 2023; i < n; i++) {
+
+
+
 
             }
 
