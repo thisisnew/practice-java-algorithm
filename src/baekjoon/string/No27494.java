@@ -31,14 +31,12 @@ public class No27494 {
 
     private static boolean matches(int num) {
         int idx = 0;
+        String str = String.valueOf(num);
 
-        for (char c : String.valueOf(num).toCharArray()) {
-            if (c == ARR_2023[idx]) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ARR_2023[idx]) {
                 idx++;
-
-                if (idx == 4) {
-                    return true;
-                }
+                if (idx == 4) return true;
             }
         }
 
