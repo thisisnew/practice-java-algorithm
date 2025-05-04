@@ -17,7 +17,7 @@ public class No27494 {
         } else {
             int result  = 0;
 
-            for (int i = 2023; i < n; i++) {
+            for (int i = 2023; i <= n; i++) {
                 if (matches(i)) {
                     result++;
                 }
