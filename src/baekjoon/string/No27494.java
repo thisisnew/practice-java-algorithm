@@ -30,10 +30,9 @@ public class No27494 {
     }
 
     private static boolean matches(int num) {
-        char[] values = String.valueOf(num).toCharArray();
         int idx = 0;
 
-        for (char c : values) {
+        for (char c : String.valueOf(num).toCharArray()) {
             if (c == ARR_2023[idx]) {
                 idx++;
 
