@@ -19,14 +19,17 @@ public class No30822 {
         for (int i = 0; i < n; i++) {
             String input = st.nextToken();
 
-            if (!matches(input)) {
-                continue;
-            }
+            if (!matches(input)) continue;
 
             int count = charMap.getOrDefault(input, 0);
             charMap.put(input, ++count);
         }
 
+        int min = 1000;
+        for (Map.Entry<String, Integer> entry : charMap.entrySet()) {
+            if (entry.getValue() < min) min = entry.getValue();
+        }
+        System.out.println(min);
         br.close();
     }
 
