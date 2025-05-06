@@ -11,14 +11,14 @@ public class No31833 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        int x = get(br.readLine(), n);
-        int y = get(br.readLine(), n);
+        long x = get(br.readLine(), n);
+        long y = get(br.readLine(), n);
 
         System.out.println(Math.min(x, y));
         br.close();
     }
 
-    private static int get(String input, int n) {
+    private static long get(String input, int n) {
         StringTokenizer st = new StringTokenizer(input);
         StringBuilder sb = new StringBuilder(n);
 
@@ -26,6 +26,6 @@ public class No31833 {
             sb.append(st.nextToken());
         }
 
-        return Integer.parseInt(sb.toString());
+        return Long.parseLong(sb.toString());
     }
 }
