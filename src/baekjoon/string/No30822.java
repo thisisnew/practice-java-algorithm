@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringTokenizer;
 
 public class No30822 {
 
@@ -23,9 +20,7 @@ public class No30822 {
         int cCnt = 0;
 
         for (int i = 0; i < n; i++) {
-            char c = input.charAt(i);
-
-            switch (c) {
+            switch (input.charAt(i)) {
                 case 'u': uCnt++; break;
                 case 'o': oCnt++; break;
                 case 's': sCnt++; break;
@@ -35,14 +30,10 @@ public class No30822 {
             }
         }
 
-        int[] arr = {uCnt, oCnt, sCnt, pCnt, cCnt};
+        int[] arr = { uCnt, oCnt, sCnt, pCnt, cCnt };
         Arrays.sort(arr);
 
         System.out.println(arr[0]);
         br.close();
-    }
-
-    private static boolean matches(char c) {
-        return c == 'u' || c == 'o' || c == 's' || c == 'p' || c == 'c';
     }
 }
