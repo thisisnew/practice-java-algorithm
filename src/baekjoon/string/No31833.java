@@ -7,27 +7,24 @@ import java.util.StringTokenizer;
 
 public class No31833 {
 
-    private static final char[] ARR_2023 = { '2', '0', '2', '3' };
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        String x = get(n);
-        String y = get(n);
+        int x = get(new StringTokenizer(br.readLine()), n);
+        int y = get(new StringTokenizer(br.readLine()), n);
 
-
+        System.out.println(Math.min(x, y));
         br.close();
     }
 
-    private static String get(int n) {
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        StringBuilder sb = new StringBuilder(5);
+    private static int get(StringTokenizer st, int n) {
+        StringBuilder sb = new StringBuilder(n);
 
         for (int i = 0; i < n; i++) {
             sb.append(st.nextToken());
         }
 
-        return sb.toString();
+        return Integer.parseInt(sb.toString());
     }
 }
