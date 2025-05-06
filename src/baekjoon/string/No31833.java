@@ -11,14 +11,15 @@ public class No31833 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        int x = get(new StringTokenizer(br.readLine()), n);
-        int y = get(new StringTokenizer(br.readLine()), n);
+        int x = get(br.readLine(), n);
+        int y = get(br.readLine(), n);
 
         System.out.println(Math.min(x, y));
         br.close();
     }
 
-    private static int get(StringTokenizer st, int n) {
+    private static int get(String input, int n) {
+        StringTokenizer st = new StringTokenizer(input);
         StringBuilder sb = new StringBuilder(n);
 
         for (int i = 0; i < n; i++) {
