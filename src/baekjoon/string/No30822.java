@@ -19,12 +19,19 @@ public class No30822 {
         for (int i = 0; i < n; i++) {
             String input = st.nextToken();
 
-
+            if (!matches(input)) {
+                continue;
+            }
 
             int count = charMap.getOrDefault(input, 0);
             charMap.put(input, ++count);
         }
 
         br.close();
+    }
+
+    private static boolean matches(String input) {
+        char c = input.charAt(0);
+        return c == 'u' || c == 'o' || c == 's' || c == 'p' || c == 'c';
     }
 }
