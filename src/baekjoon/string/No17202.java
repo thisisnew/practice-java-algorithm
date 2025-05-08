@@ -21,6 +21,12 @@ public class No17202 {
             phoneNum[i*2 + 1] = b.charAt(i) - '0';
         }
 
+        while(n > 2) {
+            n /= 2;
+
+            phoneNum = new int[n];
+        }
+
         br.close();
     }
 }
