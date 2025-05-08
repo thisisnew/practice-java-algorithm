@@ -13,7 +13,8 @@ public class No17202 {
         String a = br.readLine();
         String b = br.readLine();
 
-        int[] phoneNum = new int[16];
+        int n = 16;
+        int[] phoneNum = new int[n];
 
         for (int i = 0; i < 8; i++) {
             phoneNum[i*2] = a.charAt(i) - '0';
