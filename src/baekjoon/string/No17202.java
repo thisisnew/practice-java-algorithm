@@ -15,10 +15,10 @@ public class No17202 {
 
         int[] phoneNum = new int[16];
 
-        for (int i = 0; i < a.length(); i++) {
-            phoneNum[a.charAt(i) - '0']++;
+        for (int i = 0; i < 8; i++) {
+            phoneNum[i*2] = a.charAt(i) - '0';
+            phoneNum[i*2 + 1] = b.charAt(i) - '0';
         }
-
 
         br.close();
     }
