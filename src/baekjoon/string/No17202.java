@@ -13,7 +13,13 @@ public class No17202 {
         String a = br.readLine();
         String b = br.readLine();
 
-        System.out.println(names.get(0));
+        int[] phoneNum = new int[16];
+
+        for (int i = 0; i < a.length(); i++) {
+            phoneNum[a.charAt(i) - '0']++;
+        }
+
+
         br.close();
     }
 }
