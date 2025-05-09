@@ -23,8 +23,13 @@ public class No17202 {
 
         while(n > 2) {
             n /= 2;
+            int temp = new int[n];
 
-            phoneNum = new int[n];
+            for (int i = 0; i < phoneNum.length-1; i++) {
+
+
+
+            }
         }
 
         br.close();
