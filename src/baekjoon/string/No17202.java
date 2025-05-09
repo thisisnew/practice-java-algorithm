@@ -35,7 +35,7 @@ public class No17202 {
             phoneNum = temp;
         }
 
-        System.out.printf("%d%d%n", phoneNum[0], phoneNum[1]);
+        System.out.printf("%02d%n", phoneNum[0] * 10 + phoneNum[1]);
         br.close();
     }
 }
