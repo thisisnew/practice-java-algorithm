@@ -21,25 +21,21 @@ public class No17202 {
             phoneNum[i*2 + 1] = b.charAt(i) - '0';
         }
 
-//        while(n > 2) {
-//            n /= 2;
-//            List<Integer> temp = new ArrayList<>();
-//
-//            for (int i = 0; i < phoneNum.length-1; i++) {
-//                int a = phoneNum[i];
-//                int b = phoneNum[i+1];
-//                temp.add(a+b);
-//            }
-//        }
+        while(n > 2) {
+            n--;
 
-        n /= 2;
-        List<Integer> temp = new ArrayList<>();
+            int idx = 0;
+            int[] temp = new int[n];
 
-        for (int i = 0; i < phoneNum.length-1; i++) {
-            temp.add(phoneNum[i] + phoneNum[i+1]);
+            for (int i = 0; i < phoneNum.length-1; i++) {
+                temp[idx] = (phoneNum[i] + phoneNum[i+1]) % 10;
+                idx++;
+            }
+
+            phoneNum = temp;
         }
-        System.out.println(temp);
 
+        System.out.printf("%d%d%n", phoneNum[0], phoneNum[1]);
         br.close();
     }
 }
