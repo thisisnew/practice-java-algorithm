@@ -15,7 +15,7 @@ public class No26068 {
         for (int i = 0; i < n; i++) {
             String s = br.readLine().substring(2);
 
-            if (Integer.parseInt(s) < 90) {
+            if (Integer.parseInt(s) <= 90) {
                 result++;
             }
         }
