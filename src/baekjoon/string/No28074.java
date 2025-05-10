@@ -10,19 +10,27 @@ public class No28074 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = 0;
         Map<Character, Boolean> map = new HashMap<>();
+        boolean available = false;
 
-        String input = br.readLine();
+        for (char c : br.readLine().toCharArray()) {
+            if (c != 'M' && c != 'O' && c != 'B' && c != 'I' && c != 'S') {
+                continue;
+            }
 
-        for (char c : input.toCharArray()) {
+            map.put(c, true);
 
-
-
-
+            if (map.size() == 5) {
+                available = true;
+                break;
+            }
         }
 
-
+        if (available) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
 
         br.close();
     }
