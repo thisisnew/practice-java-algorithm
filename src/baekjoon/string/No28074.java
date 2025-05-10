@@ -10,7 +10,7 @@ public class No28074 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        Map<Character, Boolean> map = new HashMap<>();
+        Set<Character> charSet = new HashSet<>();
         boolean available = false;
 
         for (char c : br.readLine().toCharArray()) {
@@ -18,9 +18,9 @@ public class No28074 {
                 continue;
             }
 
-            map.put(c, true);
+            charSet.add(c);
 
-            if (map.size() == 5) {
+            if (charSet.size() == 5) {
                 available = true;
                 break;
             }
