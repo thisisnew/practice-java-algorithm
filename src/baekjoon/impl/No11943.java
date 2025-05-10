@@ -21,8 +21,7 @@ public class No11943 {
         c = Integer.parseInt(st.nextToken());
         d = Integer.parseInt(st.nextToken());
 
-
-
+        System.out.println(Math.min(a+d, b+c));
         br.close();
     }
 }
