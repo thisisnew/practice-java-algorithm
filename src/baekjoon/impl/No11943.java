@@ -9,17 +9,13 @@ public class No11943 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int a = 0;
-        int b = 0;
-        int c = 0;
-        int d = 0;
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        a = Integer.parseInt(st.nextToken());
-        b = Integer.parseInt(st.nextToken());
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
         st = new StringTokenizer(br.readLine());
-        c = Integer.parseInt(st.nextToken());
-        d = Integer.parseInt(st.nextToken());
+        int c = Integer.parseInt(st.nextToken());
+        int d = Integer.parseInt(st.nextToken());
 
         System.out.println(Math.min(a+d, b+c));
         br.close();
