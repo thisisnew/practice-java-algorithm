@@ -20,17 +20,17 @@ public class No1864 {
             int result = 0;
 
             for (int i = input.length() - 1; i >= 0; i--) {
-                char c = input.charAt(i);
-
-                //result += Math.pow()
+                result += (int) Math.pow(8, pow) * convert(input.charAt(i));
+                pow++;
             }
 
+            System.out.println(result);
         }
 
         br.close();
     }
 
-    private int convert(char c) {
+    private static int convert(char c) {
         switch (c) {
             case '-':
                 return 0;
