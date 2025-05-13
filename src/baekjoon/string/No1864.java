@@ -31,27 +31,17 @@ public class No1864 {
     }
 
     private static int convert(char c) {
-        switch (c) {
-            case '-':
-                return 0;
-            case '\\':
-                return 1;
-            case '(':
-                return 2;
-            case '@':
-                return 3;
-            case '?':
-                return 4;
-            case '>':
-                return 5;
-            case '&':
-                return 6;
-            case '%':
-                return 7;
-            case '/':
-                return -1;
-            default:
-                throw new IllegalArgumentException("Invalid character: " + c);
-        }
+        return switch (c) {
+            case '-' -> 0;
+            case '\\' -> 1;
+            case '(' -> 2;
+            case '@' -> 3;
+            case '?' -> 4;
+            case '>' -> 5;
+            case '&' -> 6;
+            case '%' -> 7;
+            case '/' -> -1;
+            default -> throw new IllegalArgumentException("Invalid character: " + c);
+        };
     }
 }
