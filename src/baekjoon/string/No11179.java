@@ -14,7 +14,7 @@ public class No11179 {
         List<Integer> list = new ArrayList<>();
         int n = Integer.parseInt(br.readLine());
 
-        while (n >= 2) {
+        while (n > 0) {
             list.add(n % 2);
             n /= 2;
         }
