@@ -12,11 +12,11 @@ public class No11179 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         List<Integer> list = new ArrayList<>();
-        String n = br.readLine();
+        int n = Integer.parseInt(br.readLine());
 
-        for (int i = 0; i < n.length(); i++) {
-            int i1 = (n.charAt(i) - '0') * (int) Math.pow(2, i);
-            list.add(i1);
+        while (n < 2) {
+            list.add(n%2);
+            n = n/2;
         }
 
         System.out.println(list);
