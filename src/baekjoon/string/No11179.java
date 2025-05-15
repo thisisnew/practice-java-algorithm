@@ -21,15 +21,14 @@ public class No11179 {
             n /= 2;
         }
 
+        int result = 0;
+        int i = 0;
         while (!queue.isEmpty()) {
-            int value = queue.poll();
-
-
+            result += (int) Math.pow(2, i) * queue.poll();
+            i++;
         }
 
-        System.out.println(queue);
-
-
+        System.out.println(result);
         br.close();
     }
 
