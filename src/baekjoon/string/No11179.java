@@ -21,7 +21,7 @@ public class No11179 {
         int result = 0;
 
         for (int i = list.size() - 1; i >= 0; i--) {
-            result += (int) Math.pow(2, list.size() - 1- i) * list.get(i);
+            result += (int) Math.pow(2, (list.size() - 1) - i) * list.get(i);
         }
 
         System.out.println(result);
