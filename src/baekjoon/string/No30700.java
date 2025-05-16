@@ -12,14 +12,14 @@ public class No30700 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input = br.readLine();
 
         int idx = 0;
-        String input = br.readLine();
-        StringBuilder sb = new StringBuilder();
+        int count = 0;
 
         for (char c : input.toCharArray()) {
             if (c == KOREA_CHARS[idx]) {
-                sb.append(c);
+                count++;
 
                 if (++idx == KOREA_CHARS.length) {
                     idx = 0;
@@ -27,7 +27,7 @@ public class No30700 {
             }
         }
 
-        System.out.println(sb.toString().length());
+        System.out.println(count);
         br.close();
     }
 }
