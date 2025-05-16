@@ -18,8 +18,17 @@ public class No31009 {
             map.put(st.nextToken(), Integer.parseInt(st.nextToken()));
         }
 
-        System.out.println(map.get("jinju"));
-        System.out.println();
+        int fee = map.get("jinju");
+        int count = 0;
+
+        for(Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > fee) {
+                count++;
+            }
+        }
+
+        System.out.println(fee);
+        System.out.println(count);
         br.close();
     }
 }
