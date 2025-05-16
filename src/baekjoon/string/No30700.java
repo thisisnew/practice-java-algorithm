@@ -8,21 +8,22 @@ import java.util.Map;
 
 public class No30700 {
 
+    private static final char[] KOREA_CHARS = { 'K', 'O', 'R', 'E', 'A' };
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        char[] arr = { 'K', 'O', 'R', 'E', 'A' };
+
         int idx = 0;
         String input = br.readLine();
         StringBuilder sb = new StringBuilder();
 
         for (char c : input.toCharArray()) {
-            if (c == arr[idx]) {
-                idx++;
+            if (c == KOREA_CHARS[idx]) {
                 sb.append(c);
-            }
 
-            if (idx == arr.length) {
-                idx = 0;
+                if (++idx == KOREA_CHARS.length) {
+                    idx = 0;
+                }
             }
         }
 
