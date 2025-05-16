@@ -21,8 +21,8 @@ public class No31009 {
         int fee = map.get("jinju");
         int count = 0;
 
-        for(Map.Entry<String, Integer> entry : map.entrySet()) {
-            if (entry.getValue() > fee) {
+        for(int price : map.values()) {
+            if (price > fee) {
                 count++;
             }
         }
