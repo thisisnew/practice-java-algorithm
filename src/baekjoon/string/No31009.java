@@ -18,7 +18,7 @@ public class No31009 {
             map.put(st.nextToken(), Integer.parseInt(st.nextToken()));
         }
 
-
+        System.out.println(map.get("jinju"));
         System.out.println();
         br.close();
     }
