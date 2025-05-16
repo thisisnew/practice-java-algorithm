@@ -14,18 +14,14 @@ public class No31009 {
         Map<String, Integer> map = new HashMap<>();
 
         for (int i = 0; i < n; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            map.put(st.nextToken(), Integer.parseInt(st.nextToken()));
+            String[] input = br.readLine().split(" ");
+            map.put(input[0], Integer.parseInt(input[1]));
         }
 
         int fee = map.get("jinju");
-        int count = 0;
-
-        for(int price : map.values()) {
-            if (price > fee) {
-                count++;
-            }
-        }
+        long count = map.values().stream()
+                .filter(price -> price > fee)
+                .count();
 
         System.out.println(fee);
         System.out.println(count);
