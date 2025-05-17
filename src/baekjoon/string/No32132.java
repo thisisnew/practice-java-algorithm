@@ -17,7 +17,7 @@ public class No32132 {
         int idx = 0;
 
         do {
-            if (idx + 3 > n) {
+            if (idx + 2 >= n) {
                 sb.append(input.substring(idx));
                 break;
             }
