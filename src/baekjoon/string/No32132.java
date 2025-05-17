@@ -17,10 +17,15 @@ public class No32132 {
         int idx = 0;
 
         do {
-            String sub = input.substring(idx, idx + 3);
+            if (idx + 3 <= n) {
+                String sub = input.substring(idx, idx + 3);
 
-            if (sub.equals("PS4") || sub.equals("PS5")) {
-                idx += 3;
+                if (sub.equals("PS4") || sub.equals("PS5")) {
+                    idx += 3;
+                } else {
+                    sb.append(input.charAt(idx));
+                    idx++;
+                }
             } else {
                 sb.append(input.charAt(idx));
                 idx++;
