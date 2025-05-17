@@ -25,6 +25,7 @@ public class No32132 {
             String sub = input.substring(idx, idx + 3);
 
             if (sub.equals("PS4") || sub.equals("PS5")) {
+                sb.append(input, idx, idx + 2);
                 idx += 3;
             } else {
                 sb.append(input.charAt(idx));
