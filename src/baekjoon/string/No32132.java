@@ -14,21 +14,21 @@ public class No32132 {
         String input = br.readLine();
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < n - 2; i+=3) {
-            String sub = input.substring(i, i + 3);
+        int idx = 0;
 
-            if (sub.equals("PS4")) {
-                continue;
+        do {
+            String sub = input.substring(idx, idx + 3);
+
+            if (sub.equals("PS4") || sub.equals("PS5")) {
+                idx += 3;
+            } else {
+                sb.append(input.charAt(idx));
+                idx++;
             }
 
-            if (sub.equals("PS5")) {
-                continue;
-            }
+        } while (idx < n);
 
-            sb.append(sub);
-        }
-
-
+        System.out.println(sb);
         br.close();
     }
 }
