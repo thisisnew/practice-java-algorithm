@@ -15,7 +15,7 @@ public class No33571 {
 
         while (st.hasMoreTokens()) {
             for (char c : st.nextToken().toCharArray()) {
-                result += countSpace(c);
+                result += countHoles(c);
             }
         }
 
@@ -23,7 +23,7 @@ public class No33571 {
         br.close();
     }
 
-    private static int countSpace(char c) {
+    private static int countHoles(char c) {
 
         if (c == 'B') {
             return 2;
