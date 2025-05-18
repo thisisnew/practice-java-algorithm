@@ -18,11 +18,7 @@ public class No32132 {
 
         int idx = 0;
 
-        do {
-            if (idx + 2 >= n) {
-                break;
-            }
-
+        while(idx + 2 < n) {
             String sub = input.substring(idx, idx + 3);
 
             if (!sub.equals(PLAY_STATION_4) && !sub.equals(PLAY_STATION_5)) {
@@ -33,8 +29,7 @@ public class No32132 {
             input = input.substring(0, idx + 2) + input.substring(idx + 3);
             n = input.length();
             idx = 0;
-
-        } while (idx < n);
+        }
 
         System.out.println(input);
         br.close();
