@@ -23,7 +23,7 @@ public class No32132 {
             String sub = input.substring(idx, idx + 3);
 
             if (sub.equals("PS4") || sub.equals("PS5")) {
-                input = input.substring(idx, idx + 2) + input.substring(idx + 3);
+                input = input.substring(0, idx + 2) + input.substring(idx + 3);
                 n = input.length();
                 idx = 0;
             } else {
