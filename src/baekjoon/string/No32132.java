@@ -12,29 +12,27 @@ public class No32132 {
 
         int n = Integer.parseInt(br.readLine());
         String input = br.readLine();
-        StringBuilder sb = new StringBuilder();
 
         int idx = 0;
 
         do {
             if (idx + 2 >= n) {
-                sb.append(input.substring(idx));
                 break;
             }
 
             String sub = input.substring(idx, idx + 3);
 
             if (sub.equals("PS4") || sub.equals("PS5")) {
-                sb.append(input, idx, idx + 2);
-                idx += 3;
+                input = input.substring(idx, idx + 2) + input.substring(idx + 3);
+                n = input.length();
+                idx = 0;
             } else {
-                sb.append(input.charAt(idx));
                 idx++;
             }
 
         } while (idx < n);
 
-        System.out.println(sb);
+        System.out.println(input);
         br.close();
     }
 }
