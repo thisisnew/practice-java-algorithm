@@ -3,12 +3,15 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 public class No32132 {
 
     private static final String PLAY_STATION_4 = "PS4";
     private static final String PLAY_STATION_5 = "PS5";
+    private static final Set<String> PLAYING_STATIONS = Set.of(PLAY_STATION_4, PLAY_STATION_5);
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -21,7 +24,7 @@ public class No32132 {
         while(idx + 2 < n) {
             String sub = input.substring(idx, idx + 3);
 
-            if (!sub.equals(PLAY_STATION_4) && !sub.equals(PLAY_STATION_5)) {
+            if (!PLAYING_STATIONS.contains(sub)) {
                 idx++;
                 continue;
             }
