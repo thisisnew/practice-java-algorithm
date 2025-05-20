@@ -17,7 +17,7 @@ public class No5357 {
             StringBuilder sb = new StringBuilder();
 
             for (char c : input.toCharArray()) {
-                if (sb.isEmpty()) {
+                if (sb.length() == 0) {
                     sb.append(c);
                 } else if (c != sb.charAt(sb.length() - 1)) {
                     sb.append(c);
