@@ -11,12 +11,7 @@ public class No32929 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-
-        int idx = n % 3 - 1;
-
-        if (idx < 0) {
-            idx = 2;
-        }
+        int idx = n % 3 - 1 < 0 ? 2 : n % 3 - 1;
 
         System.out.println(UOS_CHARS[idx]);
         br.close();
