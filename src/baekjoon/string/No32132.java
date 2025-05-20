@@ -9,9 +9,7 @@ import java.util.StringTokenizer;
 
 public class No32132 {
 
-    private static final String PLAY_STATION_4 = "PS4";
-    private static final String PLAY_STATION_5 = "PS5";
-    private static final Set<String> PLAYING_STATIONS = Set.of(PLAY_STATION_4, PLAY_STATION_5);
+    private static final Set<String> PLAYING_STATIONS = Set.of("PS4", "PS5");
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
