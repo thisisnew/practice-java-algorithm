@@ -12,7 +12,13 @@ public class No32929 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        System.out.println(UOS_CHARS[n%3 - 1]);
+        int idx = n % 3 - 1;
+
+        if (idx < 0) {
+            idx = 2;
+        }
+
+        System.out.println(UOS_CHARS[idx]);
         br.close();
     }
 }
