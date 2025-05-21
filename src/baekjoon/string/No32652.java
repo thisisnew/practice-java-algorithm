@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class No32652 {
+
+    private static final String AKARAKA = "AKARAKA";
+    private static final String RAKA = "RAKA";
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int k = Integer.parseInt(br.readLine());
@@ -13,11 +17,10 @@ public class No32652 {
 
         for(int i=0; i<k; i++) {
             if (i == 0) {
-                sb.append("AKARAKA");
-                continue;
+                sb.append(AKARAKA);
+            } else {
+                sb.append(RAKA);
             }
-
-            sb.append("RAKA");
         }
 
         System.out.println(sb);
