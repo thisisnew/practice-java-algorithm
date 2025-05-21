@@ -12,8 +12,7 @@ public class No32652 {
         StringBuilder sb = new StringBuilder();
 
         for(int i=0; i<k; i++) {
-
-            if (i == 0 ) {
+            if (i == 0) {
                 sb.append("AKARAKA");
                 continue;
             }
@@ -21,7 +20,7 @@ public class No32652 {
             sb.append("RAKA");
         }
 
-        sb.deleteCharAt(sb);
+        System.out.println(sb);
         br.close();
     }
 
