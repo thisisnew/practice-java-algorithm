@@ -13,10 +13,7 @@ public class No32652 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int k = Integer.parseInt(br.readLine());
 
-        StringBuilder sb = new StringBuilder(AKARAKA);
-        sb.append(RAKA.repeat(Math.max(0, k - 1)));
-
-        System.out.println(sb);
+        System.out.println(AKARAKA + RAKA.repeat(Math.max(0, k - 1)));
         br.close();
     }
 
