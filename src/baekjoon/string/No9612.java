@@ -13,7 +13,6 @@ import java.util.Map;
 public class No9612 {
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         int n = Integer.parseInt(br.readLine());
         int max = 0;
         Map<String, Integer> map = new HashMap<>();
@@ -29,14 +28,14 @@ public class No9612 {
         List<String> letters = new ArrayList<>();
 
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            String key = entry.getKey();
-            int value = entry.getValue();
+            String letter = entry.getKey();
+            int count = entry.getValue();
 
-            if (value < max) {
+            if (count < max) {
                 continue;
             }
 
-            letters.add(key);
+            letters.add(letter);
         }
 
         letters.sort(String::compareTo);
