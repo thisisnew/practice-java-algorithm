@@ -41,7 +41,8 @@ public class No9612 {
 
         letters.sort(String::compareTo);
 
-        System.out.println(letters.get(letters.size() - 1));
+        String result = letters.get(letters.size() - 1);
+        System.out.println(result + " " + map.get(result));
         br.close();
     }
 
