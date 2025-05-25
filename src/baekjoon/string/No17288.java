@@ -35,8 +35,8 @@ public class No17288 {
                 break;
             }
 
-            idx++;
             result++;
+            idx++;
         }
 
         System.out.println(result);
