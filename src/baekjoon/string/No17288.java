@@ -36,10 +36,9 @@ public class No17288 {
     private static boolean is3CharsSerial(String str, int idx) {
 
         try {
-            String sub = str.substring(idx, idx + 3);
-            int c1 = sub.charAt(0) - '0';
-            int c2 = sub.charAt(1) - '0';
-            int c3 = sub.charAt(2) - '0';
+            int c1 = str.charAt(idx) - '0';
+            int c2 = str.charAt(idx + 1) - '0';
+            int c3 = str.charAt(idx + 2) - '0';
 
             return (c1 + 1 == c2) && (c1 + 2 == c3);
         } catch (Exception e) {
@@ -50,11 +49,10 @@ public class No17288 {
     private static boolean is4CharsSerial(String str, int idx) {
 
         try {
-            String sub = str.substring(idx, idx + 4);
-            int c1 = sub.charAt(0) - '0';
-            int c2 = sub.charAt(1) - '0';
-            int c3 = sub.charAt(2) - '0';
-            int c4 = sub.charAt(3) - '0';
+            int c1 = str.charAt(idx) - '0';
+            int c2 = str.charAt(idx + 1) - '0';
+            int c3 = str.charAt(idx + 2) - '0';
+            int c4 = str.charAt(idx + 3) - '0';
 
             return (c1 + 1 == c2) && (c1 + 2 == c3) && (c1 + 3 == c4);
         } catch (Exception e) {
