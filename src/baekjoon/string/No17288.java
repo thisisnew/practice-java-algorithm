@@ -11,10 +11,22 @@ public class No17288 {
         String s = br.readLine();
         int result = 0;
 
-        for (int i = 0; i < s.length() - 2; i++) {
-            if (is3CharsSerial(s, i) && is4CharsNotSerial(s, i)) {
-                result++;
+        int idx = 0;
+        int len = s.length();
+
+        while (idx < len) {
+            if (!is3CharsSerial(s, idx)) {
+                idx++;
+                continue;
             }
+
+            if (is4CharsSerial(s, idx)) {
+                idx += 3;
+                continue;
+            }
+
+            result++;
+            idx++;
         }
 
         System.out.println(result);
@@ -35,7 +47,7 @@ public class No17288 {
         }
     }
 
-    private static boolean is4CharsNotSerial(String str, int idx) {
+    private static boolean is4CharsSerial(String str, int idx) {
 
         try {
             String sub = str.substring(idx, idx + 4);
@@ -44,7 +56,7 @@ public class No17288 {
             int c3 = sub.charAt(2) - '0';
             int c4 = sub.charAt(3) - '0';
 
-            return (c1 + 1 == c2) && (c1 + 2 == c3) && (c1 + 3 != c4);
+            return (c1 + 1 == c2) && (c1 + 2 == c3) && (c1 + 3 == c4);
         } catch (Exception e) {
             return false;
         }
