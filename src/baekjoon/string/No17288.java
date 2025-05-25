@@ -14,49 +14,32 @@ public class No17288 {
         int idx = 0;
         int len = s.length();
 
-        while (idx < len) {
-            if (!is3CharsSerial(s, idx)) {
+        while (idx < len - 2) {
+            int c1 = s.charAt(idx) - '0';
+            int c2 = s.charAt(idx + 1) - '0';
+            int c3 = s.charAt(idx + 2) - '0';
+
+            if ((c1 + 1 != c2) || (c1 + 2 != c3)) {
                 idx++;
                 continue;
             }
 
-            if (is4CharsSerial(s, idx)) {
-                idx += 3;
-                continue;
+            try {
+                int c4 = s.charAt(idx + 3) - '0';
+                if (c1 + 3 == c4) {
+                    idx = idx + 4;
+                    continue;
+                }
+            } catch (Exception e) {
+                result++;
+                break;
             }
 
-            result++;
             idx++;
+            result++;
         }
 
         System.out.println(result);
         br.close();
-    }
-
-    private static boolean is3CharsSerial(String str, int idx) {
-
-        try {
-            int c1 = str.charAt(idx) - '0';
-            int c2 = str.charAt(idx + 1) - '0';
-            int c3 = str.charAt(idx + 2) - '0';
-
-            return (c1 + 1 == c2) && (c1 + 2 == c3);
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    private static boolean is4CharsSerial(String str, int idx) {
-
-        try {
-            int c1 = str.charAt(idx) - '0';
-            int c2 = str.charAt(idx + 1) - '0';
-            int c3 = str.charAt(idx + 2) - '0';
-            int c4 = str.charAt(idx + 3) - '0';
-
-            return (c1 + 1 == c2) && (c1 + 2 == c3) && (c1 + 3 == c4);
-        } catch (Exception e) {
-            return false;
-        }
     }
 }
