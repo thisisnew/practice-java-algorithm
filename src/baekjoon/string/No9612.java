@@ -25,20 +25,12 @@ public class No9612 {
             max = Math.max(max, count);
         }
 
-        List<String> letters = new ArrayList<>();
-
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            String letter = entry.getKey();
-            int count = entry.getValue();
-
-            if (count < max) {
-                continue;
-            }
-
-            letters.add(letter);
-        }
-
-        letters.sort(String::compareTo);
+        final int maxValue = max;
+        List<String> letters = map.entrySet().stream()
+                .filter(entry -> entry.getValue() >= maxValue)
+                .map(Map.Entry::getKey)
+                .sorted()
+                .toList();
 
         String result = letters.get(letters.size() - 1);
         System.out.println(result + " " + map.get(result));
