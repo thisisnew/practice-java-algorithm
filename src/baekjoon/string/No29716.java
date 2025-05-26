@@ -20,14 +20,27 @@ public class No29716 {
         int result = 0;
 
         for (int i = 0; i < n; i++) {
-            int v = Integer.parseInt(br.readLine());
+            st = new StringTokenizer(br.readLine());
+
+            int v = 0;
+            while (st.hasMoreTokens()) {
+                v += calculate(st.nextToken());
+            }
 
             if (v <= j) {
-                result++;
+                result += v;
             }
         }
 
         System.out.println(result);
         br.close();
+    }
+
+    private static int calculate(String s) {
+
+
+
+
+
     }
 }
