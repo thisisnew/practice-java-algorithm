@@ -24,8 +24,13 @@ public class No29713 {
         }
 
         int idx = 0;
-        while (alphabet.get(BRONZE_SILVER.charAt(idx++)) > 0) {
-            alphabet.put(s.charAt(idx), alphabet.getOrDefault(s.charAt(idx), 0) - 1);
+        while (true) {
+            char c = BRONZE_SILVER.charAt(idx);
+            int count = alphabet.getOrDefault(c, 0);
+            if (count <= 0) break;
+
+            alphabet.put(c, --count);
+            idx++;
 
             if (idx == BRONZE_SILVER.length()) {
                 result++;
