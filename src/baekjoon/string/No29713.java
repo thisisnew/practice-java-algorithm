@@ -27,7 +27,9 @@ public class No29713 {
         while (true) {
             char c = BRONZE_SILVER.charAt(idx);
             int count = alphabet.getOrDefault(c, 0);
-            if (count <= 0) break;
+            if (count <= 0) {
+                break;
+            }
 
             alphabet.put(c, --count);
             idx++;
