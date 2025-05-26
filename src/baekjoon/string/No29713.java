@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class No29713 {
+
+    private static final String BRONZE_SILVER = "BRONZESILVER";
+
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -21,8 +24,8 @@ public class No29713 {
         }
 
         int idx = 0;
-        while (alphabet.get(s.charAt(idx++)) != 0) {
-            if (idx == s.length()) {
+        while (alphabet.get(BRONZE_SILVER.charAt(idx++)) != 0) {
+            if (idx == BRONZE_SILVER.length()) {
                 result++;
                 idx = 0;
             }
