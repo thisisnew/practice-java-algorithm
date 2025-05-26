@@ -24,7 +24,9 @@ public class No29713 {
         }
 
         int idx = 0;
-        while (alphabet.get(BRONZE_SILVER.charAt(idx++)) != 0) {
+        while (alphabet.get(BRONZE_SILVER.charAt(idx++)) > 0) {
+            alphabet.put(s.charAt(idx), alphabet.getOrDefault(s.charAt(idx), 0) - 1);
+
             if (idx == BRONZE_SILVER.length()) {
                 result++;
                 idx = 0;
