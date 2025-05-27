@@ -26,7 +26,7 @@ public class No29716 {
             }
 
             if (v <= j) {
-                result += v;
+                result++;
             }
         }
 
