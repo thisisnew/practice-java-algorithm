@@ -22,7 +22,7 @@ public class No29716 {
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
 
-            int v = st.countTokens();
+            int v = st.countTokens()-1;
             while (st.hasMoreTokens()) {
                 v += calculate(st.nextToken());
             }
