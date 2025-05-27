@@ -3,14 +3,12 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.stream.IntStream;
 
 public class No29716 {
 
-    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -37,18 +35,10 @@ public class No29716 {
     }
 
     private static int calculate(String s) {
-        int result = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-
-            if (Character.isUpperCase(c)) {
-                result += 4;
-            } else {
-                result += 2;
-            }
+        int sum = 0;
+        for (char c : s.toCharArray()) {
+            sum += Character.isUpperCase(c) ? 4 : 2;
         }
-
-        return result;
+        return sum;
     }
 }
