@@ -22,7 +22,7 @@ public class No29716 {
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
 
-            int v = 0;
+            int v = st.countTokens();
             while (st.hasMoreTokens()) {
                 v += calculate(st.nextToken());
             }
@@ -37,10 +37,18 @@ public class No29716 {
     }
 
     private static int calculate(String s) {
+        int result = 0;
 
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
 
+            if (Character.isUpperCase(c)) {
+                result += 4;
+            } else {
+                result += 2;
+            }
+        }
 
-
-
+        return result;
     }
 }
