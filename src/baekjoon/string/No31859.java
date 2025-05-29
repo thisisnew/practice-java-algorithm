@@ -33,6 +33,7 @@ public class No31859 {
         StringBuilder sb = new StringBuilder();
 
         for (char c : s.toCharArray()) {
+
             if (!charSet.contains(c)) {
                 charSet.add(c);
                 sb.append(c);
