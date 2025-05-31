@@ -17,13 +17,31 @@ public class No7513 {
         for (int i = 0; i < t; i++) {
             int m = Integer.parseInt(br.readLine());
 
+            String[] words = new String[m];
+
             for (int j = 0; j < m; j++) {
                 String word = br.readLine();
+                words[j] = word;
             }
 
             int n = Integer.parseInt(br.readLine());
 
+            String scenario = String.format("Scenario #%d:%n", i+1);
+            System.out.println(scenario);
 
+            for (int j = 0; j < n; j++) {
+                StringBuilder sb = new StringBuilder();
+                StringTokenizer st = new StringTokenizer(br.readLine());
+                int k = Integer.parseInt(st.nextToken());
+
+                for (int l = 0; l < k; l++) {
+                    sb.append(words[Integer.parseInt(st.nextToken())]);
+                }
+
+                System.out.println(sb);
+            }
+
+            System.out.println();
         }
         
         br.close();
