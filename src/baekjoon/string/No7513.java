@@ -20,8 +20,7 @@ public class No7513 {
             String[] words = new String[m];
 
             for (int j = 0; j < m; j++) {
-                String word = br.readLine();
-                words[j] = word;
+                words[j] = br.readLine();
             }
 
             int n = Integer.parseInt(br.readLine());
