@@ -41,7 +41,9 @@ public class No7513 {
                 System.out.println(sb);
             }
 
-            System.out.println();
+            if (i < t-1) {
+                System.out.println();
+            }
         }
         
         br.close();
