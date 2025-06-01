@@ -11,13 +11,30 @@ public class No28064 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
+        String[] arr = new String[n];
 
         for (int i = 0; i < n; i++) {
+            arr[i] = br.readLine();
+        }
 
+        int res = 0;
 
+        for (String pre : arr) {
+            for (String post : arr) {
+                if (Objects.equals(pre, post)) {
+                    continue;
+                }
 
+                if (availableToConnect(pre, post)) {
+                    res++;
+                }
+            }
         }
 
         br.close();
+    }
+
+    private static boolean availableToConnect(String pre, String post) {
+        return true;
     }
 }
