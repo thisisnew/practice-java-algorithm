@@ -3,8 +3,7 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Objects;
 import java.util.StringTokenizer;
 
 public class No7513 {
@@ -23,10 +22,9 @@ public class No7513 {
                 words[j] = br.readLine();
             }
 
-            int n = Integer.parseInt(br.readLine());
+            System.out.printf("Scenario #%d:%n", i+1);
 
-            String scenario = String.format("Scenario #%d:", i+1);
-            System.out.println(scenario);
+            int n = Integer.parseInt(br.readLine());
 
             for (int j = 0; j < n; j++) {
                 StringBuilder sb = new StringBuilder();
