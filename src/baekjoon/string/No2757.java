@@ -3,14 +3,11 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
 public class No2757 {
 
-    private static final char[] ALPHABETS = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
-    private static final int ALPHABETS_LENGTH = ALPHABETS.length;
     private static final String R0C0 = "R0C0";
     private static final String C = "C";
     private static final String R = "R";
@@ -25,11 +22,8 @@ public class No2757 {
                 break;
             }
 
-            Map<String, Integer> rcMap = createRcMap(s);
-            int r = rcMap.get(R);
-            int c = rcMap.get(C);
-
-            System.out.println(createRStr(c) + r);
+            Rc rc = parse(s);
+            System.out.println(createRStr(rc.col()) + rc.row());
         }
 
         br.close();
@@ -39,25 +33,28 @@ public class No2757 {
         return Objects.equals(R0C0, s);
     }
 
-    private static Map<String, Integer> createRcMap(String s) {
+    private static Rc parse(String s) {
 
-        String[] split = s.substring(1).split(C);
+        int rIndex = s.indexOf('R');
+        int cIndex = s.indexOf('C');
 
-        String s1 = split[0];
-        String s2 = split[1];
+        int row = Integer.parseInt(s.substring(rIndex + 1, cIndex));
+        int col = Integer.parseInt(s.substring(cIndex + 1));
 
-        Map<String, Integer> result = new HashMap<>();
-        result.put(R, Integer.parseInt(s1));
-        result.put(C, Integer.parseInt(s2));
-
-        return result;
+        return new Rc(row, col);
     }
 
     private static String createRStr(int n) {
+        StringBuilder sb = new StringBuilder();
 
-        int a = n / ALPHABETS_LENGTH;
-        int b = n % ALPHABETS_LENGTH;
+        while (n > 0) {
+            n--;
+            sb.append((char) ('A' + n % 26));
+            n /= 26;
+        }
 
-        return "";
+        return sb.reverse().toString();
     }
+
+    private record Rc(int row, int col) {}
 }
