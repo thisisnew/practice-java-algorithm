@@ -21,9 +21,7 @@ public class No28064 {
 
         for (String pre : arr) {
             for (String post : arr) {
-                if (availableToConnect(pre, post)) {
-                    res++;
-                }
+                if (availableToConnect(pre, post)) res++;
             }
         }
 
