@@ -3,7 +3,6 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Map;
 import java.util.Objects;
 
 public class No2757 {
@@ -55,5 +54,21 @@ public class No2757 {
         return sb.reverse().toString();
     }
 
-    private record Rc(int row, int col) {}
+    private static class Rc {
+        private final int row;
+        private final int col;
+
+        private Rc(int row, int col) {
+            this.row = row;
+            this.col = col;
+        }
+
+        public int row() {
+            return row;
+        }
+
+        public int col() {
+            return col;
+        }
+    }
 }
