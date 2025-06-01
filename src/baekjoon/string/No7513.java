@@ -25,8 +25,8 @@ public class No7513 {
 
             int n = Integer.parseInt(br.readLine());
 
-            String scenario = String.format("Scenario #%d:%n", i+1);
-            System.out.print(scenario);
+            String scenario = String.format("Scenario #%d:", i+1);
+            System.out.println(scenario);
 
             for (int j = 0; j < n; j++) {
                 StringBuilder sb = new StringBuilder();
