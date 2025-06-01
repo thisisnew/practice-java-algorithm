@@ -29,8 +29,12 @@ public class No2757 {
     }
 
     private static Map<String, Integer> createRcMap(String s) {
-        String[] split = s.split("C");
-        String s1 = split[0].substring(1);
+
+        String[] split = s.replaceFirst("R", "")
+                .replaceFirst("C", ",")
+                .split(",");
+
+        String s1 = split[0];
         String s2 = split[1];
 
         Map<String, Integer> result = new HashMap<>();
