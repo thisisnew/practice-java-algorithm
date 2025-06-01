@@ -19,6 +19,8 @@ public class No2757 {
             }
 
             Map<String, Integer> rcMap = createRcMap(s);
+            int r = rcMap.get("R");
+            int c = rcMap.get("C");
 
 
         }
