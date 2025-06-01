@@ -5,11 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class No2757 {
 
     private static final String C = "C";
     private static final String R = "R";
+    private static final String R0C0 = "R0C0";
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,7 +19,7 @@ public class No2757 {
         while (true) {
             String s = br.readLine();
 
-            if (s.equals("R0C0")) {
+            if (isEnd(s)) {
                 break;
             }
 
@@ -29,6 +31,10 @@ public class No2757 {
         }
 
         br.close();
+    }
+
+    private static boolean isEnd(String s) {
+        return Objects.equals(R0C0, s);
     }
 
     private static Map<String, Integer> createRcMap(String s) {
