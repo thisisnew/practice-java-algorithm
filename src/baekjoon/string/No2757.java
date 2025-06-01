@@ -9,9 +9,9 @@ import java.util.Objects;
 
 public class No2757 {
 
+    private static final String R0C0 = "R0C0";
     private static final String C = "C";
     private static final String R = "R";
-    private static final String R0C0 = "R0C0";
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,7 +27,7 @@ public class No2757 {
             int r = rcMap.get(R);
             int c = rcMap.get(C);
 
-
+            System.out.println(createRStr(c) + r);
         }
 
         br.close();
@@ -49,5 +49,9 @@ public class No2757 {
         result.put(C, Integer.parseInt(s2));
 
         return result;
+    }
+
+    private static String createRStr(int n) {
+        return "";
     }
 }
