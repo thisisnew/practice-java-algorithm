@@ -9,6 +9,8 @@ import java.util.Objects;
 
 public class No2757 {
 
+    private static final char[] ALPHABETS = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+    private static final int ALPHABETS_LENGTH = ALPHABETS.length;
     private static final String R0C0 = "R0C0";
     private static final String C = "C";
     private static final String R = "R";
@@ -52,6 +54,10 @@ public class No2757 {
     }
 
     private static String createRStr(int n) {
+
+        int a = n / ALPHABETS_LENGTH;
+        int b = n % ALPHABETS_LENGTH;
+
         return "";
     }
 }
