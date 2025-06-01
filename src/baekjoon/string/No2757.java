@@ -8,6 +8,9 @@ import java.util.Map;
 
 public class No2757 {
 
+    private static final String C = "C";
+    private static final String R = "R";
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -19,8 +22,8 @@ public class No2757 {
             }
 
             Map<String, Integer> rcMap = createRcMap(s);
-            int r = rcMap.get("R");
-            int c = rcMap.get("C");
+            int r = rcMap.get(R);
+            int c = rcMap.get(C);
 
 
         }
@@ -30,15 +33,14 @@ public class No2757 {
 
     private static Map<String, Integer> createRcMap(String s) {
 
-        String[] split = s.substring(1)
-                .split("C");
+        String[] split = s.substring(1).split(C);
 
         String s1 = split[0];
         String s2 = split[1];
 
         Map<String, Integer> result = new HashMap<>();
-        result.put("R", Integer.parseInt(s1));
-        result.put("C", Integer.parseInt(s2));
+        result.put(R, Integer.parseInt(s1));
+        result.put(C, Integer.parseInt(s2));
 
         return result;
     }
