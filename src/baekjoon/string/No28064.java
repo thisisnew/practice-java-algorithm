@@ -21,10 +21,6 @@ public class No28064 {
 
         for (String pre : arr) {
             for (String post : arr) {
-                if (Objects.equals(pre, post)) {
-                    continue;
-                }
-
                 if (availableToConnect(pre, post)) {
                     res++;
                 }
@@ -36,6 +32,10 @@ public class No28064 {
     }
 
     private static boolean availableToConnect(String pre, String post) {
+        if (Objects.equals(pre, post)) {
+            return false;
+        }
+
         return true;
     }
 }
