@@ -34,9 +34,8 @@ public class No2757 {
     }
 
     private static Rc parse(String s) {
-
-        int rIndex = s.indexOf('R');
-        int cIndex = s.indexOf('C');
+        int rIndex = s.indexOf(R);
+        int cIndex = s.indexOf(C);
 
         int row = Integer.parseInt(s.substring(rIndex + 1, cIndex));
         int col = Integer.parseInt(s.substring(cIndex + 1));
