@@ -31,6 +31,7 @@ public class No28064 {
             }
         }
 
+        System.out.println(res);
         br.close();
     }
 
