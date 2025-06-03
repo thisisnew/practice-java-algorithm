@@ -35,22 +35,15 @@ public class No28064 {
     }
 
     private static boolean availableToConnect(String pre, String post) {
-        if (Objects.equals(pre, post)) {
-            return true;
-        }
+        int len = Math.min(pre.length(), post.length());
 
-        int idx = 0;
-        for (int i = pre.length() - 1; i >=0; i--) {
-            String subPre = pre.substring(i);
-            String subPost = post.substring(0, idx);
-
-            if (subPre.equals(subPost)) {
+        for (int i = 1; i <= len; i++) {
+            if (pre.regionMatches(pre.length() - i, post, 0, i)) {
                 return true;
             }
-
-            idx++;
         }
 
-        return false;
+        return pre.equals(post);
     }
+
 }
