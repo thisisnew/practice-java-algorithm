@@ -39,10 +39,16 @@ public class No28064 {
             return false;
         }
 
+        int idx = 0;
         for (int i = pre.length() - 1; i >=0; i--) {
-            if (true) {
+            String subPre = pre.substring(i);
+            String subPost = post.substring(0, idx);
+
+            if (subPre.equals(subPost)) {
                 return true;
             }
+
+            idx++;
         }
 
         return false;
