@@ -40,11 +40,11 @@ public class No28064 {
         }
 
         for (int i = pre.length() - 1; i >=0; i--) {
-
-
-
+            if (true) {
+                return true;
+            }
         }
 
-
+        return false;
     }
 }
