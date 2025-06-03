@@ -36,7 +36,7 @@ public class No28064 {
 
     private static boolean availableToConnect(String pre, String post) {
         if (Objects.equals(pre, post)) {
-            return false;
+            return true;
         }
 
         int idx = 0;
