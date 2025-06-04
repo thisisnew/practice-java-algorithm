@@ -45,5 +45,4 @@ public class No28064 {
 
         return pre.equals(post);
     }
-
 }
