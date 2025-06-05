@@ -30,6 +30,8 @@ public class No32158 {
             }
         }
 
+        System.out.println(Arrays.toString(sCharArray));
+
         br.close();
     }
 }
