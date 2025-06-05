@@ -20,6 +20,12 @@ public class No32158 {
             }
         }
 
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'c') {
+
+            }
+        }
+
         br.close();
     }
 }
