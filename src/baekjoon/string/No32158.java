@@ -3,8 +3,7 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class No32158 {
 
@@ -12,7 +11,7 @@ public class No32158 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
 
-        List<Integer> pIndexes = new ArrayList<>();
+        Queue<Integer> pIndexes = new LinkedList<>();
 
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == 'p') {
@@ -20,9 +19,14 @@ public class No32158 {
             }
         }
 
-        for (int i = 0; i < s.length(); i++) {
+        char[] sCharArray = s.toCharArray();
+        for (int i = 0; i < sCharArray.length; i++) {
             if (s.charAt(i) == 'c') {
-
+                Integer polled = pIndexes.poll();
+                if (Objects.nonNull(polled)) {
+                    sCharArray[i] = 'p';
+                    sCharArray[polled] = 'c';
+                }
             }
         }
 
