@@ -20,24 +20,23 @@ public class No32158 {
             char c = s.charAt(i);
             chars[i] = c;
 
-            if (c == 'p') {
+            if (c == 'P') {
                 pIndexes.add(i);
             }
         }
 
         for (int i = 0; i < chars.length; i++) {
-            if (s.charAt(i) == 'c') {
+            if (s.charAt(i) == 'C') {
                 Integer polled = pIndexes.poll();
+
                 if (Objects.nonNull(polled)) {
-                    chars[i] = 'p';
-                    chars[polled] = 'c';
+                    chars[i] = 'P';
+                    chars[polled] = 'C';
                 }
             }
         }
 
         System.out.println(chars);
-        System.out.println(Arrays.toString(chars));
-
         br.close();
     }
 }
