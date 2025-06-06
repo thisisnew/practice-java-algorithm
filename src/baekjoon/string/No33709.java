@@ -14,13 +14,19 @@ public class No33709 {
 
         int n = Integer.parseInt(br.readLine());
         String s = br.readLine();
+        StringBuilder sb = new StringBuilder();
 
-        for (char c : s.toCharArray()) {
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+
             if (isNumber(c)) {
-
+                sb.append(c);
+                continue;
             }
 
+
         }
+
 
         br.close();
     }
