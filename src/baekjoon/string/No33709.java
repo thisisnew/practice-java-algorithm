@@ -16,6 +16,8 @@ public class No33709 {
         String s = br.readLine();
         StringBuilder sb = new StringBuilder();
 
+        int res = 0;
+
         for (int i = 0; i < n; i++) {
             char c = s.charAt(i);
 
@@ -24,8 +26,10 @@ public class No33709 {
                 continue;
             }
 
-
+            res += Integer.parseInt(sb.toString());
+            sb = new StringBuilder();
         }
+
 
 
         br.close();
