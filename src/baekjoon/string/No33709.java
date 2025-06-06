@@ -30,7 +30,7 @@ public class No33709 {
             sb = new StringBuilder();
         }
 
-        if (sb.length() > 0) {
+        if (!sb.isEmpty()) {
             res += Integer.parseInt(sb.toString());
         }
 
