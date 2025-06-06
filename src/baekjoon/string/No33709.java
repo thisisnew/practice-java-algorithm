@@ -15,7 +15,17 @@ public class No33709 {
         int n = Integer.parseInt(br.readLine());
         String s = br.readLine();
 
+        for (char c : s.toCharArray()) {
+            if (isNumber(c)) {
+
+            }
+
+        }
 
         br.close();
+    }
+
+    private static boolean isNumber(char c) {
+        return Character.isDigit(c);
     }
 }
