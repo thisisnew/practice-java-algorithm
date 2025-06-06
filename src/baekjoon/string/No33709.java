@@ -3,9 +3,6 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Objects;
-import java.util.Queue;
 
 public class No33709 {
 
@@ -30,7 +27,7 @@ public class No33709 {
             sb = new StringBuilder();
         }
 
-        if (!sb.isEmpty()) {
+        if (sb.length() > 0) {
             res += Integer.parseInt(sb.toString());
         }
 
