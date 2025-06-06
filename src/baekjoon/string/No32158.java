@@ -9,29 +9,34 @@ public class No32158 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+        char[] chars = new char[n];
         String s = br.readLine();
 
         Queue<Integer> pIndexes = new LinkedList<>();
 
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == 'p') {
+            char c = s.charAt(i);
+            chars[i] = c;
+
+            if (c == 'p') {
                 pIndexes.add(i);
             }
         }
 
-        char[] sCharArray = s.toCharArray();
-        for (int i = 0; i < sCharArray.length; i++) {
+        for (int i = 0; i < chars.length; i++) {
             if (s.charAt(i) == 'c') {
                 Integer polled = pIndexes.poll();
                 if (Objects.nonNull(polled)) {
-                    sCharArray[i] = 'p';
-                    sCharArray[polled] = 'c';
+                    chars[i] = 'p';
+                    chars[polled] = 'c';
                 }
             }
         }
 
-        System.out.println(sCharArray);
-        System.out.println(Arrays.toString(sCharArray));
+        System.out.println(chars);
+        System.out.println(Arrays.toString(chars));
 
         br.close();
     }
