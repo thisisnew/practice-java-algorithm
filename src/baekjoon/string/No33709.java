@@ -30,8 +30,11 @@ public class No33709 {
             sb = new StringBuilder();
         }
 
+        if (sb.length() > 0) {
+            res += Integer.parseInt(sb.toString());
+        }
 
-
+        System.out.println(res);
         br.close();
     }
 
