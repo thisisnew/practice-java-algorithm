@@ -18,7 +18,7 @@ public class No33709 {
         for (int i = 0; i < n; i++) {
             char c = s.charAt(i);
 
-            if (isNumber(c)) {
+            if (Character.isDigit(c)) {
                 sb.append(c);
                 continue;
             }
@@ -27,15 +27,11 @@ public class No33709 {
             sb = new StringBuilder();
         }
 
-        if (sb.length() > 0) {
+        if (!sb.isEmpty()) {
             res += Integer.parseInt(sb.toString());
         }
 
         System.out.println(res);
         br.close();
-    }
-
-    private static boolean isNumber(char c) {
-        return Character.isDigit(c);
     }
 }
