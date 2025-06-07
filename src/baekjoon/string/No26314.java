@@ -13,16 +13,11 @@ public class No26314 {
 
         for (int i = 0; i < n; i++) {
             String s = br.readLine();
-            int len = s.length();
-            int countedVowel = countVowel(s);
+            int vowelCnt = countVowel(s);
+            int consonantCnt = s.length() - vowelCnt;
 
             System.out.println(s);
-
-            if (countedVowel > (len - countedVowel)) {
-                System.out.println(1);
-            } else {
-                System.out.println(0);
-            }
+            System.out.println(result(vowelCnt, consonantCnt));
         }
 
         br.close();
@@ -38,5 +33,9 @@ public class No26314 {
         }
 
         return result;
+    }
+
+    private static int result(int vowelCnt, int consonantCnt) {
+        return vowelCnt > consonantCnt ? 1 : 0;
     }
 }
