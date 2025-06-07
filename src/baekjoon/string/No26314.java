@@ -13,7 +13,7 @@ public class No26314 {
 
         for (int i = 0; i < n; i++) {
             String s = br.readLine();
-            int vowelCnt = countVowel(s);
+            int vowelCnt = countVowels(s);
             int consonantCnt = s.length() - vowelCnt;
 
             System.out.println(s);
@@ -23,7 +23,7 @@ public class No26314 {
         br.close();
     }
 
-    private static int countVowel(String s) {
+    private static int countVowels(String s) {
         int result = 0;
 
         for (char c : s.toCharArray()) {
