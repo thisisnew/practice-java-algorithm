@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class No33845 {
 
@@ -16,7 +17,7 @@ public class No33845 {
 
         Set<Character> sSet = s.chars()
                 .mapToObj(c -> (char) c)
-                .collect(HashSet::new, Set::add, Set::addAll);
+                .collect(Collectors.toSet());
 
         StringBuilder sb = new StringBuilder();
 
