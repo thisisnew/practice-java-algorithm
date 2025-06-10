@@ -18,12 +18,12 @@ public class No27891 {
         map.put("KIS", "Korea International School");
         map.put("SJA", "St. Johnsbury Academy");
 
-        String answer = "";
-        boolean existsAnswer = false;
+        var answer = "";
+        var existsAnswer = false;
 
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            String customized = subString(toLowerCase(trimSpecialCharacters(entry.getValue())), 0, 10);
-            char[] chars = customized.toCharArray();
+            var customized = subString(toLowerCase(trimSpecialCharacters(entry.getValue())));
+            var chars = customized.toCharArray();
 
             for (int seq = 0; seq <= 25; seq++) {
                 if (nextChar(chars[0], seq) != s.charAt(0)) {
@@ -55,8 +55,8 @@ public class No27891 {
         return s.toLowerCase();
     }
 
-    private static String subString(String s, int start, int end) {
-        return s.substring(start, end);
+    private static String subString(String s) {
+        return s.substring(0, 10);
     }
 
     private static Character nextChar(char c, int seq) {
