@@ -9,17 +9,19 @@ import java.util.stream.Collectors;
 
 public class No27891 {
 
-    private static final Map<String, String> MAP = Map.of(
-            "NLCS", "North London Collegiate School",
-            "BHA", "Branksome Hall Asia",
-            "KIS", "Korea International School",
-            "SJA", "St. Johnsbury Academy"
-    );
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String s = br.readLine();
+
+        var map = Map.of(
+                "NLCS", "North London Collegiate School",
+                "BHA", "Branksome Hall Asia",
+                "KIS", "Korea International School",
+                "SJA", "St. Johnsbury Academy"
+        );
+
+
 
 
 
