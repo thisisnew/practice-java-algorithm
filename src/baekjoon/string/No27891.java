@@ -3,6 +3,7 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -14,12 +15,11 @@ public class No27891 {
 
         String s = br.readLine();
 
-        var map = Map.of(
-                "NLCS", "North London Collegiate School",
-                "BHA", "Branksome Hall Asia",
-                "KIS", "Korea International School",
-                "SJA", "St. Johnsbury Academy"
-        );
+        var map = new HashMap<String, String>();
+        map.put("NLCS", "North London Collegiate School");
+        map.put("BHA", "Branksome Hall Asia");
+        map.put("KIS", "Korea International School");
+        map.put("SJA", "St. Johnsbury Academy");
 
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
@@ -28,11 +28,10 @@ public class No27891 {
             String trimmedValue = trimSpecialCharacters(value);
             String lowerCaseValue = toLowerCase(trimmedValue);
             String subStringValue = subString(lowerCaseValue, 0, 10);
-
-
-
+            map.put(key, subStringValue);
         }
 
+        System.out.println(map);
 
 
         br.close();
