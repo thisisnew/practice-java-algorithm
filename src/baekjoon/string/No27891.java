@@ -31,7 +31,12 @@ public class No27891 {
             map.put(key, subStringValue);
         }
 
-        System.out.println(map);
+        for (int i = 0; i < 25; i++) {
+
+
+
+
+        }
 
 
         br.close();
