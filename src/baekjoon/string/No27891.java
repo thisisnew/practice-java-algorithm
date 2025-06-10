@@ -65,13 +65,7 @@ public class No27891 {
     }
 
     private static Character nextChar(char c, int seq) {
-        char next = (char) (c + seq);
-
-        if (next > 'z') {
-            return 'a';
-        }
-
-        return next;
+        return (char) ('a' + (c - 'a' + seq) % 26);
     }
 
     private static String nextStr(char[] chars, int seq) {
