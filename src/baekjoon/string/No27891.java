@@ -26,19 +26,15 @@ public class No27891 {
             char[] chars = customized.toCharArray();
 
             for (int seq = 0; seq <= 25; seq++) {
-                char c = chars[0];
-                char next = nextChar(c, seq);
-
-                if (next != s.charAt(0)) {
+                if (nextChar(chars[0], seq) != s.charAt(0)) {
                     continue;
                 }
 
-                String newStr = nextStr(chars, seq);
+                if (s.equals(nextStr(chars, seq))) {
+                    answer = entry.getKey();
+                    existsAnswer = true;
+                }
 
-                if (!s.equals(newStr)) break;
-
-                answer = entry.getKey();
-                existsAnswer = true;
                 break;
             }
 
