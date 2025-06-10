@@ -22,21 +22,26 @@ public class No27891 {
         map.put("SJA", "St. Johnsbury Academy");
 
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
+            String customized = subString(toLowerCase(trimSpecialCharacters(entry.getValue())), 0, 10);
+            char[] chars = customized.toCharArray();
 
-            String trimmedValue = trimSpecialCharacters(value);
-            String lowerCaseValue = toLowerCase(trimmedValue);
-            String subStringValue = subString(lowerCaseValue, 0, 10);
-            map.put(key, subStringValue);
+            for (int i = 0; i < 25; i++) {
+                char c = customized.charAt(0);
+                char next = nextChar(c);
+
+                if (next != s.charAt(0)) {
+                    continue;
+                }
+
+                for (int j = 0; j < chars.length; j++) {
+                    chars[j] = nextChar(customized.charAt(j));
+                }
+
+                System.out.println(chars);
+            }
         }
 
-        for (int i = 0; i < 25; i++) {
 
-
-
-
-        }
 
 
         br.close();
@@ -52,5 +57,15 @@ public class No27891 {
 
     private static String subString(String s, int start, int end) {
         return s.substring(start, end);
+    }
+
+    private static Character nextChar(char c) {
+        char next = (char) (c + 1);
+
+        if (next > 'z') {
+            return 'a';
+        }
+
+        return next;
     }
 }
