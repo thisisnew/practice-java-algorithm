@@ -26,21 +26,21 @@ public class No27891 {
             String customized = subString(toLowerCase(trimSpecialCharacters(entry.getValue())), 0, 10);
             char[] chars = customized.toCharArray();
 
-            for (int i = 0; i < 25; i++) {
+            for (int seq = 1; seq <= 25; seq++) {
                 char c = chars[0];
-                char next = nextChar(c, i);
+                char next = nextChar(c, seq);
 
                 if (next != s.charAt(0)) {
                     continue;
                 }
 
-                String newStr = nextStr(chars, i);
+                String newStr = nextStr(chars, seq);
 
-                if (s.equals(newStr)) {
-                    answer = entry.getKey();
-                    existsAnswer = true;
-                    break;
-                }
+                if (!s.equals(newStr)) break;
+
+                answer = entry.getKey();
+                existsAnswer = true;
+                break;
             }
 
             if (existsAnswer) {
