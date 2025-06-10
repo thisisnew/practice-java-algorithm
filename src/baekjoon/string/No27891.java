@@ -10,7 +10,6 @@ public class No27891 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         String s = br.readLine();
 
         var map = new HashMap<String, String>();
@@ -26,7 +25,7 @@ public class No27891 {
             String customized = subString(toLowerCase(trimSpecialCharacters(entry.getValue())), 0, 10);
             char[] chars = customized.toCharArray();
 
-            for (int seq = 1; seq <= 25; seq++) {
+            for (int seq = 0; seq <= 25; seq++) {
                 char c = chars[0];
                 char next = nextChar(c, seq);
 
