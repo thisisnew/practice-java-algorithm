@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class No27891 {
 
@@ -21,29 +19,36 @@ public class No27891 {
         map.put("KIS", "Korea International School");
         map.put("SJA", "St. Johnsbury Academy");
 
+        String answer = "";
+        boolean existsAnswer = false;
+
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String customized = subString(toLowerCase(trimSpecialCharacters(entry.getValue())), 0, 10);
             char[] chars = customized.toCharArray();
 
             for (int i = 0; i < 25; i++) {
-                char c = customized.charAt(0);
-                char next = nextChar(c);
+                char c = chars[0];
+                char next = nextChar(c, i);
 
                 if (next != s.charAt(0)) {
                     continue;
                 }
 
-                for (int j = 0; j < chars.length; j++) {
-                    chars[j] = nextChar(customized.charAt(j));
-                }
+                String newStr = nextStr(chars, i);
 
-                System.out.println(chars);
+                if (s.equals(newStr)) {
+                    answer = entry.getKey();
+                    existsAnswer = true;
+                    break;
+                }
+            }
+
+            if (existsAnswer) {
+                break;
             }
         }
 
-
-
-
+        System.out.println(answer);
         br.close();
     }
 
@@ -59,13 +64,21 @@ public class No27891 {
         return s.substring(start, end);
     }
 
-    private static Character nextChar(char c) {
-        char next = (char) (c + 1);
+    private static Character nextChar(char c, int seq) {
+        char next = (char) (c + seq);
 
         if (next > 'z') {
             return 'a';
         }
 
         return next;
+    }
+
+    private static String nextStr(char[] chars, int seq) {
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] = nextChar(chars[i], seq);
+        }
+
+        return new String(chars);
     }
 }
