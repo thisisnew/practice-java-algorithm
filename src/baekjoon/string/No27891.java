@@ -21,14 +21,32 @@ public class No27891 {
                 "SJA", "St. Johnsbury Academy"
         );
 
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
 
+            String trimmedValue = trimSpecialCharacters(value);
+            String lowerCaseValue = toLowerCase(trimmedValue);
+            String subStringValue = subString(lowerCaseValue, 0, 10);
+
+
+
+        }
 
 
 
         br.close();
     }
 
-    private static String trim(String s) {
-        return s.trim().replaceAll("\\s+", " ");
+    private static String trimSpecialCharacters(String s) {
+        return s.replaceAll("[\\p{Punct}\\s]", "");
+    }
+
+    private static String toLowerCase(String s) {
+        return s.toLowerCase();
+    }
+
+    private static String subString(String s, int start, int end) {
+        return s.substring(start, end);
     }
 }
