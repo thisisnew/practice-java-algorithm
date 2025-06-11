@@ -18,8 +18,7 @@ public class No27891 {
         map.put("KIS", "Korea International School");
         map.put("SJA", "St. Johnsbury Academy");
 
-        var answer = "";
-        var existsAnswer = false;
+        String answer = null;
 
         for (Map.Entry<String, String> entry : map.entrySet()) {
             var customized = subString(toLowerCase(trimSpecialCharacters(entry.getValue())));
@@ -32,13 +31,12 @@ public class No27891 {
 
                 if (s.equals(nextStr(chars, seq))) {
                     answer = entry.getKey();
-                    existsAnswer = true;
                 }
 
                 break;
             }
 
-            if (existsAnswer) {
+            if (answer != null) {
                 break;
             }
         }
