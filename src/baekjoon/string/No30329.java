@@ -10,6 +10,15 @@ public class No30329 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String s = br.readLine();
+
+        int count = 0;
+        for (int i = 0; i < s.length() - 3; i++) {
+            if (s.startsWith("kick", i)) {
+                count++;
+            }
+        }
+
+        System.out.println(count);
         br.close();
     }
 }
