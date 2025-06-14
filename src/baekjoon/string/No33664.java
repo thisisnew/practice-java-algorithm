@@ -11,9 +11,9 @@ public class No33664 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int b = Integer.parseInt(st.nextToken());
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken()); // 토카의 보유 금액
+        int n = Integer.parseInt(st.nextToken()); // 아이템의 수
+        int m = Integer.parseInt(st.nextToken()); // 구매하려는 아이템의 수
 
         br.close();
     }
