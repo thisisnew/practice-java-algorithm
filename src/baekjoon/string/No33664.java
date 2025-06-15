@@ -26,7 +26,7 @@ public class No33664 {
         long totalPrice = 0;
         for (int i = 0; i < m; i++) {
             String item = br.readLine();
-            totalPrice += items.getOrDefault(item, 0);
+            totalPrice += items.getOrDefault(item, 0L);
         }
 
         if (totalPrice <= b) {
