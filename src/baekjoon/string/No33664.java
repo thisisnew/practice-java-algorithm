@@ -23,7 +23,17 @@ public class No33664 {
             items.put(st.nextToken(), Integer.parseInt(st.nextToken()));
         }
 
+        int totalPrice = 0;
+        for (int i = 0; i < m; i++) {
+            String item = br.readLine();
+            totalPrice += items.getOrDefault(item, 0);
+        }
 
+        if (totalPrice <= b) {
+            System.out.println("acceptable");
+        } else {
+            System.out.println("unacceptable");
+        }
 
         br.close();
     }
