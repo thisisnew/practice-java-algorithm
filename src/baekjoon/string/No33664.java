@@ -13,17 +13,17 @@ public class No33664 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int b = Integer.parseInt(st.nextToken()); // 토카의 보유 금액
+        long b = Long.parseLong(st.nextToken()); // 토카의 보유 금액
         int n = Integer.parseInt(st.nextToken()); // 아이템의 수
         int m = Integer.parseInt(st.nextToken()); // 구매하려는 아이템의 수
 
-        Map<String, Integer> items = new HashMap<>();
+        Map<String, Long> items = new HashMap<>();
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
-            items.put(st.nextToken(), Integer.parseInt(st.nextToken()));
+            items.put(st.nextToken(), Long.parseLong(st.nextToken()));
         }
 
-        int totalPrice = 0;
+        long totalPrice = 0;
         for (int i = 0; i < m; i++) {
             String item = br.readLine();
             totalPrice += items.getOrDefault(item, 0);
