@@ -15,6 +15,11 @@ public class No32401 {
         int n = Integer.parseInt(br.readLine());
         String s = br.readLine();
 
+        for (int i = 0; i < n; i++) {
+
+
+        }
+
         br.close();
     }
 }
