@@ -13,7 +13,6 @@ public class No1431 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-
         String[] arr = new String[n];
 
         for (int i = 0; i < n; i++) {
