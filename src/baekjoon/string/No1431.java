@@ -3,9 +3,7 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class No1431 {
 
@@ -13,18 +11,31 @@ public class No1431 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        String[] arr = new String[n];
+        List<String> list = new ArrayList<>(n);
 
         for (int i = 0; i < n; i++) {
-            arr[i] = br.readLine();
+            list.add(br.readLine());
         }
 
-        Arrays.sort(arr);
+        list.sort(Comparator.comparing(String::length)  // 1. 길이순
+                .thenComparing(No1431::getDigitSum)     // 2. 숫자의 합
+                .thenComparing(String::compareTo));     // 3. 사전순
 
-        for (String s : arr) {
+        for (String s : list) {
             System.out.println(s);
         }
 
         br.close();
+    }
+
+    private static int getDigitSum(String s) {
+        int sum = 0;
+
+        for (char c : s.toCharArray()) {
+            if (Character.isDigit(c)) {
+                sum += c - '0';
+            }
+        }
+        return sum;
     }
 }
