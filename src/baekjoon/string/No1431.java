@@ -18,7 +18,7 @@ public class No1431 {
         }
 
         list.sort(Comparator.comparing(String::length)  // 1. 길이순
-                .thenComparing(No1431::getDigitSum)     // 2. 숫자의 합
+                .thenComparing(No1431::digitSum)        // 2. 숫자의 합
                 .thenComparing(String::compareTo));     // 3. 사전순
 
         for (String s : list) {
@@ -28,7 +28,7 @@ public class No1431 {
         br.close();
     }
 
-    private static int getDigitSum(String s) {
+    private static int digitSum(String s) {
         int sum = 0;
 
         for (char c : s.toCharArray()) {
@@ -36,6 +36,7 @@ public class No1431 {
                 sum += c - '0';
             }
         }
+
         return sum;
     }
 }
