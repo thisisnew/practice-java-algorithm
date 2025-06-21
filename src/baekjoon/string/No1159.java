@@ -3,7 +3,9 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class No1159 {
@@ -14,28 +16,26 @@ public class No1159 {
         int n = Integer.parseInt(br.readLine());
 
         Map<Character, Integer> firstNameMap = new HashMap<>();
-        int maxCount = 0;
 
         for (int i = 0; i < n; i++) {
-            String s = br.readLine();
-            char c = s.charAt(0);
-            int count = firstNameMap.getOrDefault(c, 0) + 1;
-            firstNameMap.put(s.charAt(0), count);
+            char c = br.readLine().charAt(0);
+            firstNameMap.put(c, firstNameMap.getOrDefault(c, 0) + 1);
+        }
 
-            if (count > maxCount) {
-                maxCount = count;
+        List<Character> firstNames = new ArrayList<>();
+
+        for (Map.Entry<Character, Integer> entry : firstNameMap.entrySet()) {
+            if (entry.getValue() >= 5) {
+                firstNames.add(entry.getKey());
             }
         }
 
-        if (maxCount < 5) {
+        if (firstNames.isEmpty()) {
             System.out.println("PREDAJA");
-            return;
-        }
-
-        for (Map.Entry<Character, Integer> entry : firstNameMap.entrySet()) {
-            if (entry.getValue() == maxCount) {
-                System.out.println(entry.getKey());
-                break;
+        } else {
+            firstNames.sort(Character::compareTo);
+            for (char c : firstNames) {
+                System.out.print(c);
             }
         }
 
