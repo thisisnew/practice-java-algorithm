@@ -31,7 +31,7 @@ public class No10824 {
         return a.concat(b);
     }
 
-    private static int plus(String a, String b) {
-        return Integer.parseInt(a) + Integer.parseInt(b);
+    private static long plus(String a, String b) {
+        return Long.parseLong(a) + Long.parseLong(b);
     }
 }
