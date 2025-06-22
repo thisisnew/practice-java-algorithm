@@ -19,7 +19,11 @@ public class No10824 {
             list.add(st.nextToken());
         }
 
-        System.out.println(plus(concat(list.get(0), list.get(1)), concat(list.get(2), list.get(3))));
+        String v1 = concat(list.get(0), list.get(1));
+        String v2 = concat(list.get(2), list.get(3));
+
+        System.out.println(plus(v1, v2));
+
         br.close();
     }
 
