@@ -27,7 +27,9 @@ public class No1543 {
                 continue;
             }
 
-            if (sentence.substring(idx, idx + wordLen).equals(word)) {
+            String sub = sentence.substring(idx, idx + wordLen);
+
+            if (sub.equals(word)) {
                 idx = idx + wordLen -1;
                 count++;
             }
