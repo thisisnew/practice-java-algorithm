@@ -22,16 +22,18 @@ public class No1543 {
 
         int count = 0;
         while (idx < lastIndex) {
-            if (sentence.charAt(idx) == word.charAt(0)) {
-                if (sentence.substring(idx, idx + wordLen).equals(word)) {
-                    count++;
-                    idx += idx + wordLen -1;
-                }
+            if (!sentence.charAt(idx) == word.charAt(0)) {
+                idx++;
+                continue;
             }
 
-            System.out.println(count);
+            if (sentence.substring(idx, idx + wordLen).equals(word)) {
+                idx = idx + wordLen -1;
+                count++;
+            }
         }
 
+        System.out.println(count);
         br.close();
     }
 }
