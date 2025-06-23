@@ -30,7 +30,7 @@ public class No1543 {
             String sub = sentence.substring(idx, idx + wordLen);
 
             if (sub.equals(word)) {
-                idx = idx + wordLen -1;
+                idx = idx + wordLen;
                 count++;
             }
         }
