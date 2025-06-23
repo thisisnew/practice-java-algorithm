@@ -20,11 +20,16 @@ public class No1543 {
         int lastIndex = sentence.length() - 1;
         int idx = 0;
 
+        int count = 0;
         while (idx < lastIndex) {
             if (sentence.charAt(idx) == word.charAt(0)) {
-
+                if (sentence.substring(idx, idx + wordLen).equals(word)) {
+                    count++;
+                    idx += idx + wordLen -1;
+                }
             }
 
+            System.out.println(count);
         }
 
         br.close();
