@@ -15,6 +15,18 @@ public class No1543 {
         String sentence = br.readLine();
         String word = br.readLine();
 
+        int wordLen = word.length();
+
+        int lastIndex = sentence.length() - 1;
+        int idx = 0;
+
+        while (idx < lastIndex) {
+            if (sentence.charAt(idx) == word.charAt(0)) {
+
+            }
+
+        }
+
         br.close();
     }
 }
