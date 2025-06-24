@@ -14,6 +14,7 @@ public class No1543 {
 
         String sentence = br.readLine();
         String word = br.readLine();
+        char firstChar = word.charAt(0);
 
         int wordLen = word.length();
 
@@ -22,7 +23,7 @@ public class No1543 {
 
         int count = 0;
         while (idx < lastIndex) {
-            if (sentence.charAt(idx) != word.charAt(0)) {
+            if (sentence.charAt(idx) != firstChar) {
                 idx++;
                 continue;
             }
