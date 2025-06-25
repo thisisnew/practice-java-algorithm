@@ -15,7 +15,6 @@ public class No1543 {
         String sentence = br.readLine();
         String word = br.readLine();
         char firstChar = word.charAt(0);
-
         int wordLen = word.length();
 
         int lastIndex = sentence.length() - 1;
