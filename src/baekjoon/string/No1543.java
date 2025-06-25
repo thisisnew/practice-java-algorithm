@@ -19,8 +19,8 @@ public class No1543 {
 
         int lastIndex = sentence.length() - 1;
         int idx = 0;
-
         int count = 0;
+
         while (idx < lastIndex) {
             if (sentence.charAt(idx) != firstChar) {
                 idx++;
