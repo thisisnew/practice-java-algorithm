@@ -26,7 +26,6 @@ public class No1543 {
                 idx++;
                 continue;
             }
-
             if (sentence.substring(idx, idx + wordLen).equals(word)) {
                 count++;
                 idx += wordLen;
