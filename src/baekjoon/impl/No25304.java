@@ -15,9 +15,7 @@ public class No25304 {
         int result = 0;
         for (int i = 0; i < n; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            int price =  Integer.parseInt(st.nextToken());
-            int cnt =  Integer.parseInt(st.nextToken());
-            result += price * cnt;
+            result += Integer.parseInt(st.nextToken()) * Integer.parseInt(st.nextToken());
         }
 
         if (result == x) {
@@ -26,5 +24,4 @@ public class No25304 {
             System.out.println("NO");
         }
     }
-
 }
