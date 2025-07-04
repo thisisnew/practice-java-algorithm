@@ -19,7 +19,7 @@ public class No25304 {
         }
 
         if (result == x) {
-            System.out.println("YES");
+            System.out.println("Yes");
         } else {
             System.out.println("NO");
         }
