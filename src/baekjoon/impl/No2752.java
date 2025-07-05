@@ -19,8 +19,12 @@ public class No2752 {
 
         Arrays.sort(arr);
 
-        for (long v : arr) {
-            System.out.print(v + " ");
+        for (int i = 0; i < 3; i++) {
+            System.out.print(arr[i]);
+
+            if (i < 2) {
+                System.out.print(" ");
+            }
         }
     }
 }
