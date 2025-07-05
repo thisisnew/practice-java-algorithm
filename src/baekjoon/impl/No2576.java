@@ -17,25 +17,21 @@ public class No2576 {
 
         for (int i = 0; i < 7; i++) {
             int n = Integer.parseInt(br.readLine());
-
-            if (n % 2 == 0) {
-                continue;
-            }
-
-            nums.add(n);
+            if (n % 2 != 0)
+                nums.add(n);
         }
 
         if (nums.isEmpty()) {
             System.out.println(-1);
-        } else {
-            int sum = nums.stream()
-                    .mapToInt(Integer::intValue)
-                    .sum();
-
-            System.out.println(sum);
-
-            nums.sort(Integer::compareTo);
-            System.out.println(nums.get(0));
+            return;
         }
+
+        nums.sort(Integer::compareTo);
+        int sum = nums.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+
+        System.out.println(sum);
+        System.out.println(nums.get(0));
     }
 }
