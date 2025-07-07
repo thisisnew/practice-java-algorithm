@@ -14,6 +14,6 @@ public class No5339 {
         System.out.println("============");
         System.out.println("|          |");
         System.out.println("|          |");
-        System.out.println("|          |");
+        System.out.print("|          |");
     }
 }
