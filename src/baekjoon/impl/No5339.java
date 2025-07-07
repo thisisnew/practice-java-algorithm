@@ -1,10 +1,8 @@
 package baekjoon.impl;
 
-import java.io.IOException;
-
 public class No5339 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println("     /~\\");
         System.out.println("    ( oo|");
         System.out.println("    _\\=/_");
@@ -14,6 +12,6 @@ public class No5339 {
         System.out.println("============");
         System.out.println("|          |");
         System.out.println("|          |");
-        System.out.print("|          |");
+        System.out.println("|          |");
     }
 }
