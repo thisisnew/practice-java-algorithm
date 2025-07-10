@@ -15,10 +15,15 @@ public class No25192 {
 
         int n = Integer.parseInt(br.readLine());
 
+        String lastMember = "";
         int result = 0;
         for (int i = 0; i < n; i++) {
-            if (!STR_ENTER.equals(br.readLine())) {
-                result++;
+            String input = br.readLine();
+            if (!STR_ENTER.equals(input)) {
+                if (!lastMember.equals(input)) {
+                    lastMember = input;
+                    result++;
+                }
             }
         }
 
