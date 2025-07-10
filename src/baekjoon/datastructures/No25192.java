@@ -19,11 +19,10 @@ public class No25192 {
         int result = 0;
         for (int i = 0; i < n; i++) {
             String input = br.readLine();
-            if (!STR_ENTER.equals(input)) {
-                if (!lastMember.equals(input)) {
-                    lastMember = input;
-                    result++;
-                }
+
+            if (!STR_ENTER.equals(input) && !lastMember.equals(input)) {
+                lastMember = input;
+                result++;
             }
         }
 
