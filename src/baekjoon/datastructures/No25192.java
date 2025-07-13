@@ -20,6 +20,7 @@ public class No25192 {
         Set<String> names = new HashSet<>();
         int result = 0;
         for (int i = 0; i < n; i++) {
+
             String input = br.readLine();
 
             if (STR_ENTER.equals(input)) {
