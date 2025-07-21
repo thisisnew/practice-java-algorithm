@@ -9,13 +9,24 @@ public class No2231 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
+        int result = 0;
 
-        for (int i = n-1; i >= 1; i--) {
+        for (int i = 1; i < n; i++) {
+            int sum = i;
+            int temp = i;
 
+            while (temp > 0) {
+                sum += temp % 10;
+                temp /= 10;
+            }
 
-
+            if (sum == n) {
+                result = i;
+                break;
+            }
         }
 
+        System.out.println(result);
         br.close();
     }
 }
