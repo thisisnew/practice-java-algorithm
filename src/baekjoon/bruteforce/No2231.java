@@ -13,7 +13,7 @@ public class No2231 {
 
         for (int i = 1; i < n; i++) {
             int sum = i;
-            int temp = i;
+            int temp = sum;
 
             while (temp > 0) {
                 sum += temp % 10;
