@@ -12,7 +12,9 @@ public class No1436 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        for (int i = 1; i <= n; i++) {}
+        for (int i = 1; i <= n; i++) {
+
+        }
 
         br.close();
     }
