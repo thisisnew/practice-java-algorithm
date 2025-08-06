@@ -23,6 +23,8 @@ public class No30957 {
             map.put(c, map.get(c) + 1);
         }
 
+        System.out.println(map);
+
         br.close();
     }
 
