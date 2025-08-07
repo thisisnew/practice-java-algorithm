@@ -3,8 +3,7 @@ package baekjoon.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class No30957 {
 
@@ -13,21 +12,33 @@ public class No30957 {
         int n = Integer.parseInt(br.readLine());
         String input = br.readLine();
 
-        int bCnt = 0;
-        int sCnt = 0;
-        int aCnt = 0;
+        Map<Character, Integer> countMap = new HashMap<>();
+        countMap.put('A', 0);
+        countMap.put('B', 0);
+        countMap.put('S', 0);
 
         for (int i = 0; i < n; i++) {
             char c = input.charAt(i);
-
-            switch (c) {
-                case 'A': aCnt++; break;
-                case 'B': bCnt++; break;
-                case 'S': sCnt++; break;
-                default: break;
+            if (countMap.containsKey(c)) {
+                countMap.put(c, countMap.get(c) + 1);
             }
         }
 
+        List<Character> order = Arrays.asList('B', 'S', 'A');
+
+        List<Character> sorted = new ArrayList<>(countMap.keySet());
+        sorted.sort((c1, c2) -> {
+            int countCompare = Integer.compare(countMap.get(c2), countMap.get(c1));
+            if (countCompare != 0) {
+                return countCompare;
+            } else {
+                return Integer.compare(order.indexOf(c1), order.indexOf(c2));
+            }
+        });
+
+        for (char c : sorted) {
+            System.out.println(c);
+        }
 
         br.close();
     }
