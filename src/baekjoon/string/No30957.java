@@ -18,9 +18,7 @@ public class No30957 {
 
         for (int i = 0; i < n; i++) {
             char c = input.charAt(i);
-            if (countMap.containsKey(c)) {
-                countMap.put(c, countMap.get(c) + 1);
-            }
+            countMap.put(c, countMap.get(c) + 1);
         }
 
         List<Character> order = Arrays.asList('B', 'S', 'A');
