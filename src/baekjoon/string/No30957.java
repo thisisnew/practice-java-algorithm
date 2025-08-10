@@ -28,9 +28,9 @@ public class No30957 {
             int countCompare = Integer.compare(countMap.get(c2), countMap.get(c1));
             if (countCompare != 0) {
                 return countCompare;
-            } else {
-                return Integer.compare(order.indexOf(c1), order.indexOf(c2));
             }
+
+            return Integer.compare(order.indexOf(c1), order.indexOf(c2));
         });
 
         for (char c : sorted) {
