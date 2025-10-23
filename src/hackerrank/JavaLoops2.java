@@ -17,12 +17,25 @@ public class JavaLoops2 {
             int c = Integer.parseInt(st.nextToken());
 
             for (int j = 0; j < c; j++) {
-                System.out.print(a + Math.pow(2, j) * b);
+                System.out.print(cal(a, b, j));
+
                 if (j < c - 1) {
                     System.out.print(" ");
                 }
             }
 
+            System.out.println();
         }
+    }
+
+    private static int cal(int a, int b, int c) {
+
+        int sum = 0;
+
+        for (int j = 0; j <c; j++) {
+            sum += (int) (a + Math.pow(2, j) * b);
+        }
+
+        return sum;
     }
 }
