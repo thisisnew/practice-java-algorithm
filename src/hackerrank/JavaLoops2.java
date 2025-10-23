@@ -32,10 +32,10 @@ public class JavaLoops2 {
 
         int sum = 0;
 
-        for (int j = 0; j <c; j++) {
-            sum += (int) (a + Math.pow(2, j) * b);
+        for (int j = 0; j <=c; j++) {
+            sum += (int) (Math.pow(2, j) * b);
         }
 
-        return sum;
+        return a + sum;
     }
 }
