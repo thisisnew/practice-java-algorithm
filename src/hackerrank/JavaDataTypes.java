@@ -12,34 +12,32 @@ public class JavaDataTypes {
         for (int i = 0; i < t; i++) {
             String n = br.readLine();
 
-            for (int j = 0; j < 4; j++) {
-                boolean canParseByte = canParseByte(n);
-                boolean canParseShort = canParseShort(n);
-                boolean canParseInt = canParseInt(n);
-                boolean canParseLong = canParseLong(n);
+            boolean canParseByte = canParseByte(n);
+            boolean canParseShort = canParseShort(n);
+            boolean canParseInt = canParseInt(n);
+            boolean canParseLong = canParseLong(n);
 
-                if (!canParseByte && !canParseShort && !canParseInt && !canParseLong) {
-                    System.out.printf("%s %s", n, "n can't be fitted anywhere.");
-                    continue;
-                }
+            if (!canParseByte && !canParseShort && !canParseInt && !canParseLong) {
+                System.out.printf("%s %s", n, "n can't be fitted anywhere.");
+                continue;
+            }
 
-                System.out.printf("%s %s", n, "n can be fitted in:");
+            System.out.printf("%s %s", n, "n can be fitted in:");
 
-                if (canParseByte) {
-                    System.out.println("* byte");
-                }
+            if (canParseByte) {
+                System.out.println("* byte");
+            }
 
-                if (canParseShort) {
-                    System.out.println("* short");
-                }
+            if (canParseShort) {
+                System.out.println("* short");
+            }
 
-                if (canParseInt) {
-                    System.out.println("* int");
-                }
+            if (canParseInt) {
+                System.out.println("* int");
+            }
 
-                if (canParseLong) {
-                    System.out.println("* long");
-                }
+            if (canParseLong) {
+                System.out.println("* long");
             }
         }
     }
