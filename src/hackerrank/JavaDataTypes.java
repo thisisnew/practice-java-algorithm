@@ -23,6 +23,7 @@ public class JavaDataTypes {
             }
 
             System.out.printf("%s %s", n, "n can be fitted in:");
+            System.out.println();
 
             if (canParseByte) {
                 System.out.println("* byte");
