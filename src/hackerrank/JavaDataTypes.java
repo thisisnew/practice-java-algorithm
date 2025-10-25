@@ -10,76 +10,28 @@ public class JavaDataTypes {
         int t = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < t; i++) {
-            String n = br.readLine();
+            String s = br.readLine();
 
-            boolean canParseByte = canParseByte(n);
-            boolean canParseShort = canParseShort(n);
-            boolean canParseInt = canParseInt(n);
-            boolean canParseLong = canParseLong(n);
+            try {
+                long x = Long.parseLong(s);
+                System.out.println(x+" can be fitted in:");
 
-            if (!canParseByte && !canParseShort && !canParseInt && !canParseLong) {
-                System.out.printf("%s %s", n, "n can't be fitted anywhere.");
-                continue;
-            }
+                if(x>=-128 && x<=127) {
+                    System.out.println("* byte");
+                }
 
-            System.out.printf("%s %s", n, "n can be fitted in:");
-            System.out.println();
+                if(x>=Short.MIN_VALUE && x<=Short.MAX_VALUE) {
+                    System.out.println("* short");
+                }
 
-            if (canParseByte) {
-                System.out.println("* byte");
-            }
+                if(x>=Integer.MIN_VALUE && x<=Integer.MAX_VALUE) {
+                    System.out.println("* int");
+                }
 
-            if (canParseShort) {
-                System.out.println("* short");
-            }
-
-            if (canParseInt) {
-                System.out.println("* int");
-            }
-
-            if (canParseLong) {
                 System.out.println("* long");
+            } catch(Exception e) {
+                System.out.println(s +" can't be fitted anywhere.");
             }
         }
-    }
-
-    private static boolean canParseByte(String n) {
-        try {
-            Byte.parseByte(n);
-        } catch (Exception ignored){
-            return false;
-        }
-
-        return true;
-    }
-
-    private static boolean canParseShort(String n) {
-        try {
-            Short.parseShort(n);
-        } catch (Exception ignored){
-            return false;
-        }
-
-        return true;
-    }
-
-    private static boolean canParseInt(String n) {
-        try {
-            Integer.parseInt(n);
-        } catch (Exception ignored){
-            return false;
-        }
-
-        return true;
-    }
-
-    private static boolean canParseLong(String n) {
-        try {
-            Long.parseLong(n);
-        } catch (Exception ignored){
-            return false;
-        }
-
-        return true;
     }
 }
