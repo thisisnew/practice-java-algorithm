@@ -1,13 +1,10 @@
 package hackerrank;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class JavaStaticInitializerBlock {
 
-    private static int B;
-    private static int H;
+    private static final int B;
+    private static final int H;
     private static boolean flag = true;
 
     static {
