@@ -3,6 +3,8 @@ package hackerrank;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -12,6 +14,12 @@ public class JavaCurrencyFormatter {
         var payment = Double.parseDouble(br.readLine());
         var usCurrency = NumberFormat.getCurrencyInstance(Locale.US);
         var indiaCurrency = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
+        if (indiaCurrency instanceof DecimalFormat df) {
+            DecimalFormatSymbols symbols = df.getDecimalFormatSymbols();
+            symbols.setCurrencySymbol("Rs.");
+            df.setDecimalFormatSymbols(symbols);
+        }
+
         var chinaCurrency = NumberFormat.getCurrencyInstance(Locale.CHINA);
         var frenchCurrency = NumberFormat.getCurrencyInstance(Locale.FRANCE);
 
