@@ -14,7 +14,8 @@ public class JavaCurrencyFormatter {
         var payment = Double.parseDouble(br.readLine());
         var usCurrency = NumberFormat.getCurrencyInstance(Locale.US);
         var indiaCurrency = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
-        if (indiaCurrency instanceof DecimalFormat df) {
+        if (indiaCurrency instanceof DecimalFormat) {
+            DecimalFormat df = (DecimalFormat) indiaCurrency;
             DecimalFormatSymbols symbols = df.getDecimalFormatSymbols();
             symbols.setCurrencySymbol("Rs.");
             df.setDecimalFormatSymbols(symbols);
