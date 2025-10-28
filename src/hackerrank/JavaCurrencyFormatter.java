@@ -3,35 +3,21 @@ package hackerrank;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class JavaCurrencyFormatter {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(br.readLine());
+        var payment = Double.parseDouble(br.readLine());
+        var usCurrency = NumberFormat.getCurrencyInstance(Locale.US);
+        var indiaCurrency = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
+        var chinaCurrency = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        var frenchCurrency = NumberFormat.getCurrencyInstance(Locale.FRANCE);
 
-        for (int i = 0; i < t; i++) {
-            String s = br.readLine();
-
-            try {
-                long x = Long.parseLong(s);
-                System.out.println(x+" can be fitted in:");
-
-                if(x>=-128 && x<=127) {
-                    System.out.println("* byte");
-                }
-
-                if(x>=Short.MIN_VALUE && x<=Short.MAX_VALUE) {
-                    System.out.println("* short");
-                }
-
-                if(x>=Integer.MIN_VALUE && x<=Integer.MAX_VALUE) {
-                    System.out.println("* int");
-                }
-
-                System.out.println("* long");
-            } catch(Exception e) {
-                System.out.println(s +" can't be fitted anywhere.");
-            }
-        }
+        System.out.println("US: " + usCurrency.format(payment));
+        System.out.println("India: " + indiaCurrency.format(payment));
+        System.out.println("China: " + chinaCurrency.format(payment));
+        System.out.println("France: " + frenchCurrency.format(payment));
     }
 }
