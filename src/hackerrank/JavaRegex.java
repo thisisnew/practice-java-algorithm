@@ -18,7 +18,7 @@ public class JavaRegex {
                 break;
             }
 
-            System.out.println(myRegex.isMatch(br.readLine()));
+            System.out.println(myRegex.isMatch(s));
         }
 
     }
