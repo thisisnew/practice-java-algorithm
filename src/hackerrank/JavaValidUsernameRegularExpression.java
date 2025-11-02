@@ -3,7 +3,6 @@ package hackerrank;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Objects;
 
 class UsernameValidator {
     public static final String regularExpression = "^[a-zA-Z][a-zA-Z0-9_]{7,29}$";
