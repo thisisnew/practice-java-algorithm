@@ -19,7 +19,8 @@ public class JavaValidUsernameRegularExpression {
 
         for (int i = 0; i < n; i++) {
             var username = br.readLine();
-            System.out.println(UsernameValidator.isValidUsername(username) ? "valid" : "invalid");
+            var result = UsernameValidator.isValidUsername(username) ? "valid" : "invalid";
+            System.out.println(result);
         }
     }
 }
