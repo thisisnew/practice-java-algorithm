@@ -12,12 +12,12 @@ public class LongestSubstringWithoutRepeatingCharacters {
     public static int lengthOfLongestSubstring(String s) {
         var result = 0;
 
-        for (var i = 0; i < s.length()-1; i++) {
+        for (var i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
             var set = new HashSet<Character>();
             var count = 0;
 
-            for (var j = i+1; j < s.length(); j++) {
+            for (var j = i; j < s.length(); j++) {
                 if (set.contains(c)) {
                     break;
                 }
