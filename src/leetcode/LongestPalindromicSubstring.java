@@ -24,14 +24,12 @@ public class LongestPalindromicSubstring {
                 sb.append(c);
                 var str = sb.toString();
 
-                if (!str.equals(reverse(str))) {
-                    break;
-                }
+                if (str.equals(reverse(str))) {
+                    map.put(str.length(), str);
 
-                map.put(str.length(), str);
-
-                if (str.length() > maxLength) {
-                    maxLength = str.length();
+                    if (str.length() > maxLength) {
+                        maxLength = str.length();
+                    }
                 }
             }
         }
