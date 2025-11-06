@@ -19,6 +19,10 @@ public class LongestPalindromicSubstring {
         for (var i = 0; i < len; i++) {
             var sb = new StringBuilder();
 
+            if (len - i < maxLength) {
+                break;
+            }
+
             for (var j = i; j < len; j++) {
                 var c = s.charAt(j);
                 sb.append(c);
