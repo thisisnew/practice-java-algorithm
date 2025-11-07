@@ -28,6 +28,10 @@ public class LongestPalindromicSubstring {
                 sb.append(c);
                 var str = sb.toString();
 
+                if (str.charAt(0) != str.charAt(str.length() - 1)) {
+                    continue;
+                }
+
                 if (!str.equals(reverse(str))) {
                     continue;
                 }
