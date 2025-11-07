@@ -36,7 +36,6 @@ public class LongestPalindromicSubstring {
                     maxLength = str.length();
                     map.put(str.length(), str);
                 }
-
             }
         }
 
