@@ -14,6 +14,9 @@ public class ZigzagConversion {
     }
 
     public static String convert(String s, int numRows) {
+        for (int i = 0; i < s.length(); i++) {
+
+        }
         return "";
     }
 }
