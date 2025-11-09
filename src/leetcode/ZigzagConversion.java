@@ -14,9 +14,22 @@ public class ZigzagConversion {
     }
 
     public static String convert(String s, int numRows) {
+        var zigzag = new Character[numRows][numRows];
+
         for (int i = 0; i < s.length(); i++) {
 
         }
-        return "";
+
+        var colIdx = 0;
+        var sb = new StringBuilder();
+        for (int i = 0; i < numRows; i++) {
+            sb.append(zigzag[colIdx][i]);
+
+            if (i == numRows - 1) {
+                colIdx++;
+            }
+        }
+
+        return sb.toString();
     }
 }
