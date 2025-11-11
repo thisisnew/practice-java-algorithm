@@ -3,6 +3,8 @@ package leetcode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ZigzagConversion {
     public static void main(String[] args) throws IOException {
@@ -14,22 +16,33 @@ public class ZigzagConversion {
     }
 
     public static String convert(String s, int numRows) {
-        var zigzag = new Character[numRows][numRows];
-
-        for (int i = 0; i < s.length(); i++) {
-
+        if (numRows == 1 || numRows >= s.length()) {
+            return s;
         }
 
-        var colIdx = 0;
-        var sb = new StringBuilder();
+        List<StringBuilder> rows = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
-            sb.append(zigzag[colIdx][i]);
-
-            if (i == numRows - 1) {
-                colIdx++;
-            }
+            rows.add(new StringBuilder());
         }
 
-        return sb.toString();
+        int currentRow = 0;
+        boolean goingDown = false;
+
+        for (char c : s.toCharArray()) {
+            rows.get(currentRow).append(c);
+
+            if (currentRow == 0 || currentRow == numRows - 1) {
+                goingDown = !goingDown;
+            }
+
+            currentRow += goingDown ? 1 : -1;
+        }
+
+        StringBuilder result = new StringBuilder();
+        for (StringBuilder row : rows) {
+            result.append(row);
+        }
+
+        return result.toString();
     }
 }
