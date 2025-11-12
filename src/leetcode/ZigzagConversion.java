@@ -21,14 +21,14 @@ public class ZigzagConversion {
         }
 
         List<StringBuilder> rows = new ArrayList<>();
-        for (int i = 0; i < numRows; i++) {
+        for (var i = 0; i < numRows; i++) {
             rows.add(new StringBuilder());
         }
 
-        int currentRow = 0;
-        boolean goingDown = false;
+        var currentRow = 0;
+        var goingDown = false;
 
-        for (char c : s.toCharArray()) {
+        for (var c : s.toCharArray()) {
             rows.get(currentRow).append(c);
 
             if (currentRow == 0 || currentRow == numRows - 1) {
@@ -38,8 +38,8 @@ public class ZigzagConversion {
             currentRow += goingDown ? 1 : -1;
         }
 
-        StringBuilder result = new StringBuilder();
-        for (StringBuilder row : rows) {
+        var result = new StringBuilder();
+        for (var row : rows) {
             result.append(row);
         }
 
