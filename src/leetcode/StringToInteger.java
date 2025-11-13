@@ -19,11 +19,10 @@ public class StringToInteger {
         var value = s.trim();
         var multiplier = value.charAt(0) == '-' ? -1 : 1;
 
-        var sb = new StringBuilder();
-        sb.append(0);
+        var sb = new StringBuilder().append(0);
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        for (int i = 0; i < value.length(); i++) {
+            char c = value.charAt(i);
 
             if (c < '0' || c > '9') {
                 if (i > 0) {
@@ -45,14 +44,5 @@ public class StringToInteger {
 
             return -2147483648;
         }
-    }
-
-    private static boolean isInteger(String s) {
-        try {
-            Integer.parseInt(s);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
     }
 }
