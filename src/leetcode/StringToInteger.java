@@ -27,6 +27,8 @@ public class StringToInteger {
                 if (i > 0) {
                     break;
                 }
+
+                continue;
             }
 
             sb.append(c);
