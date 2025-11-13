@@ -33,7 +33,7 @@ public class StringToInteger {
         }
 
         try {
-            return multiplier * Integer.parseInt(s);
+            return multiplier * Integer.parseInt(sb.toString());
         } catch (NumberFormatException e) {
             if (multiplier == 1) {
                 return 2147483647;
