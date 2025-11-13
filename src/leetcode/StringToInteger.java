@@ -20,27 +20,27 @@ public class StringToInteger {
         var multiplier = value.charAt(0) == '-' ? -1 : 1;
 
         var sb = new StringBuilder().append(0);
-
         for (int i = 0; i < value.length(); i++) {
-            char c = value.charAt(i);
+            var c = value.charAt(i);
 
-            if (c < '0' || c > '9') {
-                if (i > 0) {
-                    break;
-                }
-
-                if (c == '+' || c == '-') {
-                    continue;
-                }
-
-                break;
+            if (i == 0 && (c == '+' || c == '-')) {
+                continue;
             }
 
-            sb.append(c);
+            if (c >= '0' && c <= '9') {
+                sb.append(c);
+                continue;
+            }
+
+            break;
         }
 
+        return result(multiplier, sb.toString());
+    }
+
+    private static int result(int multiplier, String s) {
         try {
-            return multiplier * Integer.parseInt(sb.toString());
+            return multiplier * Integer.parseInt(s);
         } catch (NumberFormatException e) {
             if (multiplier == 1) {
                 return 2147483647;
