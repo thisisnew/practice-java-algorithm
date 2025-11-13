@@ -29,7 +29,11 @@ public class StringToInteger {
                     break;
                 }
 
-                continue;
+                if (c == '+' || c == '-') {
+                    continue;
+                }
+
+                break;
             }
 
             sb.append(c);
