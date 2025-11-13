@@ -20,6 +20,8 @@ public class StringToInteger {
         var multiplier = value.charAt(0) == '-' ? -1 : 1;
 
         var sb = new StringBuilder();
+        sb.append(0);
+
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
 
