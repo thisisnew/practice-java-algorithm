@@ -17,13 +17,14 @@ public class StringToInteger {
         }
 
         var value = s.trim();
-        var multiplier = value.charAt(0) == '-' ? -1 : 1;
+        var multiplier = 1;
 
         var sb = new StringBuilder().append(0);
         for (int i = 0; i < value.length(); i++) {
             var c = value.charAt(i);
 
             if (i == 0 && (c == '+' || c == '-')) {
+                if (c == '-') multiplier = -1;
                 continue;
             }
 
