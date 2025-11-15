@@ -27,13 +27,34 @@ public class LetterCombinationsOfPhoneNumber {
 
     private static List<String> letterCombinations(String digits) {
 
-        var list = new ArrayList<>();
+        List<List<Character>> list = new ArrayList<>();
 
         for (var c : digits.toCharArray()) {
-
-
-
+            list.add(CHARACTER_LIST_MAP.get(c));
         }
+
+        if (list.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        var result = new ArrayList<>();
+
+        for (var i = 0; i < list.get(0).size(); i++) {
+            var sb = new StringBuilder();
+            sb.append(list.get(0).get(i));
+
+            var idx = 1;
+            while(idx < digits.length()) {
+
+
+
+                idx++;
+            }
+        }
+
+
+
+
 
         return List.of();
     }
