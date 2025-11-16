@@ -37,25 +37,27 @@ public class LetterCombinationsOfPhoneNumber {
             return new ArrayList<>();
         }
 
-        var result = new ArrayList<>();
+        var result = new ArrayList<String>();
+
 
         for (var i = 0; i < list.get(0).size(); i++) {
-            var sb = new StringBuilder();
-            sb.append(list.get(0).get(i));
+            var first = list.get(0).get(i);
+            var l = new ArrayList<Character>();
 
             var idx = 1;
-            while(idx < digits.length()) {
+            while(idx < list.size()) {
+                var chars = list.get(idx);
 
+                for (var c : chars) {
 
+                }
 
                 idx++;
             }
+
+
         }
 
-
-
-
-
-        return List.of();
+        return result;
     }
 }
