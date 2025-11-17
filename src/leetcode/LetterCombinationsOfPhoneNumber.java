@@ -41,17 +41,14 @@ public class LetterCombinationsOfPhoneNumber {
 
         for (var i = 0; i < charList.get(0).size(); i++) {
             var list = new ArrayList<String>();
-            list.add(charList.get(0).get(i));
+            var f = charList.get(0).get(i);
 
             var idx = 1;
             while(idx < charList.size()) {
                 var chars = charList.get(idx);
 
                 for (var c : chars) {
-                    for (var s : list) {
-                        list.add(s + c);
-                        list.remove(s);
-                    }
+                    list.add(f + c);
                 }
 
                 idx++;
