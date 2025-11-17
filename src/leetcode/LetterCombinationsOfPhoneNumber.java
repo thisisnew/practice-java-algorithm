@@ -41,21 +41,22 @@ public class LetterCombinationsOfPhoneNumber {
 
         for (var i = 0; i < charList.get(0).size(); i++) {
             var list = new ArrayList<String>();
-            var f = charList.get(0).get(i);
+            var first = charList.get(0).get(i);
+            list.add(first);
 
-            var idx = 1;
+            var idx = i+1;
             while(idx < charList.size()) {
                 var chars = charList.get(idx);
 
                 for (var c : chars) {
-                    list.add(f + c);
+                    list.remove(first);
+                    list.add(first + c);
                 }
 
                 idx++;
-                result.addAll(list);
             }
 
-            System.out.println(result);
+            result.addAll(list);
         }
 
         return result;
