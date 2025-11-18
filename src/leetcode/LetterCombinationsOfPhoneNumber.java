@@ -39,24 +39,20 @@ public class LetterCombinationsOfPhoneNumber {
 
         var result = new ArrayList<String>();
 
-        for (var i = 0; i < charList.get(0).size(); i++) {
+        for (List<String> chars : charList) {
             var list = new ArrayList<String>();
-            var first = charList.get(0).get(i);
-            list.add(first);
 
-            var idx = i+1;
-            while(idx < charList.size()) {
-                var chars = charList.get(idx);
-
-                for (var c : chars) {
-                    list.remove(first);
-                    list.add(first + c);
+            for (var c : chars) {
+                if (result.isEmpty()) {
+                    list.add(c);
+                } else {
+                    for (var s : result) {
+                        list.add(s + c);
+                    }
                 }
-
-                idx++;
             }
 
-            result.addAll(list);
+            result = list;
         }
 
         return result;
