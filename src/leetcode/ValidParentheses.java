@@ -14,27 +14,25 @@ public class ValidParentheses {
     private static boolean isValid(String s) {
         var stack = new Stack<Character>();
         var len = s.length();
-        var half = len/2;
 
         if (len % 2 != 0) {
             return false;
         }
 
-        for (int i = 0; i < s.length(); i++) {
+        stack.push(s.charAt(0));
+
+        for (int i = 1; i < s.length(); i++) {
             var c = s.charAt(i);
 
-            if (i < half) {
+            if (stack.isEmpty() || c != getOpposite(stack.peek())) {
                 stack.push(c);
                 continue;
             }
 
-            var pop = stack.pop();
-            if (c != getOpposite(pop)) {
-                return false;
-            }
+            stack.pop();
         }
 
-        return true;
+        return stack.isEmpty();
     }
 
     private static Character getOpposite(char c) {
