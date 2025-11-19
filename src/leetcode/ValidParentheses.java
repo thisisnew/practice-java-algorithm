@@ -14,12 +14,16 @@ public class ValidParentheses {
     private static boolean isValid(String s) {
         var stack = new Stack<Character>();
 
-        for (int i = 1; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
 
             if (c == '{' || c == '[' || c == '(') {
                 stack.push(c);
                 continue;
+            }
+
+            if (stack.isEmpty()) {
+                return false;
             }
 
             var pop = stack.pop();
