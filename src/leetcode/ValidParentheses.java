@@ -13,49 +13,30 @@ public class ValidParentheses {
 
     private static boolean isValid(String s) {
         var stack = new Stack<Character>();
-        var len = s.length();
-
-        if (len % 2 != 0) {
-            return false;
-        }
-
-        stack.push(s.charAt(0));
 
         for (int i = 1; i < s.length(); i++) {
             var c = s.charAt(i);
 
-            if (stack.isEmpty() || c != getOpposite(stack.peek())) {
+            if (c == '{' || c == '[' || c == '(') {
                 stack.push(c);
                 continue;
             }
 
-            stack.pop();
+            var pop = stack.pop();
+
+            if (c == '}' && pop != '{') {
+                break;
+            }
+
+            if (c == ']' && pop != '[') {
+                break;
+            }
+
+            if (c == ')' && pop != '(') {
+                break;
+            }
         }
 
         return stack.isEmpty();
-    }
-
-    private static Character getOpposite(char c) {
-        if (c == '(') {
-            return ')';
-        }
-
-        if (c == ')') {
-            return '(';
-        }
-
-        if (c == '[') {
-            return ']';
-        }
-
-        if (c == ']') {
-            return '[';
-        }
-
-        if (c == '{') {
-            return '}';
-        }
-
-        return '{';
     }
 }
