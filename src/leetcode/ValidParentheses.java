@@ -29,15 +29,15 @@ public class ValidParentheses {
             var pop = stack.pop();
 
             if (c == '}' && pop != '{') {
-                break;
+                return false;
             }
 
             if (c == ']' && pop != '[') {
-                break;
+                return false;
             }
 
             if (c == ')' && pop != '(') {
-                break;
+                return false;
             }
         }
 
