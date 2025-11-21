@@ -1,0 +1,17 @@
+package leetcode;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+
+public class GenerateParentheses {
+    public static void main(String[] args) throws IOException {
+        var br =  new BufferedReader(new InputStreamReader(System.in));
+        System.out.println(generateParenthesis(Integer.parseInt(br.readLine())));
+    }
+
+    private static List<String> generateParenthesis(int n) {
+        return List.of();
+    }
+}
