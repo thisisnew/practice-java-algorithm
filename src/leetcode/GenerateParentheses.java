@@ -3,6 +3,7 @@ package leetcode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GenerateParentheses {
@@ -12,6 +13,13 @@ public class GenerateParentheses {
     }
 
     private static List<String> generateParenthesis(int n) {
-        return List.of();
+
+        var result = new ArrayList<String>();
+
+        for (int i = 0; i < n; i++) {
+
+        }
+
+        return result;
     }
 }
