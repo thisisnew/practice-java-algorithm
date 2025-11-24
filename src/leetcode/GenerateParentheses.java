@@ -22,4 +22,16 @@ public class GenerateParentheses {
 
         return result;
     }
+
+    private static String create(int n, int idx) {
+        var sb = new StringBuilder();
+
+        for (int i = 0; i < n; i++) {
+
+
+
+        }
+
+        return sb.toString();
+    }
 }
