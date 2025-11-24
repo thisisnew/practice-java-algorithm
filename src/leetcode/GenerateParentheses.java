@@ -27,9 +27,12 @@ public class GenerateParentheses {
         var sb = new StringBuilder();
 
         for (int i = 0; i < n; i++) {
+            if (i == n/2) {
+                sb.append(")");
+                continue;
+            }
 
-
-
+            sb.append('(');
         }
 
         return sb.toString();
