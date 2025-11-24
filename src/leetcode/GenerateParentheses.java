@@ -17,7 +17,7 @@ public class GenerateParentheses {
         var result = new ArrayList<String>();
 
         for (int i = 0; i < n; i++) {
-
+            result.add(create(n, 0));
         }
 
         return result;
