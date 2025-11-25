@@ -26,14 +26,16 @@ public class GenerateParentheses {
 
     private static String create(int n, int idx) {
         var sb = new StringBuilder();
+        var cnt = 1;
 
         for (int i = 0; i < n; i++) {
-            if (i == n/2) {
+            if (cnt == 3 || i == idx) {
                 sb.append(")");
                 continue;
             }
 
             sb.append('(');
+            cnt++;
         }
 
         return sb.toString();
