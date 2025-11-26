@@ -29,12 +29,8 @@ public class GenerateParentheses {
         var cnt = 1;
 
         for (int i = 0; i < n; i++) {
-            if (cnt == 3 || i == idx) {
-                sb.append(")");
-                continue;
-            }
-
             sb.append('(');
+            sb.append(")");
             cnt++;
         }
 
