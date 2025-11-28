@@ -29,8 +29,7 @@ public class GenerateParentheses {
         var cnt = 1;
 
         for (int i = 0; i < n; i++) {
-            sb.append('(');
-            sb.append(")");
+            // todo 로직 고민
             cnt++;
         }
 
