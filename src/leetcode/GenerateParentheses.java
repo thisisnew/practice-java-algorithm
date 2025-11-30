@@ -13,26 +13,34 @@ public class GenerateParentheses {
     }
 
     private static List<String> generateParenthesis(int n) {
-
-        var result = new ArrayList<String>();
-
-        for (int i = 0; i < n; i++) {
-            var s = create(n, i);
-            result.add(s);
-        }
-
+        List<String> result = new ArrayList<>();
+        backtrack(result, new StringBuilder(), 0, 0, n);
         return result;
     }
 
-    private static String create(int n, int idx) {
-        var sb = new StringBuilder();
-        var cnt = 1;
-
-        for (int i = 0; i < n; i++) {
-            // todo 로직 고민
-            cnt++;
+    private static void backtrack(List<String> result,
+                           StringBuilder current,
+                           int open,
+                           int close,
+                           int n) {
+        // 길이가 2 * n이면 하나의 조합 완성
+        if (current.length() == 2 * n) {
+            result.add(current.toString());
+            return;
         }
 
-        return sb.toString();
+        // 여는 괄호 더 쓸 수 있으면 추가
+        if (open < n) {
+            current.append('(');
+            backtrack(result, current, open + 1, close, n);
+            current.deleteCharAt(current.length() - 1); // 되돌리기
+        }
+
+        // 닫는 괄호는 항상 open보다 적을 때만
+        if (close < open) {
+            current.append(')');
+            backtrack(result, current, open, close + 1, n);
+            current.deleteCharAt(current.length() - 1); // 되돌리기
+        }
     }
 }
