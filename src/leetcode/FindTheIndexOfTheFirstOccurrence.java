@@ -29,7 +29,12 @@ public class FindTheIndexOfTheFirstOccurrence {
         }
 
         for (int i = 0; i < haystack.length(); i += needle.length()) {
-            
+            var substring = haystack.substring(i, i + needle.length());
+
+            if (substring.equals(needle)) {
+                System.out.println(i);
+                break;
+            }
         }
         
         return 0;
