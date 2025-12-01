@@ -29,13 +29,9 @@ public class FindTheIndexOfTheFirstOccurrence {
         }
 
         for (int i = 0; i < haystack.length(); i += needle.length()) {
-            var substring = haystack.substring(i, i + needle.length());
-
-            if (substring.equals(needle)) {
-                return i;
-            }
+            if (haystack.startsWith(needle, i)) return i;
         }
         
-        return 0;
+        return -1;
     }
 }
