@@ -32,8 +32,7 @@ public class FindTheIndexOfTheFirstOccurrence {
             var substring = haystack.substring(i, i + needle.length());
 
             if (substring.equals(needle)) {
-                System.out.println(i);
-                break;
+                return i;
             }
         }
         
