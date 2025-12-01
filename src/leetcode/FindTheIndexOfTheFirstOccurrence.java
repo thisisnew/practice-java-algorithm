@@ -28,7 +28,7 @@ public class FindTheIndexOfTheFirstOccurrence {
             return -1;
         }
 
-        for (int i = 0; i < haystack.length(); i += needle.length()) {
+        for (int i = 0; i < haystack.length(); i ++) {
             if (haystack.startsWith(needle, i)) return i;
         }
         
