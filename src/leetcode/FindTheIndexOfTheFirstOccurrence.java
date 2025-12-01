@@ -19,7 +19,7 @@ public class FindTheIndexOfTheFirstOccurrence {
         String haystack = arr[0];
         String needle = arr[1];
 
-        System.out.println(strStr("" ,""));
+        System.out.println(strStr(haystack ,needle));
     }
 
     private static int strStr(String haystack, String needle) {
