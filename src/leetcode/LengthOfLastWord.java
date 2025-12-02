@@ -11,6 +11,8 @@ public class LengthOfLastWord {
     }
 
     private static int lengthOfLastWord(String s) {
-        return 0;
+        var split = s.split(" ");
+        var last = split[split.length - 1];
+        return last.length();
     }
 }
