@@ -23,15 +23,18 @@ public class WordPattern {
 
         for (int i = 0; i < pattern.length(); i++) {
             var c = pattern.charAt(i);
+            var sp = split[i];
 
             var value = map.get(c);
 
             if (Objects.isNull(value)) {
-                map.put(c, split[i]);
+                map.put(c, sp);
                 continue;
             }
 
-
+            if (!value.equals(sp)) {
+                return false;
+            }
         }
 
         return true;
