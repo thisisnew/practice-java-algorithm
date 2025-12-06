@@ -29,6 +29,9 @@ public class WordPattern {
 
             if (Objects.isNull(value)) {
                 keyMap.put(c, sp);
+            }
+
+            if (Objects.isNull(key)) {
                 valueMap.put(sp, c);
             }
 
