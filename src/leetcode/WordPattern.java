@@ -35,11 +35,11 @@ public class WordPattern {
                 valueMap.put(sp, c);
             }
 
-            if (!value.equals(sp)) {
+            if (Objects.nonNull(value) && !Objects.equals(value, sp)) {
                 return false;
             }
 
-            if (!key.equals(c)) {
+            if (Objects.nonNull(key) && !Objects.equals(key, c)) {
                 return false;
             }
         }
