@@ -18,13 +18,11 @@ public class WordPattern {
     private static boolean wordPattern(String pattern, String s) {
 
         var split = s.split(" ");
-
         var map = new HashMap<Character, String>();
 
         for (int i = 0; i < pattern.length(); i++) {
             var c = pattern.charAt(i);
             var sp = split[i];
-
             var value = map.get(c);
 
             if (Objects.isNull(value)) {
