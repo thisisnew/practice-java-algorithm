@@ -18,19 +18,25 @@ public class WordPattern {
     private static boolean wordPattern(String pattern, String s) {
 
         var split = s.split(" ");
-        var map = new HashMap<Character, String>();
+        var keyMap = new HashMap<Character, String>();
+        var valueMap = new HashMap<String, Character>();
 
         for (int i = 0; i < pattern.length(); i++) {
             var c = pattern.charAt(i);
             var sp = split[i];
-            var value = map.get(c);
+            var value = keyMap.get(c);
+            var key = valueMap.get(sp);
 
             if (Objects.isNull(value)) {
-                map.put(c, sp);
-                continue;
+                keyMap.put(c, sp);
+                valueMap.put(sp, c);
             }
 
             if (!value.equals(sp)) {
+                return false;
+            }
+
+            if (!key.equals(c)) {
                 return false;
             }
         }
