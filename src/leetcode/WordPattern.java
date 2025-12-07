@@ -18,6 +18,11 @@ public class WordPattern {
     private static boolean wordPattern(String pattern, String s) {
 
         var split = s.split(" ");
+
+        if (pattern.length() != split.length) {
+            return false;
+        }
+
         var keyMap = new HashMap<Character, String>();
         var valueMap = new HashMap<String, Character>();
 
