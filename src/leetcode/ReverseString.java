@@ -16,14 +16,18 @@ public class ReverseString {
 
     private static void reverseString(char[] s) {
 
-        char[] result = new char[s.length];
+        int left = 0;
+        int right = s.length - 1;
 
-        var index = 0;
-        for (int i = s.length-1; i >= 0 ; i--) {
-            result[index] = s[i];
-            index++;
+        while (left < right) {
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+
+            left++;
+            right--;
         }
 
-        System.out.println(Arrays.toString(result));
+        System.out.println(Arrays.toString(s));
     }
 }
