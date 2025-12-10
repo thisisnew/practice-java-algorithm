@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.Stack;
 
 public class ReverseVowelsOfAString {
 
@@ -15,21 +16,39 @@ public class ReverseVowelsOfAString {
 
     private static String reverseVowels(String s) {
 
-        var map = new HashMap<Character, Integer>();
+        var map = new HashMap<Integer, Character>();
+        var indexes = new Stack<Integer>();
 
         for (int i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
 
             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
-                map.put(c, i);
+                map.put(i, c);
+                indexes.push(i);
             }
+        }
+
+        if (indexes.isEmpty()) {
+            return s;
         }
 
         var sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
+            var c = s.charAt(i);
 
+            if (!isVowel(c)) {
+                sb.append(c);
+                continue;
+            }
+
+            var idx = indexes.pop();
+            sb.append(map.get(idx));
         }
 
         return sb.toString();
+    }
+
+    private static boolean isVowel(char c) {
+        return  c == 'a' || c == 'e' || c == 'i' || c == 'o'
     }
 }
