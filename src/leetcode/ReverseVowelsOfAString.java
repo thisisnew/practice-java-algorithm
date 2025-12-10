@@ -49,6 +49,6 @@ public class ReverseVowelsOfAString {
     }
 
     private static boolean isVowel(char c) {
-        return  c == 'a' || c == 'e' || c == 'i' || c == 'o'
+        return  c == 'a' || c == 'e' || c == 'i' || c == 'o';
     }
 }
