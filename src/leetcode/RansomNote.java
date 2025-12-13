@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class RansomNote {
     public static void main(String[] args) throws IOException {
@@ -16,13 +17,23 @@ public class RansomNote {
 
     private static boolean canConstruct(String ransomNote, String magazine) {
 
+        var magazineMap = map(magazine);
 
+        for (var c : ransomNote.toCharArray()) {
+            var count = magazineMap.get(c);
+
+            if (Objects.isNull(count) || count == 0) {
+                return false;
+            }
+
+            magazineMap.put(c, --count);
+        }
 
 
         return magazine.contains(ransomNote);
     }
 
-    private Map<Character, Integer> map(String s) {
+    private static Map<Character, Integer> map(String s) {
         var map = new HashMap<Character, Integer>();
 
         for (var c : s.toCharArray()) {
