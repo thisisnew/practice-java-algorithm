@@ -13,6 +13,6 @@ public class RansomNote {
     }
 
     private static boolean canConstruct(String ransomNote, String magazine) {
-        return false;
+        return magazine.contains(ransomNote);
     }
 }
