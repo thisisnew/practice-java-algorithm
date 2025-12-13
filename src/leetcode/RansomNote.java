@@ -29,7 +29,7 @@ public class RansomNote {
             magazineMap.put(c, --count);
         }
 
-        return magazine.contains(ransomNote);
+        return true;
     }
 
     private static Map<Character, Integer> map(String s) {
