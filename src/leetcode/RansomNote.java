@@ -29,7 +29,6 @@ public class RansomNote {
             magazineMap.put(c, --count);
         }
 
-
         return magazine.contains(ransomNote);
     }
 
