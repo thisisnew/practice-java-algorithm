@@ -18,13 +18,12 @@ public class FirstUniqueCharacter {
 
         for (var i=0; i<chars.length; i++) {
             var c = chars[i];
-
-            if (map.containsKey(c)) {
-                return map.get(c);
-            }
-
-            map.put(c, i);
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
+
+//        map.forEach((k, v) -> {
+//
+//        });
 
         return -1;
     }
