@@ -3,7 +3,9 @@ package leetcode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FirstUniqueCharacter {
@@ -14,16 +16,20 @@ public class FirstUniqueCharacter {
 
     private static int firstUniqChar(String s) {
         Map<Character, Integer> map = new HashMap<>();
-        var chars = s.toCharArray();
+        List<Character> list = new ArrayList<>();
 
-        for (var i=0; i<chars.length; i++) {
-            var c = chars[i];
+        for (char c : s.toCharArray()) {
+            list.add(c);
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-//        map.forEach((k, v) -> {
-//
-//        });
+        for (int i = 0; i < list.size(); i++) {
+            var c = list.get(i);
+
+            if (map.get(c) == 1) {
+                return i;
+            }
+        }
 
         return -1;
     }
