@@ -13,9 +13,7 @@ public class FirstUniqueCharacter {
     }
 
     private static int firstUniqChar(String s) {
-
         Map<Character, Integer> map = new HashMap<>();
-
         var chars = s.toCharArray();
 
         for (var i=0; i<chars.length; i++) {
