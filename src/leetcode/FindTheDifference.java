@@ -15,12 +15,19 @@ public class FindTheDifference {
     }
 
     private static char findTheDifference(String s, String t) {
+        Set<Character> sSet = createSet(s.toCharArray());
+        Set<Character> tSet = createSet(t.toCharArray());
 
+        for (char c : tSet) {
+            if (!sSet.contains(c)) {
+                return c;
+            }
+        }
 
-
+        throw new IllegalArgumentException("Invalid input");
     }
 
-    private static Set<Character> set(char[] chars) {
+    private static Set<Character> createSet(char[] chars) {
 
         var set = new HashSet<Character>();
 
