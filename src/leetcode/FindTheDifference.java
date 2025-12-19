@@ -28,7 +28,6 @@ public class FindTheDifference {
     }
 
     private static Set<Character> createSet(char[] chars) {
-
         var set = new HashSet<Character>();
 
         for (char aChar : chars) {
