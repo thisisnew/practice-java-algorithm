@@ -3,8 +3,7 @@ package leetcode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class FindTheDifference {
     public static void main(String[] args) throws IOException {
@@ -15,16 +14,35 @@ public class FindTheDifference {
     }
 
     private static char findTheDifference(String s, String t) {
-        Set<Character> sSet = createSet(s.toCharArray());
-        Set<Character> tSet = createSet(t.toCharArray());
+        var sMap = createMap(s.toCharArray());
+        var tMap = createMap(t.toCharArray());
 
-        for (char c : tSet) {
-            if (!sSet.contains(c)) {
-                return c;
+        Character result = null;
+
+        for (var entry : sMap.entrySet()) {
+            var sKey = entry.getKey();
+            var sValue = entry.getValue();
+
+            var tValue = tMap.get(sKey);
+
+            if (!Objects.equals(sValue, tValue)) {
+                result =  sKey;
+                break;
             }
         }
 
-        throw new IllegalArgumentException("Invalid input");
+        return result;
+    }
+
+    private static Map<Character, Integer> createMap(char[] chars) {
+
+        var map = new HashMap<Character, Integer>();
+
+        for (char aChar : chars) {
+            map.put(aChar, map.getOrDefault(aChar, 0) + 1);
+        }
+
+        return map;
     }
 
     private static Set<Character> createSet(char[] chars) {
