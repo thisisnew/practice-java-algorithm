@@ -19,14 +19,19 @@ public class FindTheDifference {
 
         Character result = null;
 
-        for (var entry : sMap.entrySet()) {
-            var sKey = entry.getKey();
-            var sValue = entry.getValue();
+        for (var entry : tMap.entrySet()) {
+            var tKey = entry.getKey();
+            var tValue = entry.getValue();
 
-            var tValue = tMap.get(sKey);
+            var sValue = sMap.get(tKey);
+
+            if (Objects.isNull(sValue)) {
+                result = tKey;
+                break;
+            }
 
             if (!Objects.equals(sValue, tValue)) {
-                result =  sKey;
+                result =  tKey;
                 break;
             }
         }
