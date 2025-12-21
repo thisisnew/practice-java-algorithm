@@ -14,6 +14,21 @@ public class IsSubsequence {
     }
 
     private static boolean isSubsequence(String s, String t) {
+
+        var sCharArray = s.toCharArray();
+        var lastIndex = sCharArray.length - 1;
+        var idx = 0;
+
+        for (var c : t.toCharArray()) {
+            if (c == sCharArray[idx]) {
+                idx++;
+
+                if (idx > lastIndex) {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 }
