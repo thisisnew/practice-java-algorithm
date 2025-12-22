@@ -22,10 +22,7 @@ public class IsSubsequence {
         for (var c : t.toCharArray()) {
             if (c == sCharArray[idx]) {
                 idx++;
-
-                if (idx > lastIndex) {
-                    return true;
-                }
+                if (idx > lastIndex) return true;
             }
         }
 
