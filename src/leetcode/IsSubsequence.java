@@ -19,6 +19,10 @@ public class IsSubsequence {
         var lastIndex = sCharArray.length - 1;
         var idx = 0;
 
+        if (sCharArray.length == 0) {
+            return false;
+        }
+
         for (var c : t.toCharArray()) {
             if (c == sCharArray[idx]) {
                 idx++;
