@@ -14,14 +14,12 @@ public class IsSubsequence {
     }
 
     private static boolean isSubsequence(String s, String t) {
+        if (s.isEmpty()) return false;
+        if (t.isEmpty()) return false;
 
         var sCharArray = s.toCharArray();
         var lastIndex = sCharArray.length - 1;
         var idx = 0;
-
-        if (sCharArray.length == 0) {
-            return false;
-        }
 
         for (var c : t.toCharArray()) {
             if (c == sCharArray[idx]) {
