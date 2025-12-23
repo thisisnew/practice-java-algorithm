@@ -14,7 +14,7 @@ public class IsSubsequence {
     }
 
     private static boolean isSubsequence(String s, String t) {
-        if (s.isEmpty()) return false;
+        if (s.isEmpty()) return true;
         if (t.isEmpty()) return false;
 
         var sCharArray = s.toCharArray();
