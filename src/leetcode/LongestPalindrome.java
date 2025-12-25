@@ -22,7 +22,7 @@ public class LongestPalindrome {
         }
 
         for (var cnt : numMap.values()) {
-            if (cnt != 0 && cnt > maxOddNum) {
+            if (cnt % 2 != 0 && cnt > maxOddNum) {
                 maxOddNum = cnt;
                 continue;
             }
