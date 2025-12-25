@@ -15,22 +15,19 @@ public class LongestPalindrome {
 
         var numMap = new HashMap<Character, Integer>();
         var maxOddNum = 0;
+        var result = 0;
 
         for (var c : s.toCharArray()) {
             numMap.put(c, numMap.getOrDefault(c, 0) + 1);
         }
 
-        var result = 0;
-
         for (var cnt : numMap.values()) {
-            if (cnt == 0) {
-                result += cnt;
+            if (cnt != 0 && cnt > maxOddNum) {
+                maxOddNum = cnt;
                 continue;
             }
 
-            if (maxOddNum <= cnt) {
-                maxOddNum = cnt;
-            }
+            result += cnt;
         }
 
         return result + maxOddNum;
