@@ -16,6 +16,7 @@ public class LongestPalindrome {
         var numMap = new HashMap<Character, Integer>();
         var maxOddNum = 0;
         var result = 0;
+        var add = false;
 
         for (var c : s.toCharArray()) {
             numMap.put(c, numMap.getOrDefault(c, 0) + 1);
