@@ -26,6 +26,7 @@ public class LongestPalindrome {
             if (cnt % 2 != 0) {
                 if (cnt > maxOddNum) {
                     maxOddNum = cnt;
+                    add = true;
                 }
 
                 continue;
