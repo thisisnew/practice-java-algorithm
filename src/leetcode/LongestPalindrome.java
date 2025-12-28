@@ -43,7 +43,7 @@ public class LongestPalindrome {
         var result = oddNums.get(0);
 
         for (int i = 1; i < oddNums.size(); i++) {
-            result += oddNums.get(i);
+            result += oddNums.get(i) - 1;
         }
 
         return result;
