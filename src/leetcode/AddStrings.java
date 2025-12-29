@@ -13,6 +13,8 @@ public class AddStrings {
     }
 
     private static String addStrings(String num1, String num2) {
-        return "";
+        var sum = Long.parseLong(num1) + Long.parseLong(num2);
+
+        return String.valueOf(sum);
     }
 }
