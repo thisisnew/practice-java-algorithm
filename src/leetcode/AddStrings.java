@@ -13,7 +13,7 @@ public class AddStrings {
     }
 
     private static String addStrings(String num1, String num2) {
-        var sum = Long.parseLong(num1) + Long.parseLong(num2);
+        var sum = Double.parseDouble(num1) + Double.parseDouble(num2);
         return String.valueOf(sum);
     }
 }
