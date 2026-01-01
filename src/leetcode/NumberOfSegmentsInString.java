@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class NumberOfSegmentsInString {
     public static void main(String[] args) throws IOException {
@@ -13,20 +14,12 @@ public class NumberOfSegmentsInString {
 
     private static int countSegments(String s) {
         var list = new ArrayList<String>();
-        var sb = new StringBuilder();
 
-        for (var i=0; i<s.length();i++) {
-            var c = s.charAt(i);
+        var split = s.split(" ");
 
-            if (c == ' ') {
-                list.add(sb.toString());
-                continue;
-            }
-
-            sb.append(c);
-
-            if (i == s.length()-1) {
-                list.add(sb.toString());
+        for (var sp : split) {
+            if (Objects.nonNull(sp) && !sp.isBlank()) {
+                list.add(sp);
             }
         }
 
