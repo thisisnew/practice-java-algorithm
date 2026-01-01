@@ -11,6 +11,14 @@ public class NumberOfSegmentsInString {
     }
 
     private static int countSegments(String s) {
-        return 0;
+        var count = 0;
+
+        for (var c : s.toCharArray()) {
+            if (c == ' ') {
+                count++;
+            }
+        }
+
+        return count;
     }
 }
