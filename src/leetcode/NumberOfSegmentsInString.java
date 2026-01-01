@@ -13,17 +13,21 @@ public class NumberOfSegmentsInString {
 
     private static int countSegments(String s) {
         var list = new ArrayList<String>();
-
         var sb = new StringBuilder();
+
         for (var i=0; i<s.length();i++) {
             var c = s.charAt(i);
 
-            if (i < s.length()-1 && c != ' ') {
-                sb.append(c);
+            if (c == ' ') {
+                list.add(sb.toString());
                 continue;
             }
 
-            list.add(sb.toString());
+            sb.append(c);
+
+            if (i == s.length()-1) {
+                list.add(sb.toString());
+            }
         }
 
         return list.size();
