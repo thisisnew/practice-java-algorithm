@@ -11,6 +11,27 @@ public class RepeatedSubstringPattern {
     }
 
     private static boolean repeatedSubstringPattern(String s) {
+        if (s.length() == 1) {
+            return true;
+        }
+
+        var half = s.length() / 2 - 1;
+
+        for  (int i = 1; i <= half; i++) {
+
+        }
+
         return true;
+    }
+
+    private boolean isRepeat(String whole, String part) {
+        int len = part.length();
+
+        for (int i = 0; i < whole.length(); i+=len) {
+
+
+
+        }
+
     }
 }
