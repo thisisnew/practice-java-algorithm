@@ -18,13 +18,19 @@ public class RepeatedSubstringPattern {
         var half = s.length()/2;
 
         for  (int i = 1; i < half; i++) {
+            var part = s.substring(0, i);
 
+            if (!isRepeat(s, part)) {
+                continue;
+            }
+
+            break;
         }
 
         return true;
     }
 
-    private boolean isRepeat(String whole, String part) {
+    private static boolean isRepeat(String whole, String part) {
         int len = part.length();
 
         for (int i = len; i < whole.length(); i+=len) {
