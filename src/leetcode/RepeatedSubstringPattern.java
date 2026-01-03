@@ -21,6 +21,10 @@ public class RepeatedSubstringPattern {
             var part = s.substring(0, i);
 
             if (!isRepeat(s, part)) {
+                if (i == half-1) {
+                    return false;
+                }
+
                 continue;
             }
 
