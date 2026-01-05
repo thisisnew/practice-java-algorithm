@@ -15,24 +15,15 @@ public class RepeatedSubstringPattern {
             return true;
         }
 
-        var len = s.length();
-        var lastIdx = len - 1;
-
         for  (int i = 1; i < s.length(); i++) {
             var part = s.substring(0, i);
 
-            if (!isRepeat(s, part)) {
-                if (i == lastIdx) {
-                    return false;
-                }
-
-                continue;
+            if (isRepeat(s, part)) {
+                return true;
             }
-
-            break;
         }
 
-        return true;
+        return false;
     }
 
     private static boolean isRepeat(String whole, String part) {
@@ -49,9 +40,6 @@ public class RepeatedSubstringPattern {
         }
 
         var n = wholeLen / partLen;
-        var sb = new StringBuilder();
-        sb.append(part.repeat(n));
-
-        return sb.toString().equals(whole);
+        return part.repeat(n).equals(whole);
     }
 }
