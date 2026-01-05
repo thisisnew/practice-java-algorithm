@@ -40,6 +40,10 @@ public class RepeatedSubstringPattern {
         var wholeLen = whole.length();
         var partLen = part.length();
 
+        if (wholeLen / 2 < partLen) {
+            return false;
+        }
+
         if (wholeLen % partLen != 0) {
             return false;
         }
