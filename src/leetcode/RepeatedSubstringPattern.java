@@ -36,18 +36,18 @@ public class RepeatedSubstringPattern {
     }
 
     private static boolean isRepeat(String whole, String part) {
-        if (part.length() > whole.length()/2) {
-            return false;
-        }
+        var result = false;
 
         for (var i = part.length(); i < whole.length(); i+=part.length()) {
-            if (part.equals(whole.substring(i, i + part.length()))) {
-                continue;
+            if (!part.equals(whole.substring(i, i + part.length()))) {
+                return result;
             }
 
-            return false;
+            if (i + part.length() == whole.length() -1) {
+                result = true;
+            }
         }
 
-        return true;
+        return result;
     }
 }
