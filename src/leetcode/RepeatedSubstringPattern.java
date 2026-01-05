@@ -14,10 +14,6 @@ public class RepeatedSubstringPattern {
         for  (int i = 1; i < s.length(); i++) {
             var part = s.substring(0, i);
 
-            if (part.length() > s.length() / 2) {
-                return false;
-            }
-
             if (isRepeat(s, part)) {
                 return true;
             }
@@ -27,15 +23,9 @@ public class RepeatedSubstringPattern {
     }
 
     private static boolean isRepeat(String whole, String part) {
+        if (whole.equals(part)) return true;
 
-        var wholeLen = whole.length();
-        var partLen = part.length();
-
-        if (wholeLen % partLen != 0) {
-            return false;
-        }
-
-        var n = wholeLen / partLen;
+        var n = whole.length() / part.length();
         return part.repeat(n).equals(whole);
     }
 }
