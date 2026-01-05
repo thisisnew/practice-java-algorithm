@@ -14,6 +14,10 @@ public class RepeatedSubstringPattern {
         for  (int i = 1; i < s.length(); i++) {
             var part = s.substring(0, i);
 
+            if (part.length() > s.length() / 2) {
+                return false;
+            }
+
             if (isRepeat(s, part)) {
                 return true;
             }
@@ -26,10 +30,6 @@ public class RepeatedSubstringPattern {
 
         var wholeLen = whole.length();
         var partLen = part.length();
-
-        if (wholeLen / 2 < partLen) {
-            return false;
-        }
 
         if (wholeLen % partLen != 0) {
             return false;
