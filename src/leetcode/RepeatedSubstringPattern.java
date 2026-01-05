@@ -11,10 +11,6 @@ public class RepeatedSubstringPattern {
     }
 
     private static boolean repeatedSubstringPattern(String s) {
-        if (s.length() <= 2) {
-            return true;
-        }
-
         for  (int i = 1; i < s.length(); i++) {
             var part = s.substring(0, i);
 
