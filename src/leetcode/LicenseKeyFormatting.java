@@ -27,6 +27,7 @@ public class LicenseKeyFormatting {
 
         var idx = 0;
         var sj = new StringJoiner("-");
+
         for (var i = list.size() - 1; i >= 0; i--) {
             var sb = new StringBuilder();
             for (int j = 0; j < list.get(i); j++) {
