@@ -31,7 +31,8 @@ public class LicenseKeyFormatting {
             var temp = new StringBuilder();
 
             for (int j = 0; j < list.get(i); j++) {
-                temp.append(replaced[idx++]);
+                var v = replaced[idx++] + "";
+                temp.append(v.toUpperCase());
             }
 
             sb.append(temp).append("-");
