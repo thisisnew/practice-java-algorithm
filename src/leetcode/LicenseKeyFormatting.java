@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.StringJoiner;
 
 public class LicenseKeyFormatting {
     public static void main(String[] args) throws IOException {
@@ -17,27 +18,21 @@ public class LicenseKeyFormatting {
 
         var replaced = s.replaceAll("-", "").toCharArray();
         var len = replaced.length;
-        var list = new ArrayList<Character[]>();
+        var list = new ArrayList<Integer>();
 
         while(len > 0) {
-            if (len < k) {
-                list.add(new Character[len]);
-            } else {
-                list.add(new Character[k]);
-            }
-
+            list.add(Math.min(len, k));
             len -= k;
         }
 
         var idx = 0;
+        var sj = new StringJoiner("-");
         for (var i = list.size() - 1; i >= 0; i--) {
-            var strings = list.get(i);
-
-            for (int j = 0; j < strings.length; j++) {
-                strings[j] = replaced[idx++];
+            for (int j = 0; j < list.get(i); j++) {
+                sj.add(replaced[idx++] + "");
             }
         }
 
-        return "";
+        return sj.toString();
     }
 }
