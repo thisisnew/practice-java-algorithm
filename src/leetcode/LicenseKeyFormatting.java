@@ -17,22 +17,26 @@ public class LicenseKeyFormatting {
 
         var replaced = s.replaceAll("-", "");
         var len = replaced.length();
-        var list = new ArrayList<String[]>();
+        var list = new ArrayList<Character[]>();
 
         while(len > 0) {
             if (len < k) {
-                list.add(new String[len]);
+                list.add(new Character[len]);
             } else {
-                list.add(new String[k]);
+                list.add(new Character[k]);
             }
 
             len -= k;
         }
 
+        var idx = 0;
+        var replacedArr = replaced.toCharArray();
         for (var i = list.size() - 1; i >= 0; i--) {
+            var strings = list.get(i);
 
-
-
+            for (int j = 0; j < strings.length; j++) {
+                strings[j] = replacedArr[idx++];
+            }
         }
 
         return "";
