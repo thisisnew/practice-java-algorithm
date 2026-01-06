@@ -15,8 +15,8 @@ public class LicenseKeyFormatting {
 
     private static String licenseKeyFormatting(String s, int k) {
 
-        var replaced = s.replaceAll("-", "");
-        var len = replaced.length();
+        var replaced = s.replaceAll("-", "").toCharArray();
+        var len = replaced.length;
         var list = new ArrayList<Character[]>();
 
         while(len > 0) {
@@ -30,12 +30,11 @@ public class LicenseKeyFormatting {
         }
 
         var idx = 0;
-        var replacedArr = replaced.toCharArray();
         for (var i = list.size() - 1; i >= 0; i--) {
             var strings = list.get(i);
 
             for (int j = 0; j < strings.length; j++) {
-                strings[j] = replacedArr[idx++];
+                strings[j] = replaced[idx++];
             }
         }
 
