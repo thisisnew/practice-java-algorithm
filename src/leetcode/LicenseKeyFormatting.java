@@ -39,7 +39,8 @@ public class LicenseKeyFormatting {
         }
 
         var result = sb.toString();
+        var last = Math.max(result.length() - 1, 0);
 
-        return result.substring(0, result.length() - 1);
+        return result.substring(0, last);
     }
 }
