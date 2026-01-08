@@ -61,6 +61,6 @@ public class KeyboardRow {
             }
         }
 
-        return new String[]{};
+        return result.toArray(new String[0]);
     }
 }
