@@ -23,17 +23,14 @@ public class KeyboardRow {
         var result = new ArrayList<String>();
 
         for (String word : words) {
+            if (Objects.isNull(word) || word.isBlank()) continue;
 
-            if (Objects.isNull(word) || word.isBlank()) {
-                continue;
-            }
-
-            var chars = word.toCharArray();
             var fCnt = 0;
             var sCnt = 0;
             var tCnt = 0;
             var isSameRow = true;
-            for (var c : chars) {
+
+            for (var c : word.toCharArray()) {
                 if (FIRST_ROW_SET.contains(c)) {
                     fCnt++;
                     if (sCnt > 0 || tCnt > 0) {
