@@ -10,9 +10,9 @@ import java.util.Set;
 
 public class KeyboardRow {
 
-    private static final Set<Character> FIRST_ROW_SET = Set.of('q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p');
-    private static final Set<Character> SECOND_ROW_SET = Set.of('a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l');
-    private static final Set<Character> THIRD_ROW_SET = Set.of('z', 'x', 'c', 'v', 'b', 'n', 'm');
+    private static final Set<Character> FIRST_ROW_SET = Set.of('q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P');
+    private static final Set<Character> SECOND_ROW_SET = Set.of('a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L');
+    private static final Set<Character> THIRD_ROW_SET = Set.of('z', 'x', 'c', 'v', 'b', 'n', 'm', 'Z', 'X', 'C', 'V', 'B', 'N', 'M');
 
     public static void main(String[] args) throws IOException {
         var br =  new BufferedReader(new InputStreamReader(System.in));
