@@ -26,12 +26,16 @@ public class DetectCapital {
 
         for(char c : chars) {
             if(UPPER_CHARS.contains(c)) {
-                continue;
+                upperCnt++;
+            } else {
+                lowerCnt++;
             }
-
-            return false;
         }
 
-        return true;
+        if (upperCnt == 0 || lowerCnt == 0) {
+            return true;
+        }
+
+        return UPPER_CHARS.contains(firstChar) && upperCnt == 1;
     }
 }
