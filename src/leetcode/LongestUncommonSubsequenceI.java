@@ -13,19 +13,14 @@ public class LongestUncommonSubsequenceI {
 
     private static int findLUSlength(String a, String b) {
 
-        for (int i = b.length()-1; i >= 0; i--) {
-            var bSub = b.substring(0, i);
-            var bLen = bSub.length();
+        for (int i = a.length()-1; i >= 0; i--) {
+            var aSub = a.substring(0, i);
 
-            for (int j = 0; j < a.length(); j+=bLen) {
-                var aSub = a.substring(j, j + bLen);
-
-                if (aSub.equals(bSub)) {
-                    return bLen; // todo
-                }
+            if (b.contains(aSub)) {
+                return aSub.length();
             }
         }
 
-        return Math.max(a.length(), b.length());
+        return a.length();
     }
 }
