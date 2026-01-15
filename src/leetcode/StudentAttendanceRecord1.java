@@ -14,12 +14,12 @@ public class StudentAttendanceRecord1 {
     private static boolean checkRecord(String s) {
 
         var aCnt = 0;
-        var lSb = new StringBuilder();
+        var lCnt = 0;
 
         for (var c : s.toCharArray()) {
             switch (c) {
                 case 'A': {
-                    lSb = new StringBuilder();
+                    lCnt = 0;
                     aCnt++;
 
                     if (aCnt >= 2) {
@@ -29,16 +29,16 @@ public class StudentAttendanceRecord1 {
                     break;
                 }
                 case 'L': {
-                    lSb.append(c);
+                    lCnt++;
 
-                    if (lSb.length() >= 3) {
+                    if (lCnt >= 3) {
                         return false;
                     }
 
                     break;
                 }
                 default: {
-                    lSb = new StringBuilder();
+                    lCnt = 0;
                     break;
                 }
             }
