@@ -17,29 +17,15 @@ public class StudentAttendanceRecord1 {
         var lCnt = 0;
 
         for (var c : s.toCharArray()) {
-            switch (c) {
-                case 'A': {
-                    lCnt = 0;
-                    aCnt++;
+            if (c == 'L') {
+                if (++lCnt >= 3) return false;
+                continue;
+            }
 
-                    if (aCnt >= 2) {
-                        return false;
-                    }
-
-                    break;
-                }
-                case 'L': {
-                    lCnt++;
-
-                    if (lCnt >= 3) {
-                        return false;
-                    }
-
-                    break;
-                }
-                default: {
-                    lCnt = 0;
-                    break;
+            lCnt = 0;
+            if (c == 'A') {
+                if (++aCnt >= 2) {
+                    return false;
                 }
             }
         }
