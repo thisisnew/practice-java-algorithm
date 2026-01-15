@@ -12,6 +12,34 @@ public class StudentAttendanceRecord1 {
     }
 
     private static boolean checkRecord(String s) {
-        return false;
+
+        var aCnt = 0;
+        var lSb = new StringBuilder();
+
+        for (var c : s.toCharArray()) {
+            if (c == 'P') {
+                lSb = new StringBuilder();
+                continue;
+            }
+
+            if (c == 'A') {
+                lSb = new StringBuilder();
+                aCnt++;
+
+                if (aCnt >= 2) {
+                    return false;
+                }
+            }
+
+            if (c == 'L') {
+                lSb.append(c);
+
+                if (lSb.length() >= 3) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
