@@ -17,26 +17,23 @@ public class StudentAttendanceRecord1 {
         var lSb = new StringBuilder();
 
         for (var c : s.toCharArray()) {
-            if (c == 'P') {
-                lSb = new StringBuilder();
-                continue;
-            }
+            switch (c) {
+                case 'A': {
+                    lSb = new StringBuilder();
+                    aCnt++;
 
-            if (c == 'A') {
-                lSb = new StringBuilder();
-                aCnt++;
-
-                if (aCnt >= 2) {
-                    return false;
+                    if (aCnt >= 2) {
+                        return false;
+                    }
                 }
-            }
+                case 'L': {
+                    lSb.append(c);
 
-            if (c == 'L') {
-                lSb.append(c);
-
-                if (lSb.length() >= 3) {
-                    return false;
+                    if (lSb.length() >= 3) {
+                        return false;
+                    }
                 }
+                default: lSb = new StringBuilder();
             }
         }
 
