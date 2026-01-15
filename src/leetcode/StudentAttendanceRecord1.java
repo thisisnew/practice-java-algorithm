@@ -25,6 +25,8 @@ public class StudentAttendanceRecord1 {
                     if (aCnt >= 2) {
                         return false;
                     }
+
+                    break;
                 }
                 case 'L': {
                     lSb.append(c);
@@ -32,8 +34,13 @@ public class StudentAttendanceRecord1 {
                     if (lSb.length() >= 3) {
                         return false;
                     }
+
+                    break;
                 }
-                default: lSb = new StringBuilder();
+                default: {
+                    lSb = new StringBuilder();
+                    break;
+                }
             }
         }
 
