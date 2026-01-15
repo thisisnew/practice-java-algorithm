@@ -18,7 +18,9 @@ public class StudentAttendanceRecord1 {
 
         for (var c : s.toCharArray()) {
             if (c == 'L') {
-                if (++lCnt >= 3) return false;
+                if (++lCnt >= 3) {
+                    return false;
+                }
                 continue;
             }
 
