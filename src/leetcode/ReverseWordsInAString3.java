@@ -3,7 +3,6 @@ package leetcode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 public class ReverseWordsInAString3 {
 
@@ -17,9 +16,8 @@ public class ReverseWordsInAString3 {
 
         var sb = new StringBuilder();
 
-        var tokenizer = new StringTokenizer(s);
-        while (tokenizer.hasMoreTokens()) {
-            var token = tokenizer.nextToken();
+        var arr = s.split(" ");
+        for (var token : arr) {
             sb.append(reverse(token)).append(" ");
         }
 
