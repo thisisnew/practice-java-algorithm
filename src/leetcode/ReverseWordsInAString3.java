@@ -20,10 +20,10 @@ public class ReverseWordsInAString3 {
         var tokenizer = new StringTokenizer(s);
         while (tokenizer.hasMoreTokens()) {
             var token = tokenizer.nextToken();
-            sb.append(reverse(token));
+            sb.append(reverse(token)).append(" ");
         }
 
-        return sb.toString();
+        return sb.toString().trim();
     }
 
     private static String reverse(String s) {
