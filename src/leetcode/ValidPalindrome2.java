@@ -12,7 +12,9 @@ public class ValidPalindrome2 {
 
     private static boolean validPalindrome(String moves) {
 
-        for (var move : moves.toCharArray()) {
+        for (int i = 0; i < moves.length() / 2; i++) {
+            var a = moves.charAt(i);
+            var b = moves.charAt(moves.length() - i - 1);
 
         }
 
