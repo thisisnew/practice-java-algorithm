@@ -10,10 +10,10 @@ public class ValidPalindrome2 {
         System.out.println(validPalindrome(br.readLine()));
     }
 
-    private static boolean validPalindrome(String moves) {
+    private static boolean validPalindrome(String s) {
         var erased = false;
 
-        for (int i = 0; i < moves.length() / 2; i++) {
+        for (int i = 0; i < s.length() / 2; i++) {
             var a = moves.charAt(i);
             var b = moves.charAt(moves.length() - i - 1);
 
