@@ -11,19 +11,19 @@ public class ValidPalindrome2 {
     }
 
     private static boolean validPalindrome(String moves) {
-
-        var count = 0;
+        var erased = false;
 
         for (int i = 0; i < moves.length() / 2; i++) {
             var a = moves.charAt(i);
             var b = moves.charAt(moves.length() - i - 1);
 
             if (a != b) {
-                count++;
+                if (erased) {
+                    return false;
+                }
 
-                if (count > 1) return false;
+                erased = true;
             }
-
         }
 
         return true;
