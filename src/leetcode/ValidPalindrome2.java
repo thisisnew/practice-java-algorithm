@@ -14,8 +14,8 @@ public class ValidPalindrome2 {
         var erased = false;
 
         for (int i = 0; i < s.length() / 2; i++) {
-            var a = moves.charAt(i);
-            var b = moves.charAt(moves.length() - i - 1);
+            var a = s.charAt(i);
+            var b = s.charAt(s.length() - i - 1);
 
             if (a != b) {
                 if (erased) {
