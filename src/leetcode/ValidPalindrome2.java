@@ -11,20 +11,8 @@ public class ValidPalindrome2 {
     }
 
     private static boolean validPalindrome(String s) {
-        var erased = false;
 
-        for (int i = 0; i < s.length() / 2; i++) {
-            var a = s.charAt(i);
-            var b = s.charAt(s.length() - i - 1);
 
-            if (a != b) {
-                if (erased) {
-                    return false;
-                }
-
-                erased = true;
-            }
-        }
 
         return true;
     }
