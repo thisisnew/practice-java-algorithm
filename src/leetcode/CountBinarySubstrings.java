@@ -25,6 +25,11 @@ public class CountBinarySubstrings {
 
         var min = Math.min(zeroCnt, oneCnt);
 
+        for (var c : s.toCharArray()) {
+
+        }
+
+
 
         return 0;
     }
