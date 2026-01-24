@@ -11,6 +11,11 @@ public class ToLowerCase {
     }
 
     private static String toLowerCase(String s) {
+
+        for (var c : s.toCharArray()) {
+
+        }
+
         return "";
     }
 }
