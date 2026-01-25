@@ -12,10 +12,17 @@ public class ToLowerCase {
 
     private static String toLowerCase(String s) {
 
-        for (var c : s.toCharArray()) {
+        var sb = new StringBuilder();
 
+        for (var c : s.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                sb.append(Character.toLowerCase(c));
+                continue;
+            }
+
+            sb.append(c);
         }
 
-        return "";
+        return sb.toString();
     }
 }
