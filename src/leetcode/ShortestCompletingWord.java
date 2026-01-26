@@ -25,8 +25,20 @@ public class ShortestCompletingWord {
                 continue;
             }
 
+            var copyMap = new HashMap<>(map);
 
+            for (var c : word.toCharArray()) {
 
+                if (!copyMap.containsKey(c)) {
+                    continue;
+                }
+
+                map.put(c, map.get(c) - 1);
+            }
+
+            if (map.values().stream().allMatch(v -> v == 0)) {
+                return word;
+            }
         }
 
         return "";
