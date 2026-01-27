@@ -1,7 +1,7 @@
 package leetcode;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class ShortestCompletingWord {
     public static void main(String[] args) throws IOException {
@@ -10,41 +10,39 @@ public class ShortestCompletingWord {
 
     private static String shortestCompletingWord(String licensePlate, String[] words) {
 
-        var map = new HashMap<Character, Integer>();
-        var total = 0;
+        var result = "";
+        var list = new ArrayList<Character>();
 
         for (var c : licensePlate.toLowerCase().toCharArray()) {
             if (Character.isLetter(c)) {
-                total++;
-                map.put(c, map.getOrDefault(c, 0) + 1);
+                list.add(c);
             }
         }
 
         for (var word : words) {
-            if (word.length() < total) {
+            if (word.length() < list.size()) {
                 continue;
             }
 
-            var copyMap = new HashMap<>(map);
+            var len = list.size();
 
             for (var c : word.toCharArray()) {
 
-                if (Character.isDigit(c) || c == ' ') {
+                if (Character.isDigit(c) || c == ' ' || !list.contains(c)) {
                     continue;
                 }
 
-                if (!copyMap.containsKey(c)) {
-                    continue;
-                }
-
-                map.put(c, map.get(c) - 1);
+                len--;
             }
 
-            if (map.values().stream().allMatch(v -> v == 0)) {
-                return word;
+            if (len > 0) {
+                continue;
             }
+
+            result = word;
+            break;
         }
 
-        return "";
+        return result;
     }
 }
