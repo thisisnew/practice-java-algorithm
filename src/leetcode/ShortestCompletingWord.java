@@ -29,6 +29,10 @@ public class ShortestCompletingWord {
 
             for (var c : word.toCharArray()) {
 
+                if (Character.isDigit(c) || c == ' ') {
+                    continue;
+                }
+
                 if (!copyMap.containsKey(c)) {
                     continue;
                 }
