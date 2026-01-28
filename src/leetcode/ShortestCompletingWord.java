@@ -31,6 +31,7 @@ public class ShortestCompletingWord {
                     continue;
                 }
 
+                list.remove(c);
                 len--;
             }
 
