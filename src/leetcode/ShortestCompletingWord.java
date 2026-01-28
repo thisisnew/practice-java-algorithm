@@ -27,7 +27,7 @@ public class ShortestCompletingWord {
             var len = list.size();
 
             for (var c : word.toCharArray()) {
-                if (Character.isLetter(c) && !list.contains(c)) {
+                if (!Character.isLetter(c) || !list.contains(c)) {
                     continue;
                 }
 
