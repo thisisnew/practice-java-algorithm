@@ -32,7 +32,7 @@ public class ShortestCompletingWord {
                 }
 
                 list.remove(c);
-                len--;
+                len = list.size();
             }
 
             if (len > 0) {
