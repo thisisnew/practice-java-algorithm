@@ -16,7 +16,7 @@ public class ShortestCompletingWord {
 
         for (var c : licensePlate.toLowerCase().toCharArray()) {
             if (Character.isLetter(c)) {
-                map.put(c, map.getOrDefault(c, 0) + 1);
+                map.put(c, map.getOrDefault(Character.toLowerCase(c), 0) + 1);
             }
         }
 
@@ -27,7 +27,11 @@ public class ShortestCompletingWord {
             var copied = new HashMap<>(map);
 
             for (var c : word.toCharArray()) {
-                if (Character.isLetter(c) && copied.containsKey(c)) {
+                if (!Character.isLetter(c)) {
+                    continue;
+                }
+
+                if (copied.containsKey(c) || copied.containsKey(Character.toLowerCase(c))) {
                     copied.put(c, copied.get(c) - 1);
                 }
             }
@@ -47,6 +51,6 @@ public class ShortestCompletingWord {
         }
 
         results.sort(Comparator.comparingInt(String::length));
-        return results.isEmpty() ? "" : results.get(0);
+        return results.get(0);
     }
 }
