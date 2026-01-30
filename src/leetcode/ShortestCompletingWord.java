@@ -39,7 +39,7 @@ public class ShortestCompletingWord {
             var pass = true;
             for (var value : copied.values()) {
 
-                if (value != 0) {
+                if (value > 0) {
                     pass = false;
                     break;
                 }
