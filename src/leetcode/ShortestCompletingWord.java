@@ -47,6 +47,6 @@ public class ShortestCompletingWord {
         }
 
         results.sort(Comparator.comparingInt(String::length));
-        return results.get(0);
+        return results.isEmpty() ? "" : results.get(0);
     }
 }
