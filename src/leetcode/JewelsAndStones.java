@@ -12,10 +12,7 @@ public class JewelsAndStones {
     private static int numJewelsInStones(String jewels, String stones) {
 
         var queue = new LinkedList<Character>();
-
-        for(var s : stones.toCharArray()) {
-            queue.add(s);
-        }
+        for(var s : stones.toCharArray()) queue.add(s);
 
         var count = 0;
 
