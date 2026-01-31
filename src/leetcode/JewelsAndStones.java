@@ -17,27 +17,23 @@ public class JewelsAndStones {
             queue.add(s);
         }
 
-        var idx = 0;
-        var len = queue.size();
-
-        var result = 0;
+        var count = 0;
 
         for(var j : jewels.toCharArray()) {
-            while(idx < len) {
+            var idx = 0;
+            while(idx < queue.size()) {
                 var pop = queue.pop();
 
                 if (Objects.equals(j, pop)) {
-                    result++;
+                    count++;
                 } else {
                     queue.add(pop);
                 }
 
                 idx++;
             }
-
-
         }
 
-        return result;
+        return count;
     }
 }
