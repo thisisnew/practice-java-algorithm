@@ -1,8 +1,7 @@
 package leetcode;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.Objects;
+import java.util.HashMap;
 
 public class JewelsAndStones {
     public static void main(String[] args) throws IOException {
@@ -11,23 +10,22 @@ public class JewelsAndStones {
 
     private static int numJewelsInStones(String jewels, String stones) {
 
-        var queue = new LinkedList<Character>();
-        for(var s : stones.toCharArray()) queue.add(s);
+        var map = new HashMap<Character, Integer>();
+
+        for(var s : stones.toCharArray()) {
+            map.put(s, map.getOrDefault(s, 0) + 1);
+        }
 
         var count = 0;
 
         for(var j : jewels.toCharArray()) {
-            var idx = 0;
-            while(idx < queue.size()) {
-                var pop = queue.pop();
-
-                if (Objects.equals(j, pop)) {
-                    count++;
-                } else {
-                    queue.add(pop);
+            for(var entry : map.entrySet()) {
+                if (entry.getValue() == 0 || entry.getValue() != j) {
+                    continue;
                 }
 
-                idx++;
+                map.put(entry.getKey(), map.get(entry.getKey()) - 1);
+                count++;
             }
         }
 
