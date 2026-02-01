@@ -20,7 +20,7 @@ public class JewelsAndStones {
 
         for(var j : jewels.toCharArray()) {
             for(var entry : map.entrySet()) {
-                if (entry.getValue() == 0 || entry.getValue() != j) {
+                if (entry.getValue() <= 0 || entry.getValue() != j) {
                     continue;
                 }
 
