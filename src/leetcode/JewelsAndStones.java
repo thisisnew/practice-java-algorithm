@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class JewelsAndStones {
     public static void main(String[] args) throws IOException {
-        System.out.println(numJewelsInStones("", ""));
+        System.out.println(numJewelsInStones("aA", "aAAbbbb"));
     }
 
     private static int numJewelsInStones(String jewels, String stones) {
@@ -20,7 +20,7 @@ public class JewelsAndStones {
 
         for(var j : jewels.toCharArray()) {
             for(var entry : map.entrySet()) {
-                if (entry.getValue() <= 0 || entry.getValue() != j) {
+                if (entry.getValue() <= 0 || entry.getKey() != j) {
                     continue;
                 }
 
