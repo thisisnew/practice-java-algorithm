@@ -19,12 +19,16 @@ public class JewelsAndStones {
         var count = 0;
 
         for(var j : jewels.toCharArray()) {
+
             for(var entry : map.entrySet()) {
-                if (entry.getValue() <= 0 || entry.getKey() != j) {
+                var key = entry.getKey();
+                var value = entry.getValue();
+
+                if (value <= 0 || key != j) {
                     continue;
                 }
 
-                map.put(entry.getKey(), map.get(entry.getKey()) - 1);
+                map.put(key, value - 1);
                 count++;
             }
         }
