@@ -28,8 +28,8 @@ public class JewelsAndStones {
                     continue;
                 }
 
-                map.put(key, value - 1);
-                count++;
+                map.put(key, 0);
+                count+=value;
             }
         }
 
