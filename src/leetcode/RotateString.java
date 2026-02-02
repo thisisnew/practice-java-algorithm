@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class RotateString {
     public static void main(String[] args) throws IOException {
-        System.out.println(rotateString("",""));
+        System.out.println(rotateString("abcde","cdeab"));
     }
 
     private static boolean rotateString(String s, String goal) {
@@ -17,7 +17,7 @@ public class RotateString {
             return true;
         }
 
-        for (var i = 0; i < s.length(); i++) {
+        for (var i = 1; i < s.length(); i++) {
             var sub = s.substring(0, i);
             var remain = s.substring(i);
             var newStr = remain + sub;
