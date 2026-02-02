@@ -18,9 +18,15 @@ public class RotateString {
         }
 
         for (var i = 0; i < s.length(); i++) {
+            var sub = s.substring(0, i);
+            var remain = s.substring(i);
+            var newStr = remain + sub;
 
+            if (newStr.equals(goal)) {
+                return true;
+            }
         }
 
-        return true;
+        return false;
     }
 }
