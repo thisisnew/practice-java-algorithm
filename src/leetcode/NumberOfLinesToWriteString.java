@@ -3,6 +3,7 @@ package leetcode;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class NumberOfLinesToWriteString {
 
@@ -12,7 +13,8 @@ public class NumberOfLinesToWriteString {
 
     private static int[] numberOfLines(int[] widths, String s) {
 
-        var list = new ArrayList<Character>();
+        var characters = new ArrayList<Character>();
+        var multiCharacters = new ArrayList<List<Character>>();
         var sum = 0;
 
         for (int i = 0; i < s.length(); i++) {
@@ -21,15 +23,17 @@ public class NumberOfLinesToWriteString {
 
             if (sum + pixel <= 100) {
                 sum += pixel;
-                list.add(c);
+                characters.add(c);
                 continue;
             }
 
             sum = 0;
-            list = new ArrayList<>();
+            if (!characters.isEmpty()) {
+                multiCharacters.add(characters);
+            }
         }
 
 
-        return new int[]{};
+        return new int[]{multiCharacters.size(), characters.size()};
     }
 }
