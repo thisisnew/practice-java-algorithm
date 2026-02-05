@@ -33,7 +33,9 @@ public class NumberOfLinesToWriteString {
             }
         }
 
-
-        return new int[]{multiCharacters.size(), characters.size()};
+        return new int[]{
+                multiCharacters.size(),
+                characters.size()
+        };
     }
 }
