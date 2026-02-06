@@ -8,7 +8,7 @@ import java.util.List;
 public class NumberOfLinesToWriteString {
 
     public static void main(String[] args) throws IOException {
-        System.out.println(Arrays.toString(numberOfLines(new int[]{}, "")));
+        System.out.println(Arrays.toString(numberOfLines(new int[]{10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10}, "abcdefghijklmnopqrstuvwxyz")));
     }
 
     private static int[] numberOfLines(int[] widths, String s) {
@@ -30,6 +30,7 @@ public class NumberOfLinesToWriteString {
             sum = 0;
             if (!characters.isEmpty()) {
                 multiCharacters.add(characters);
+                characters = new ArrayList<>();
             }
         }
 
