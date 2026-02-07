@@ -34,6 +34,11 @@ public class NumberOfLinesToWriteString {
             }
         }
 
+        if (!characters.isEmpty()) {
+            multiCharacters.add(characters);
+            characters = new ArrayList<>();
+        }
+
         return new int[]{
                 multiCharacters.size(),
                 characters.stream().mapToInt(c -> widths[c - 'a']).sum()
