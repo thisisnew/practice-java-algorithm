@@ -36,7 +36,6 @@ public class NumberOfLinesToWriteString {
 
         if (!characters.isEmpty()) {
             multiCharacters.add(characters);
-            characters = new ArrayList<>();
         }
 
         return new int[]{
