@@ -36,7 +36,7 @@ public class NumberOfLinesToWriteString {
 
         return new int[]{
                 multiCharacters.size(),
-                characters.size()
+                characters.stream().mapToInt(c -> widths[c - 'a']).sum()
         };
     }
 }
