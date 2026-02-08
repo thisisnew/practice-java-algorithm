@@ -7,42 +7,57 @@ import java.util.List;
 
 public class NumberOfLinesToWriteString {
 
+    private static final int MAX_PIXEL = 100;
+
     public static void main(String[] args) throws IOException {
         System.out.println(Arrays.toString(numberOfLines(new int[]{4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10}, "bbbcccdddaaa")));
     }
 
     private static int[] numberOfLines(int[] widths, String s) {
 
-        var characters = new ArrayList<Character>();
-        var multiCharacters = new ArrayList<List<Character>>();
-        var sum = 0;
+        var characters = new CharacterList(new ArrayList<>());
 
         for (int i = 0; i < s.length(); i++) {
-            var c = s.charAt(i);
-            var idx = c - 'a';
-            var pixel = widths[idx];
+            var pixel = widths[s.charAt(i) - 'a'];
 
-            if (sum + pixel < 100) {
-                sum += pixel;
-                characters.add(c);
+            if (characters.sumPixels() < MAX_PIXEL - pixel) {
+                characters.add(pixel);
                 continue;
             }
 
-            sum = 0;
-            if (!characters.isEmpty()) {
-                multiCharacters.add(characters);
-                characters = new ArrayList<>();
-                characters.add(c);
-            }
+            characters.refresh();
+            characters.add(pixel);
         }
 
-        if (!characters.isEmpty()) {
-            multiCharacters.add(characters);
-        }
+        return new int[]{characters.multiPixelsSize(), characters.sumPixels()};
+    }
+}
 
-        return new int[]{
-                multiCharacters.size(),
-                characters.stream().mapToInt(c -> widths[c - 'a']).sum()
-        };
+class CharacterList {
+
+    private final ArrayList<List<Integer>> multiPixels = new ArrayList<>();
+    private final List<Integer> pixels;
+
+    CharacterList(List<Integer> pixels) {
+        this.pixels = pixels;
+    }
+
+    public int sumPixels() {
+        return pixels.stream()
+                .mapToInt(c -> c - 'a')
+                .sum();
+    }
+
+    public void add(int pixel) {
+        pixels.add(pixel);
+    }
+
+    public void refresh() {
+        multiPixels.add(pixels);
+        pixels.clear();
+    }
+
+    public int multiPixelsSize() {
+        return multiPixels.size();
     }
 }
