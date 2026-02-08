@@ -20,12 +20,10 @@ public class NumberOfLinesToWriteString {
         for (int i = 0; i < s.length(); i++) {
             var pixel = widths[s.charAt(i) - 'a'];
 
-            if (characters.sumPixels() < MAX_PIXEL - pixel) {
-                characters.add(pixel);
-                continue;
+            if (characters.sumPixels() >= MAX_PIXEL - pixel) {
+                characters.refresh();
             }
 
-            characters.refresh();
             characters.add(pixel);
         }
 
