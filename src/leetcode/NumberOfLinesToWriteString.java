@@ -21,7 +21,7 @@ public class NumberOfLinesToWriteString {
             var c = s.charAt(i);
             var pixel = widths[c - 'a'];
 
-            if (sum + pixel <= 100) {
+            if (sum + pixel < 100) {
                 sum += pixel;
                 characters.add(c);
                 continue;
