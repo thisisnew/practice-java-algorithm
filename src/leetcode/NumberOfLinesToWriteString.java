@@ -8,7 +8,7 @@ import java.util.List;
 public class NumberOfLinesToWriteString {
 
     public static void main(String[] args) throws IOException {
-        System.out.println(Arrays.toString(numberOfLines(new int[]{10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10}, "abcdefghijklmnopqrstuvwxyz")));
+        System.out.println(Arrays.toString(numberOfLines(new int[]{4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10}, "bbbcccdddaaa")));
     }
 
     private static int[] numberOfLines(int[] widths, String s) {
@@ -19,7 +19,8 @@ public class NumberOfLinesToWriteString {
 
         for (int i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
-            var pixel = widths[c - 'a'];
+            var idx = c - 'a';
+            var pixel = widths[idx];
 
             if (sum + pixel < 100) {
                 sum += pixel;
@@ -31,6 +32,7 @@ public class NumberOfLinesToWriteString {
             if (!characters.isEmpty()) {
                 multiCharacters.add(characters);
                 characters = new ArrayList<>();
+                characters.add(c);
             }
         }
 
