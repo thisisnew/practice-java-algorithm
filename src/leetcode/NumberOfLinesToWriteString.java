@@ -42,7 +42,7 @@ class CharacterList {
 
     public int sumPixels() {
         return pixels.stream()
-                .mapToInt(c -> c - 'a')
+                .mapToInt(Integer::intValue)
                 .sum();
     }
 
