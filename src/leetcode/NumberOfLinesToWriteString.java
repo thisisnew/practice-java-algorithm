@@ -27,13 +27,13 @@ public class NumberOfLinesToWriteString {
             characters.add(pixel);
         }
 
-        return new int[]{characters.multiPixelsSize(), characters.sumPixels()};
+        return new int[]{characters.countPixels(), characters.sumPixels()};
     }
 }
 
 class CharacterList {
 
-    private final ArrayList<List<Integer>> multiPixels = new ArrayList<>();
+    private int countPixels = 0;
     private final List<Integer> pixels;
 
     CharacterList(List<Integer> pixels) {
@@ -51,16 +51,15 @@ class CharacterList {
     }
 
     public void refresh() {
-        multiPixels.add(pixels.stream().toList());
+        countPixels++;
         pixels.clear();
     }
 
-    public int multiPixelsSize() {
-        if (pixels.isEmpty()) {
-            return multiPixels.size();
+    public int countPixels() {
+        if (!pixels.isEmpty()) {
+            countPixels++;
         }
 
-        multiPixels.add(pixels.stream().toList());
-        return multiPixels.size();
+        return countPixels;
     }
 }
