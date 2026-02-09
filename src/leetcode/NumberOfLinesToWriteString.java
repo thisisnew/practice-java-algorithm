@@ -51,11 +51,16 @@ class CharacterList {
     }
 
     public void refresh() {
-        multiPixels.add(pixels);
+        multiPixels.add(pixels.stream().toList());
         pixels.clear();
     }
 
     public int multiPixelsSize() {
+        if (pixels.isEmpty()) {
+            return multiPixels.size();
+        }
+
+        multiPixels.add(pixels.stream().toList());
         return multiPixels.size();
     }
 }
