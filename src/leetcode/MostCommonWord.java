@@ -2,7 +2,6 @@ package leetcode;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.StringTokenizer;
 
 public class MostCommonWord {
     public static void main(String[] args) throws IOException {
@@ -11,11 +10,11 @@ public class MostCommonWord {
 
     private static String mostCommonWord(String paragraph, String[] banned) {
 
-        var tokenizer = new StringTokenizer(paragraph);
+        var tokens = paragraph.split(" ");
         var map = new HashMap<String, Integer>();
 
-        while (tokenizer.hasMoreTokens()) {
-            var word = tokenizer.nextToken().replaceAll("[^A-Za-z !\\?\"',;\\.]", "");
+        for(var token : tokens){
+            var word = token.replaceAll("[^A-Za-z !\\?\"',;\\.]", "");
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
