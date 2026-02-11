@@ -15,11 +15,11 @@ public class MostCommonWord {
 
         for(var token : tokens){
             var word = token.replaceAll("[!?',;.]", "");
-            map.put(word, map.getOrDefault(word, 0) + 1);
+            map.put(word.toLowerCase(), map.getOrDefault(word, 0) + 1);
         }
 
         for (var word : banned) {
-            map.remove(word);
+            map.remove(word.toLowerCase());
         }
 
         var max = 0;
