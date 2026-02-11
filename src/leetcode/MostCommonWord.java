@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class MostCommonWord {
     public static void main(String[] args) throws IOException {
-        System.out.println(mostCommonWord("", new String[]{}));
+        System.out.println(mostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new String[]{"hit"}));
     }
 
     private static String mostCommonWord(String paragraph, String[] banned) {
@@ -14,7 +14,7 @@ public class MostCommonWord {
         var map = new HashMap<String, Integer>();
 
         for(var token : tokens){
-            var word = token.replaceAll("[^A-Za-z !\\?\"',;\\.]", "");
+            var word = token.replaceAll("[!?',;.]", "");
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
