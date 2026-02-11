@@ -15,7 +15,7 @@ public class MostCommonWord {
         var map = new HashMap<String, Integer>();
 
         while (tokenizer.hasMoreTokens()) {
-            var word = tokenizer.nextToken();
+            var word = tokenizer.nextToken().replaceAll("[^A-Za-z !\\?\"',;\\.]", "");
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
