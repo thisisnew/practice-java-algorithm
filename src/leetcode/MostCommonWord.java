@@ -14,8 +14,8 @@ public class MostCommonWord {
         var map = new HashMap<String, Integer>();
 
         for(var token : tokens){
-            var word = token.replaceAll("[!?',;.]", "");
-            map.put(word.toLowerCase(), map.getOrDefault(word, 0) + 1);
+            var word = token.replaceAll("[!?',;.]", "").toLowerCase();
+            map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
         for (var word : banned) {
