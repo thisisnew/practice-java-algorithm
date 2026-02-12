@@ -10,11 +10,11 @@ public class MostCommonWord {
 
     private static String mostCommonWord(String paragraph, String[] banned) {
 
-        var tokens = paragraph.split(" ");
+        var tokens = paragraph.replaceAll("[!?',;.]", " ").split(" ");
         var map = new HashMap<String, Integer>();
 
         for(var token : tokens){
-            var word = token.replaceAll("[!?',;.]", "").toLowerCase();
+            var word = token.toLowerCase();
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
