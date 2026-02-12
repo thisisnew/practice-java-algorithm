@@ -14,12 +14,12 @@ public class MostCommonWord {
         var map = new HashMap<String, Integer>();
 
         for(var token : tokens){
-            var word = token.toLowerCase();
+            var word = token.trim().toLowerCase();
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
         for (var word : banned) {
-            map.remove(word.toLowerCase());
+            map.remove(word.trim().toLowerCase());
         }
 
         var max = 0;
