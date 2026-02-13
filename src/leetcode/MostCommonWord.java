@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class MostCommonWord {
     public static void main(String[] args) throws IOException {
-        System.out.println(mostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new String[]{"hit"}));
+        System.out.println(mostCommonWord("Bob. hIt, baLl", new String[]{"bob", "hit"}));
     }
 
     private static String mostCommonWord(String paragraph, String[] banned) {
@@ -15,7 +15,10 @@ public class MostCommonWord {
 
         for(var token : tokens){
             var word = token.trim().toLowerCase();
-            map.put(word, map.getOrDefault(word, 0) + 1);
+
+            if (!word.isBlank()) {
+                map.put(word, map.getOrDefault(word, 0) + 1);
+            }
         }
 
         for (var word : banned) {
