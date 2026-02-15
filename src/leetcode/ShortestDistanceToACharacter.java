@@ -40,14 +40,14 @@ public class ShortestDistanceToACharacter {
         for (var idx : indexes) {
 
             if (idx > index)  {
-                if (idx - index < index - result) {
+                if (Math.abs(idx - index) < Math.abs(index - result)) {
                     result = idx - index;
                 }
 
                 break;
             }
 
-            if (index - idx < index - result) {
+            if (Math.abs(index - idx) < Math.abs(index - result)) {
                 result = idx;
             }
         }
