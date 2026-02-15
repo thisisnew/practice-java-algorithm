@@ -19,6 +19,29 @@ public class ShortestDistanceToACharacter {
             }
         }
 
-        return new int[]{};
+        var result = new int[s.length()];
+
+        for (var i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'e') {
+                result[i] = 0;
+                continue;
+            }
+
+            result[i] = closestIndex(indexes, i);
+        }
+
+        return result;
+    }
+
+    private static int closestIndex(HashSet<Integer> indexes, int index) {
+        var result = Integer.MAX_VALUE;
+
+        for (var idx : indexes) {
+            if (Math.abs(index - result) > Math.abs(index - idx)) {
+                result = idx;
+            }
+        }
+
+        return result;
     }
 }
