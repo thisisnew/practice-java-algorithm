@@ -14,7 +14,7 @@ public class ShortestDistanceToACharacter {
         var indexes = new ArrayList<Integer>();
 
         for (var i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == 'e') {
+            if (s.charAt(i) == c) {
                 indexes.add(i);
             }
         }
@@ -22,7 +22,7 @@ public class ShortestDistanceToACharacter {
         var result = new int[s.length()];
 
         for (var i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == 'e') {
+            if (s.charAt(i) == c) {
                 result[i] = 0;
                 continue;
             }
