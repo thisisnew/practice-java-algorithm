@@ -39,9 +39,8 @@ public class ShortestDistanceToACharacter {
 
         for (var idx : indexes) {
             var diffBetweenIdx = Math.abs(index - idx);
-            var diffBetweenResult = Math.abs(index - result);
 
-            if (diffBetweenIdx < diffBetweenResult) {
+            if (diffBetweenIdx < result) {
                 result = diffBetweenIdx;
             }
         }
