@@ -18,10 +18,9 @@ public class GoatLatin {
 
             if (word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o") || word.startsWith("u")) {
                 sb.append(word).append(ma).append(" ");
-                continue;
+            } else {
+                sb.append(word.substring(1)).append(word.charAt(0)).append(ma).append(" ");
             }
-
-
         }
 
         return sb.toString().trim();
