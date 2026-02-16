@@ -16,7 +16,18 @@ public class GoatLatin {
         for (var word : split) {
             var ma = "m" + "a".repeat(++aCnt);
 
-            if (word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o") || word.startsWith("u")) {
+            if (
+                    word.startsWith("a") ||
+                    word.startsWith("e") ||
+                    word.startsWith("i") ||
+                    word.startsWith("o") ||
+                    word.startsWith("u") ||
+                    word.startsWith("A") ||
+                    word.startsWith("E") ||
+                    word.startsWith("I") ||
+                    word.startsWith("O") ||
+                    word.startsWith("U")
+            ) {
                 sb.append(word).append(ma).append(" ");
             } else {
                 sb.append(word.substring(1)).append(word.charAt(0)).append(ma).append(" ");
