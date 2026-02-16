@@ -27,13 +27,13 @@ public class ShortestDistanceToACharacter {
                 continue;
             }
 
-            result[i] = closestIndex(indexes, i);
+            result[i] = closestDistance(indexes, i);
         }
 
         return result;
     }
 
-    private static int closestIndex(ArrayList<Integer> indexes, int index) {
+    private static int closestDistance(ArrayList<Integer> indexes, int index) {
 
         var result = Integer.MAX_VALUE;
 
@@ -41,14 +41,14 @@ public class ShortestDistanceToACharacter {
 
             if (idx > index)  {
                 if (Math.abs(idx - index) < Math.abs(index - result)) {
-                    result = idx - index;
+                    result = Math.abs(idx - index);
                 }
 
                 break;
             }
 
             if (Math.abs(index - idx) < Math.abs(index - result)) {
-                result = idx;
+                result = Math.abs(index - idx);
             }
         }
 
