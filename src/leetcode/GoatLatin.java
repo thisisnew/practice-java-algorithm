@@ -24,6 +24,6 @@ public class GoatLatin {
 
         }
 
-        return "";
+        return sb.toString().trim();
     }
 }
