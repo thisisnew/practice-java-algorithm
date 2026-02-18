@@ -14,10 +14,26 @@ public class PositionsOfLargeGroups {
         var result = new ArrayList<List<Integer>>();
         var temp = new ArrayList<Integer>();
 
-        for (int i = 0; i < s.length(); i++) {
+        var tempLetter = s.charAt(0);
+        var currentIdx = 0;
+        var endIdx = 0;
+        var length = 1;
+
+        for (int i = 1; i < s.length(); i++) {
             var c = s.charAt(i);
 
+            if (c == tempLetter) {
+                length++;
+                endIdx = i;
+                continue;
+            }
 
+            if (length >= 3) {
+                temp.add(currentIdx);
+                temp.add(endIdx);
+                result.add(temp);
+                temp = new ArrayList<>();
+            }
         }
 
         return result;
