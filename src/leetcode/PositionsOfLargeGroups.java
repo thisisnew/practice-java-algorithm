@@ -28,14 +28,15 @@ public class PositionsOfLargeGroups {
                 continue;
             }
 
-            tempLetter = c;
-
             if (length >= 3) {
                 temp.add(currentIdx);
                 temp.add(endIdx);
                 result.add(temp);
                 temp = new ArrayList<>();
             }
+
+            tempLetter = c;
+            currentIdx = i;
         }
 
         return result;
