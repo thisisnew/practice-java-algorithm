@@ -28,6 +28,8 @@ public class PositionsOfLargeGroups {
                 continue;
             }
 
+            tempLetter = c;
+
             if (length >= 3) {
                 temp.add(currentIdx);
                 temp.add(endIdx);
