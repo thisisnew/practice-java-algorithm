@@ -6,7 +6,7 @@ import java.util.List;
 
 public class PositionsOfLargeGroups {
     public static void main(String[] args) throws IOException {
-        System.out.println(largeGroupPositions(""));
+        System.out.println(largeGroupPositions("abbxxxxzzy"));
     }
 
     private static List<List<Integer>> largeGroupPositions(String s) {
@@ -37,6 +37,8 @@ public class PositionsOfLargeGroups {
 
             tempLetter = c;
             currentIdx = i;
+            endIdx = i;
+            length = 1;
         }
 
         return result;
