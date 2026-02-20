@@ -8,26 +8,20 @@ public class BackspaceStringCompare {
     }
 
     private static boolean backspaceCompare(String s, String t) {
+        return build(s).equals(build(t));
+    }
 
-        var sSb = new StringBuilder();
-        var tSb = new StringBuilder();
+    private static String build(String s) {
+        var sb = new StringBuilder();
 
-        for (var i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '#') {
-                sSb.deleteCharAt(sSb.length() - 1);
+                sb.deleteCharAt(sb.length() - 1);
             } else {
-                sSb.append(s.charAt(i));
+                sb.append(s.charAt(i));
             }
         }
 
-        for (var i = 0; i < t.length(); i++) {
-            if (t.charAt(i) == '#') {
-                tSb.deleteCharAt(tSb.length() - 1);
-            } else {
-                tSb.append(t.charAt(i));
-            }
-        }
-
-        return sSb.toString().contentEquals(tSb);
+        return sb.toString();
     }
 }
