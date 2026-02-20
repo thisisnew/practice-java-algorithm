@@ -12,7 +12,6 @@ public class PositionsOfLargeGroups {
     private static List<List<Integer>> largeGroupPositions(String s) {
 
         var result = new ArrayList<List<Integer>>();
-        var temp = new ArrayList<Integer>();
 
         var tempLetter = s.charAt(0);
         var currentIdx = 0;
@@ -29,10 +28,7 @@ public class PositionsOfLargeGroups {
             }
 
             if (length >= 3) {
-                temp.add(currentIdx);
-                temp.add(endIdx);
-                result.add(temp);
-                temp = new ArrayList<>();
+                result.add(List.of(currentIdx, endIdx));
             }
 
             tempLetter = c;
@@ -42,9 +38,7 @@ public class PositionsOfLargeGroups {
         }
 
         if (length >= 3) {
-            temp.add(currentIdx);
-            temp.add(endIdx);
-            result.add(temp);
+            result.add(List.of(currentIdx, endIdx));
         }
 
         return result;
