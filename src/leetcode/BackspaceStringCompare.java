@@ -15,10 +15,15 @@ public class BackspaceStringCompare {
         var sb = new StringBuilder();
 
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '#') {
+            var c = s.charAt(i);
+
+            if (c != '#') {
+                sb.append(c);
+                continue;
+            }
+
+            if (!sb.isEmpty()) {
                 sb.deleteCharAt(sb.length() - 1);
-            } else {
-                sb.append(s.charAt(i));
             }
         }
 
