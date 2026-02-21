@@ -18,11 +18,18 @@ public class BuddyStrings {
 
         for (var i = 0; i < sArr.length; i++) {
             if (sArr[i] != goalArr[i]) {
+                var isSwitch = false;
+
                 for (var j = i; j < sArr.length; j++) {
                     if (sArr[j] == goalArr[j]) {
+                        isSwitch = true;
                         switchCh(sArr, i, j);
                         break;
                     }
+                }
+
+                if (!isSwitch) {
+                    return false;
                 }
             }
         }
