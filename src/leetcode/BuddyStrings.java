@@ -18,7 +18,7 @@ public class BuddyStrings {
 
         for (var i = 0; i < sArr.length; i++) {
             if (sArr[i] != goalArr[i]) {
-                for (var j = i; j < s.length(); j++) {
+                for (var j = i; j < sArr.length; j++) {
                     if (sArr[j] == goalArr[j]) {
                         switchCh(sArr, i, j);
                         break;
