@@ -17,27 +17,17 @@ public class BuddyStrings {
         var goalArr = goal.toCharArray();
 
         var idx = 0;
-        while(idx < sArr.length) {
-            if (sArr[idx] != goalArr[idx]) {
-                var isSwitch = false;
+        while(idx < sArr.length - 1) {
+            switchCh(sArr, idx, idx + 1);
 
-                for (var j = idx; j < sArr.length; j++) {
-                    if (sArr[j] == goalArr[j]) {
-                        isSwitch = true;
-                        switchCh(sArr, idx, j);
-                        break;
-                    }
-                }
-
-                if (!isSwitch) {
-                    return false;
-                }
+            if (Arrays.equals(sArr, goalArr)) {
+                return true;
             }
 
             idx++;
         }
 
-        return Arrays.toString(sArr).equals(goal);
+        return false;
     }
 
     private static void switchCh(char[] arr, int i, int j) {
