@@ -31,10 +31,4 @@ public class BuddyStrings {
 
         return false;
     }
-
-    private static void switchCh(char[] arr, int i, int j) {
-        var temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
 }
