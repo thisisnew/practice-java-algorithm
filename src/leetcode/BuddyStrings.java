@@ -16,14 +16,15 @@ public class BuddyStrings {
         var sArr = s.toCharArray();
         var goalArr = goal.toCharArray();
 
-        for (var i = 0; i < sArr.length; i++) {
-            if (sArr[i] != goalArr[i]) {
+        var idx = 0;
+        while(idx < sArr.length) {
+            if (sArr[idx] != goalArr[idx]) {
                 var isSwitch = false;
 
-                for (var j = i; j < sArr.length; j++) {
+                for (var j = idx; j < sArr.length; j++) {
                     if (sArr[j] == goalArr[j]) {
                         isSwitch = true;
-                        switchCh(sArr, i, j);
+                        switchCh(sArr, idx, j);
                         break;
                     }
                 }
@@ -32,6 +33,8 @@ public class BuddyStrings {
                     return false;
                 }
             }
+
+            idx++;
         }
 
         return Arrays.toString(sArr).equals(goal);
