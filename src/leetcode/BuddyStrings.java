@@ -18,7 +18,9 @@ public class BuddyStrings {
 
         var idx = 0;
         while(idx < sArr.length - 1) {
-            switchCh(sArr, idx, idx + 1);
+            var temp = sArr[idx];
+            sArr[idx] = sArr[idx+1];
+            sArr[idx+1] = temp;
 
             if (Arrays.equals(sArr, goalArr)) {
                 return true;
