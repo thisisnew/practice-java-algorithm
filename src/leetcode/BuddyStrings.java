@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class BuddyStrings {
     public static void main(String[] args) throws IOException {
-        System.out.println(buddyStrings("", ""));
+        System.out.println(buddyStrings("aaaaaaabc", "aaaaaaacb"));
     }
 
     private static boolean buddyStrings(String s, String goal) {
@@ -17,7 +17,7 @@ public class BuddyStrings {
         var goalArr = goal.toCharArray();
 
         var idx = 0;
-        while(idx < sArr.length - 1) {
+        while(idx <= sArr.length - 1) {
             var temp = sArr[idx];
             sArr[idx] = sArr[idx+1];
             sArr[idx+1] = temp;
