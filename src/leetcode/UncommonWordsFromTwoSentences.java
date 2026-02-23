@@ -9,6 +9,13 @@ public class UncommonWordsFromTwoSentences {
     }
 
     private static String[] uncommonFromSentences(String s1, String s2) {
+
+        var s1Arr = s1.split(" ");
+        var s2Arr = s2.split(" ");
+
+
+
+
         return new String[]{};
     }
 }
