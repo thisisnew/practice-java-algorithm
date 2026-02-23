@@ -13,9 +13,6 @@ public class UncommonWordsFromTwoSentences {
         var s1Arr = s1.split(" ");
         var s2Arr = s2.split(" ");
 
-
-
-
         return new String[]{};
     }
 }
