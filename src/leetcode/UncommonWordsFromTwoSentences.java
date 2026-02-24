@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 public class UncommonWordsFromTwoSentences {
     public static void main(String[] args) throws IOException {
@@ -15,14 +16,14 @@ public class UncommonWordsFromTwoSentences {
         var s1Arr = s1.split(" ");
         var s2Arr = s2.split(" ");
 
-        if (s1Arr.length > s2Arr.length) {
-            return uncommonWords(s1Arr, s2Arr);
-        }
+        var res = new ArrayList<String>();
+        res.addAll(uncommonWords(s1Arr, s2Arr));
+        res.addAll(uncommonWords(s2Arr, s1Arr));
 
-        return uncommonWords(s2Arr, s1Arr);
+        return res.toArray(new String[0]);
     }
 
-    private static String[] uncommonWords(String[] s1Arr, String[] s2Arr) {
+    private static List<String> uncommonWords(String[] s1Arr, String[] s2Arr) {
         var result = new ArrayList<String>();
         var words = new HashSet<>(Arrays.asList(s2Arr));
 
@@ -32,6 +33,6 @@ public class UncommonWordsFromTwoSentences {
             }
         }
 
-        return result.toArray(new String[0]);
+        return result;
     }
 }
