@@ -20,7 +20,8 @@ public class UncommonWordsFromTwoSentences {
             return uncommonWords(s1Arr, s2Arr).toArray(new String[0]);
         }
 
-        return uncommonWords(s2Arr, s1Arr).toArray(new String[0]);
+        return uncommonWords(s2Arr, s1Arr)
+                .toArray(new String[0]);
     }
 
     private static List<String> uncommonWords(String[] s1Arr, String[] s2Arr) {
