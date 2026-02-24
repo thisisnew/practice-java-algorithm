@@ -27,11 +27,9 @@ public class UncommonWordsFromTwoSentences {
         var words = new HashSet<>(Arrays.asList(s2Arr));
 
         for (var word: s1Arr) {
-            if (words.contains(word)) {
-                continue;
+            if (!words.contains(word)) {
+                result.add(word);
             }
-
-            result.add(word);
         }
 
         return result.toArray(new String[0]);
