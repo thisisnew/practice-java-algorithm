@@ -2,6 +2,7 @@ package leetcode;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class ReverseOnlyLetters {
     public static void main(String[] args) throws IOException {
@@ -10,11 +11,12 @@ public class ReverseOnlyLetters {
 
     private static String reverseOnlyLetters(String s) {
         var map = new HashMap<Integer, Character>();
-
+        var queue = new LinkedList<Character>();
         for (var i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
 
-            if (Character.isAlphabetic() || Character.isDigit(c)) {
+            if (Character.isAlphabetic(c) || Character.isDigit(c)) {
+                queue.push(c);
                 continue;
             }
 
