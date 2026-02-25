@@ -1,7 +1,6 @@
 package leetcode;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.LinkedList;
 
 public class ReverseOnlyLetters {
@@ -10,8 +9,10 @@ public class ReverseOnlyLetters {
     }
 
     private static String reverseOnlyLetters(String s) {
-        var map = new HashMap<Integer, Character>();
+
         var queue = new LinkedList<Character>();
+        var result = new StringBuilder();
+
         for (var i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
 
@@ -20,17 +21,13 @@ public class ReverseOnlyLetters {
                 continue;
             }
 
-            map.put(i, c);
+            while (!queue.isEmpty()) {
+                result.append(queue.pop());
+            }
+
+            result.append(c);
         }
 
-        var result = new StringBuilder();
-
-        for (var i = s.length() -1; i >= 0; i--) {
-
-
-
-        }
-
-        return "";
+        return result.toString();
     }
 }
