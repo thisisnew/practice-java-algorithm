@@ -28,6 +28,10 @@ public class ReverseOnlyLetters {
             result.append(c);
         }
 
+        while (!queue.isEmpty()) {
+            result.append(queue.pop());
+        }
+
         return result.toString();
     }
 }
