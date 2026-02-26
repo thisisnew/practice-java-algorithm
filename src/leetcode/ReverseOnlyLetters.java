@@ -22,7 +22,8 @@ public class ReverseOnlyLetters {
             }
 
             while (!queue.isEmpty()) {
-                result.append(queue.pop());
+                var pop = queue.pop();
+                result.append(pop);
             }
 
             result.append(c);
