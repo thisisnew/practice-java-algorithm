@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class ReverseOnlyLetters {
     public static void main(String[] args) throws IOException {
-        System.out.println(reverseOnlyLetters("ab-cd"));
+        System.out.println(reverseOnlyLetters("Test1ng-Leet=code-Q!"));
     }
 
     private static String reverseOnlyLetters(String s) {
@@ -18,7 +18,7 @@ public class ReverseOnlyLetters {
         for (var i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
 
-            if (!Character.isAlphabetic(c) && !Character.isDigit(c)) {
+            if (!Character.isAlphabetic(c)) {
                 cMap.put(i, c);
                 continue;
             }
