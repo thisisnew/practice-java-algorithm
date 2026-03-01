@@ -30,6 +30,7 @@ public class ReverseOnlyLetters {
         while (idx < s.length()) {
             var c = cMap.containsKey(idx) ? cMap.get(idx) : queue.pop();
             result.append(c);
+            idx++;
         }
 
         return result.toString();
