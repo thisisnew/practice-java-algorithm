@@ -23,7 +23,7 @@ public class LongPressedName {
                 offset++;
             }
 
-
+            startOffset = offset;
         }
 
 
