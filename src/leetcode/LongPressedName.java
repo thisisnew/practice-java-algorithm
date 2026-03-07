@@ -9,8 +9,18 @@ public class LongPressedName {
 
     private static boolean isLongPressedName(String name, String typed) {
 
+        if (name.length() > typed.length()) {
+            return false;
+        }
+
         var offset = 0;
         var startOffset = 0;
+        var str = "";
+
+        for (var i = 1; i < name.length(); i++) {
+
+        }
+
 
         while(offset < name.length()) {
             var c = name.charAt(offset);
