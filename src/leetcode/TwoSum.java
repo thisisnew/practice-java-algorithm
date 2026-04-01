@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class TwoSum {
 
-    private static final Map<Integer, Integer> map = new HashMap<>();
+    private static final Map<Integer, Integer> MAP = new HashMap<>();
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(twoSum(new int[]{2, 7, 11, 15}, 9)));
@@ -17,13 +17,13 @@ public class TwoSum {
         for (int i = 0; i < nums.length; i++) {
             var v = target - nums[i];
 
-            if (map.containsKey(v)) {
-                return new int[]{map.get(v), i};
+            if (MAP.containsKey(v)) {
+                return new int[]{MAP.get(v), i};
             }
 
-            map.put(nums[i], i);
+            MAP.put(nums[i], i);
         }
 
-        return new int[0];
+        return new int[]{};
     }
 }
