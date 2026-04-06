@@ -3,13 +3,10 @@ package leetcode;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.stream.IntStream;
 
 public class DesignTwitter {
     public static void main(String[] args) throws IOException {
-        var twitter = new Twitter();
-
-
+        Twitter twitter = new Twitter();
     }
 }
 
@@ -19,39 +16,73 @@ class Twitter {
     private final Map<Integer, Set<Integer>> followersByUser;
 
     public Twitter() {
-        this.feedsByUser = new HashMap<>();
-        this.followersByUser = new HashMap<>();
+        this.feedsByUser = new HashMap<Integer, Set<Feed>>();
+        this.followersByUser = new HashMap<Integer, Set<Integer>>();
     }
 
     public void postTweet(int userId, int tweetId) {
-        var userFeeds = Objects.requireNonNullElse(this.feedsByUser.get(userId), new HashSet<Feed>());
+        Set<Feed> userFeeds = this.feedsByUser.get(userId);
+        if (userFeeds == null) {
+            userFeeds = new HashSet<Feed>();
+        }
+
         userFeeds.add(new Feed(tweetId));
         this.feedsByUser.put(userId, userFeeds);
     }
 
     public List<Integer> getNewsFeed(int userId) {
-        var totalFeeds = new ArrayList<>(Objects.requireNonNullElse(feedsByUser.get(userId), new HashSet<>()));
+        List<Feed> totalFeeds = new ArrayList<Feed>();
 
-        followersByUser.getOrDefault(userId, new HashSet<>())
-                .forEach(followeeId -> totalFeeds.addAll(feedsByUser.getOrDefault(followeeId, new HashSet<>())));
+        Set<Feed> myFeeds = feedsByUser.get(userId);
+        if (myFeeds != null) {
+            totalFeeds.addAll(myFeeds);
+        }
 
-        totalFeeds.sort((a, b) -> b.timestamp().compareTo(a.timestamp()));
+        Set<Integer> followees = followersByUser.get(userId);
+        if (followees != null) {
+            for (Integer followeeId : followees) {
+                Set<Feed> followeeFeeds = feedsByUser.get(followeeId);
+                if (followeeFeeds != null) {
+                    totalFeeds.addAll(followeeFeeds);
+                }
+            }
+        }
 
-        return IntStream.of(0, 10)
-                .mapToObj(i -> totalFeeds.get(i).tweetId)
-                .toList();
+        Collections.sort(totalFeeds, new Comparator<Feed>() {
+            @Override
+            public int compare(Feed a, Feed b) {
+                return b.timestamp().compareTo(a.timestamp());
+            }
+        });
+
+        List<Integer> result = new ArrayList<Integer>();
+        int limit = Math.min(10, totalFeeds.size());
+
+        for (int i = 0; i < limit; i++) {
+            result.add(totalFeeds.get(i).tweetId);
+        }
+
+        return result;
     }
 
     public void follow(int followerId, int followeeId) {
-        var followers = Objects.requireNonNullElse(followersByUser.get(followerId), new HashSet<Integer>());
-        followers.add(followerId);
-        followersByUser.put(followerId, followers);
+        Set<Integer> followees = followersByUser.get(followerId);
+        if (followees == null) {
+            followees = new HashSet<Integer>();
+        }
+
+        followees.add(followeeId);
+        followersByUser.put(followerId, followees);
     }
 
     public void unfollow(int followerId, int followeeId) {
-        var followers = Objects.requireNonNullElse(followersByUser.get(followerId), new HashSet<Integer>());
-        followers.remove(followeeId);
-        followersByUser.put(followerId, followers);
+        Set<Integer> followees = followersByUser.get(followerId);
+        if (followees == null) {
+            followees = new HashSet<Integer>();
+        }
+
+        followees.remove(followeeId);
+        followersByUser.put(followerId, followees);
     }
 
     private static class Feed {
@@ -79,6 +110,11 @@ class Twitter {
 
             Feed other = (Feed) obj;
             return this.tweetId == other.tweetId;
+        }
+
+        @Override
+        public int hashCode() {
+            return Integer.valueOf(tweetId).hashCode();
         }
     }
 }
