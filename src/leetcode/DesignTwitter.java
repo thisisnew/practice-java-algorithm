@@ -1,7 +1,6 @@
 package leetcode;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.*;
 
 public class DesignTwitter {
@@ -14,10 +13,12 @@ class Twitter {
 
     private final Map<Integer, Set<Feed>> feedsByUser;
     private final Map<Integer, Set<Integer>> followersByUser;
+    private int sequence;
 
     public Twitter() {
         this.feedsByUser = new HashMap<Integer, Set<Feed>>();
         this.followersByUser = new HashMap<Integer, Set<Integer>>();
+        this.sequence = 0;
     }
 
     public void postTweet(int userId, int tweetId) {
@@ -26,7 +27,7 @@ class Twitter {
             userFeeds = new HashSet<Feed>();
         }
 
-        userFeeds.add(new Feed(tweetId));
+        userFeeds.add(new Feed(tweetId, sequence++));
         this.feedsByUser.put(userId, userFeeds);
     }
 
@@ -51,7 +52,7 @@ class Twitter {
         Collections.sort(totalFeeds, new Comparator<Feed>() {
             @Override
             public int compare(Feed a, Feed b) {
-                return b.timestamp().compareTo(a.timestamp());
+                return b.timestamp - a.timestamp;
             }
         });
 
@@ -87,15 +88,11 @@ class Twitter {
 
     private static class Feed {
         private final int tweetId;
-        private final LocalDateTime timestamp;
+        private final int timestamp;
 
-        public Feed(int tweetId) {
+        public Feed(int tweetId, int timestamp) {
             this.tweetId = tweetId;
-            this.timestamp = LocalDateTime.now();
-        }
-
-        public LocalDateTime timestamp() {
-            return timestamp;
+            this.timestamp = timestamp;
         }
 
         @Override
