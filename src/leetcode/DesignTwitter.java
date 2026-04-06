@@ -3,6 +3,7 @@ package leetcode;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class DesignTwitter {
     public static void main(String[] args) throws IOException {
@@ -34,7 +35,11 @@ class Twitter {
         followersByUser.getOrDefault(userId, new HashSet<>())
                 .forEach(followeeId -> totalFeeds.addAll(feedsByUser.getOrDefault(followeeId, new HashSet<>())));
 
-        return List.of();
+        totalFeeds.sort((a, b) -> b.timestamp().compareTo(a.timestamp()));
+
+        return IntStream.of(0, 10)
+                .mapToObj(i -> totalFeeds.get(i).tweetId)
+                .toList();
     }
 
     public void follow(int followerId, int followeeId) {
