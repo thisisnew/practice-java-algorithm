@@ -1,7 +1,7 @@
 package leetcode;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.*;
 
 public class DesignTwitter {
     public static void main(String[] args) throws IOException {
@@ -13,8 +13,10 @@ public class DesignTwitter {
 
 class Twitter {
 
-    public Twitter() {
+    private Map<Integer, Set<Integer>> follower;
 
+    public Twitter() {
+        this.follower = new HashMap<>();
     }
 
     public void postTweet(int userId, int tweetId) {
@@ -26,10 +28,14 @@ class Twitter {
     }
 
     public void follow(int followerId, int followeeId) {
-
+        var followers = Objects.requireNonNullElse(follower.get(followerId), new HashSet<Integer>());
+        followers.add(followerId);
+        follower.put(followerId, followers);
     }
 
     public void unfollow(int followerId, int followeeId) {
-
+        var followers = Objects.requireNonNullElse(follower.get(followerId), new HashSet<Integer>());
+        followers.remove(followeeId);
+        follower.put(followerId, followers);
     }
 }
