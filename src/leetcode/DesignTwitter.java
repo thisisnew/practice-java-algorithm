@@ -14,34 +14,39 @@ public class DesignTwitter {
 
 class Twitter {
 
-    private Map<Integer, Set<Feed>> feed;
-    private Map<Integer, Set<Integer>> follower;
+    private final Map<Integer, Set<Feed>> feedsByUser;
+    private final Map<Integer, Set<Integer>> followersByUser;
 
     public Twitter() {
-        this.feed = new HashMap<>();
-        this.follower = new HashMap<>();
+        this.feedsByUser = new HashMap<>();
+        this.followersByUser = new HashMap<>();
     }
 
     public void postTweet(int userId, int tweetId) {
-        var userFeeds = Objects.requireNonNullElse(this.feed.get(userId), new HashSet<Feed>());
+        var userFeeds = Objects.requireNonNullElse(this.feedsByUser.get(userId), new HashSet<Feed>());
         userFeeds.add(new Feed(tweetId));
-        this.feed.put(userId, userFeeds);
+        this.feedsByUser.put(userId, userFeeds);
     }
 
     public List<Integer> getNewsFeed(int userId) {
+        var totalFeeds = new ArrayList<>(Objects.requireNonNullElse(feedsByUser.get(userId), new HashSet<>()));
+
+        followersByUser.getOrDefault(userId, new HashSet<>())
+                .forEach(followeeId -> totalFeeds.addAll(feedsByUser.getOrDefault(followeeId, new HashSet<>())));
+
         return List.of();
     }
 
     public void follow(int followerId, int followeeId) {
-        var followers = Objects.requireNonNullElse(follower.get(followerId), new HashSet<Integer>());
+        var followers = Objects.requireNonNullElse(followersByUser.get(followerId), new HashSet<Integer>());
         followers.add(followerId);
-        follower.put(followerId, followers);
+        followersByUser.put(followerId, followers);
     }
 
     public void unfollow(int followerId, int followeeId) {
-        var followers = Objects.requireNonNullElse(follower.get(followerId), new HashSet<Integer>());
+        var followers = Objects.requireNonNullElse(followersByUser.get(followerId), new HashSet<Integer>());
         followers.remove(followeeId);
-        follower.put(followerId, followers);
+        followersByUser.put(followerId, followers);
     }
 
     private static class Feed {
