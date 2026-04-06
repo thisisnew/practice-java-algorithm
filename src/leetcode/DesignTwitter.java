@@ -45,8 +45,8 @@ class Twitter {
     }
 
     private static class Feed {
-        private int tweetId;
-        private LocalDateTime timestamp;
+        private final int tweetId;
+        private final LocalDateTime timestamp;
 
         public Feed(int tweetId) {
             this.tweetId = tweetId;
