@@ -33,9 +33,8 @@ class Browser {
                 return this.current;
             }
 
-            String url = this.backward.pop();
-            this.forward.push(url);
-            this.current = url;
+            this.forward.push(this.current);
+            this.current = this.backward.pop();
         }
 
         return this.current;
@@ -47,9 +46,8 @@ class Browser {
                 return this.current;
             }
 
-            String url = this.forward.pop();
-            this.backward.push(url);
-            this.current = url;
+            this.backward.push(this.current);
+            this.current = this.forward.pop();
         }
 
         return this.current;
