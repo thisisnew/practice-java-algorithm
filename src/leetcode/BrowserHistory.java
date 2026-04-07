@@ -1,8 +1,7 @@
 package leetcode;
 
 import java.io.IOException;
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.Stack;
 
 public class BrowserHistory {
     public static void main(String[] args) throws IOException {
@@ -12,29 +11,47 @@ public class BrowserHistory {
 
 class Browser {
 
-    private final Deque<String> history;
+    private final Stack<String> backward;
+    private final Stack<String> forward;
+    private String current;
 
     public Browser(String homepage) {
-        this.history = new ArrayDeque<>();
+        this.backward = new Stack<>();
+        this.forward = new Stack<>();
+        this.current = homepage;
     }
 
     public void visit(String url) {
-        history.addFirst(url);
+        this.backward.push(this.current);
+        this.forward.clear();
+        this.current = url;
     }
 
     public String back(int steps) {
-        if (history.isEmpty()) return "";
+        if (this.backward.empty()) {
+            return this.current;
+        }
 
-        String url = history.removeFirst();
-        history.addLast(url);
-        return url;
+        for (int i = 0; i < steps; i++) {
+            String url = this.backward.pop();
+            this.forward.push(url);
+            this.current = url;
+        }
+
+        return this.current;
     }
 
     public String forward(int steps) {
-        if (history.isEmpty()) return "";
+        if (this.forward.empty()) {
+            return this.current;
+        }
 
-        String url = history.removeLast();
-        history.addFirst(url);
-        return url;
+        for (int i = 0; i < steps; i++) {
+            String url = this.forward.pop();
+            this.backward.push(url);
+            this.current = url;
+        }
+
+        return this.current;
     }
 }
