@@ -28,11 +28,11 @@ class Browser {
     }
 
     public String back(int steps) {
-        if (this.backward.empty()) {
-            return this.current;
-        }
-
         for (int i = 0; i < steps; i++) {
+            if (this.backward.empty()) {
+                return this.current;
+            }
+
             String url = this.backward.pop();
             this.forward.push(url);
             this.current = url;
@@ -42,11 +42,11 @@ class Browser {
     }
 
     public String forward(int steps) {
-        if (this.forward.empty()) {
-            return this.current;
-        }
-
         for (int i = 0; i < steps; i++) {
+            if (this.forward.empty()) {
+                return this.current;
+            }
+
             String url = this.forward.pop();
             this.backward.push(url);
             this.current = url;
