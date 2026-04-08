@@ -33,7 +33,9 @@ public class UndergroundSystem {
     }
 
     public double getAverageTime(String startStation, String endStation) {
-
+        String travelStation = startStation + "-" + endStation;
+        TravelTime travelTime = this.travelTime.getOrDefault(travelStation, new TravelTime(new ArrayList<>()));
+        return travelTime.averageTime();
     }
 
 }
@@ -66,5 +68,12 @@ class TravelTime {
 
     public void addTime(int time) {
         this.times.add(time);
+    }
+
+    public double averageTime() {
+        return times.stream()
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
     }
 }
