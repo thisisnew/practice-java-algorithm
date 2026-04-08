@@ -42,7 +42,6 @@ public class UndergroundSystem {
 }
 
 class Station {
-
     private final String stationName;
     private final int time;
 
