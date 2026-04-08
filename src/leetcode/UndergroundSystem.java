@@ -30,6 +30,7 @@ public class UndergroundSystem {
         String travelStation = startStation + "-" + stationName;
         TravelTime travelTime = this.travelTime.getOrDefault(travelStation, new TravelTime(new ArrayList<>()));
         travelTime.addTime(t - checkInStation.time());
+        this.travelTime.put(travelStation, travelTime);
     }
 
     public double getAverageTime(String startStation, String endStation) {
