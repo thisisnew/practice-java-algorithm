@@ -7,21 +7,21 @@ import java.util.Map;
 
 public class UndergroundSystem {
 
-    private final Map<Integer, Station> checkInStation;
+    private final Map<Integer, Station> checkInStationByUser;
     private final Map<String, TravelTime> travelTime;
 
     public UndergroundSystem() {
-        this.checkInStation = new HashMap<>();
+        this.checkInStationByUser = new HashMap<>();
         this.travelTime = new HashMap<>();
     }
 
     public void checkIn(int id, String stationName, int t) {
         Station station = new Station(stationName, t);
-        checkInStation.put(id, station);
+        checkInStationByUser.put(id, station);
     }
 
     public void checkOut(int id, String stationName, int t) {
-        var checkInStation = this.checkInStation.get(id);
+        var checkInStation = this.checkInStationByUser.get(id);
         if (checkInStation == null) {
             return;
         }
