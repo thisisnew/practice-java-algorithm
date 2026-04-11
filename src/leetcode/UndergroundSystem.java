@@ -20,7 +20,7 @@ public class UndergroundSystem {
         checkInStationByUser.put(id, station);
     }
 
-    public void checkOut(int id, String stationName, int t) {
+    public void checkOut(int id, String stationName, int checkOutTime) {
         var checkInStation = this.checkInStationByUser.get(id);
         if (checkInStation == null) {
             return;
@@ -29,7 +29,7 @@ public class UndergroundSystem {
         String startStation = checkInStation.stationName();
         String travelStation = startStation + "-" + stationName;
         TravelTime travelTime = this.travelTime.getOrDefault(travelStation, new TravelTime(new ArrayList<>()));
-        travelTime.addTime(t - checkInStation.time());
+        travelTime.addTime(checkOutTime - checkInStation.time());
         this.travelTime.put(travelStation, travelTime);
     }
 
