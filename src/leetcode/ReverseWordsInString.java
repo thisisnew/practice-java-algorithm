@@ -8,7 +8,7 @@ public class ReverseWordsInString {
 
         int idx = 0;
         for (int i = tokens.length - 1; i >= 0; i--) {
-            result[idx++] = tokens[i];
+            result[idx++] = tokens[i].trim();
         }
 
         return String.join(" ", result);
