@@ -1,14 +1,25 @@
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ReverseWordsInString {
+
+    public static void main(String[] args) {
+        System.out.println(new ReverseWordsInString().reverseWords("a good   example"));
+    }
+
     public String reverseWords(String s) {
         String[] tokens = s.trim().split(" ");
 
-        String[] result = new String[tokens.length];
+        List<String> result = new ArrayList<>();
 
-        int idx = 0;
         for (int i = tokens.length - 1; i >= 0; i--) {
-            result[idx++] = tokens[i].trim();
+            String token = tokens[i].trim();
+
+            if (!token.isBlank()) {
+                result.add(token);
+            }
         }
 
         return String.join(" ", result);
