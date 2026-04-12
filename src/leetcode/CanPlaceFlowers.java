@@ -1,6 +1,11 @@
 package leetcode;
 
 public class CanPlaceFlowers {
+
+    public static void main(String[] args) {
+        System.out.println(new CanPlaceFlowers().canPlaceFlowers(new int[]{1, 0, 0, 0, 1}, 2));
+    }
+
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
 
         boolean isPlanted = false;
@@ -12,6 +17,7 @@ public class CanPlaceFlowers {
             }
 
             if (flower == 1) {
+                isPlanted = true;
                 continue;
             }
 
