@@ -8,24 +8,16 @@ public class KidsWithTheGreatestNumberOfCandies {
         List<Integer> maxCandies = new ArrayList<>();
         int max = 0;
 
-        for (int i = 0; i < candies.length; i++) {
-            int count = candies[i];
-
-            if (count > max) {
-                max = count;
+        for (int candy : candies) {
+            if (candy > max) {
+                max = candy;
             }
-
-            maxCandies.add(count+extraCandies);
         }
 
         List<Boolean> result = new ArrayList<>();
 
-        for (int i = 0; i < maxCandies.size(); i++) {
-            if (maxCandies.get(i) >= max) {
-                result.add(true);
-            } else {
-                result.add(false);
-            }
+        for (int candy : candies) {
+            result.add(candy + extraCandies >= max);
         }
 
         return result;
