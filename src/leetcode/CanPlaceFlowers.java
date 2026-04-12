@@ -3,7 +3,7 @@ package leetcode;
 public class CanPlaceFlowers {
 
     public static void main(String[] args) {
-        System.out.println(new CanPlaceFlowers().canPlaceFlowers(new int[]{1, 0, 0, 0, 1}, 2));
+        System.out.println(new CanPlaceFlowers().canPlaceFlowers(new int[]{0, 1, 0}, 1));
     }
 
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
@@ -28,8 +28,9 @@ public class CanPlaceFlowers {
                 if (flowerbed[i + 1] == 0) {
                     flowerbed[i] = 1;
                     n--;
-                    continue;
                 }
+
+                continue;
             }
 
             if (i == flowerbed.length - 1) {
