@@ -1,0 +1,41 @@
+package leetcode;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class AuthenticationManager {
+
+    private final int timeToLive;
+    private final Map<String, Integer> tokenMap;
+
+    public AuthenticationManager(int timeToLive) {
+        this.timeToLive = timeToLive;
+        this.tokenMap = new HashMap<>();
+    }
+
+    public void generate(String tokenId, int currentTime) {
+        tokenMap.put(tokenId, currentTime + timeToLive);
+    }
+
+    public void renew(String tokenId, int currentTime) {
+
+        Integer time = tokenMap.get(tokenId);
+
+        if (time != null && time > currentTime) {
+            tokenMap.put(tokenId, currentTime + timeToLive);
+        }
+    }
+
+    public int countUnexpiredTokens(int currentTime) {
+        int count = 0;
+
+        for (Map.Entry<String, Integer> entry : tokenMap.entrySet()) {
+            if (entry.getValue() > currentTime) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+}
