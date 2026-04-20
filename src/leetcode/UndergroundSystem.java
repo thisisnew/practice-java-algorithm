@@ -7,73 +7,62 @@ import java.util.Map;
 
 public class UndergroundSystem {
 
-    private final Map<Integer, Station> checkInStationByUser;
-    private final Map<String, TravelTime> travelTime;
+    private final Map<Integer, Station> checkInStationMap;
+    private final Map<String, List<Integer>> fromToEndTimeMap;
+    private static final String STR_DASH = "-";
 
     public UndergroundSystem() {
-        this.checkInStationByUser = new HashMap<>();
-        this.travelTime = new HashMap<>();
+        this.checkInStationMap = new HashMap<>();
+        this.fromToEndTimeMap = new HashMap<>();
     }
 
     public void checkIn(int id, String stationName, int t) {
-        Station station = new Station(stationName, t);
-        checkInStationByUser.put(id, station);
+        Station checkInStation = new Station(stationName, t);
+        checkInStationMap.put(id, checkInStation);
     }
 
-    public void checkOut(int id, String stationName, int checkOutTime) {
-        var checkInStation = this.checkInStationByUser.get(id);
-        if (checkInStation == null) {
-            return;
-        }
+    public void checkOut(int id, String stationName, int t) {
+        Station checkInStation = checkInStationMap.get(id);
+        if (checkInStation == null) return;
 
-        String startStation = checkInStation.stationName();
-        String travelStation = startStation + "-" + stationName;
-        TravelTime travelTime = this.travelTime.getOrDefault(travelStation, new TravelTime(new ArrayList<>()));
-        travelTime.addTime(checkOutTime - checkInStation.time());
-        this.travelTime.put(travelStation, travelTime);
+        String key = checkInStation.name() + STR_DASH + stationName;
+        int duration = t - checkInStation.time();
+
+        List<Integer> fromToEndTimes = fromToEndTimeMap.getOrDefault(key, new ArrayList<>());
+        fromToEndTimes.add(duration);
+
+        fromToEndTimeMap.put(key, fromToEndTimes);
     }
 
     public double getAverageTime(String startStation, String endStation) {
-        String travelStation = startStation + "-" + endStation;
-        TravelTime travelTime = this.travelTime.getOrDefault(travelStation, new TravelTime(new ArrayList<>()));
-        return travelTime.averageTime();
-    }
 
-}
+        String key = startStation + STR_DASH + endStation;
+        List<Integer> fromToEndTimes = fromToEndTimeMap.getOrDefault(key, new ArrayList<>());
 
-class Station {
-    private final String stationName;
-    private final int time;
-
-    Station(String stationName, int time) {
-        this.stationName = stationName;
-        this.time = time;
-    }
-
-    public String stationName() {
-        return stationName;
-    }
-
-    public int time() {
-        return time;
-    }
-}
-
-class TravelTime {
-    private final List<Integer> times;
-
-    TravelTime(List<Integer> times) {
-        this.times = times;
-    }
-
-    public void addTime(int time) {
-        this.times.add(time);
-    }
-
-    public double averageTime() {
-        return times.stream()
-                .mapToInt(Integer::intValue)
+        return fromToEndTimes.stream()
+                .mapToInt(value -> {
+                    return value;
+                })
                 .average()
-                .orElse(0);
+                .orElse(0.0);
     }
+
+    private static class Station {
+        private final String name;
+        private final int time;
+
+        public Station(String name, int time) {
+            this.name = name;
+            this.time = time;
+        }
+
+        public String name() {
+            return name;
+        }
+
+        public int time() {
+            return time;
+        }
+    }
+
 }
