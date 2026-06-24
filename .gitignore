@@ -1,0 +1,4 @@
+# IntelliJ / Java build output
+out/
+*.class
+
