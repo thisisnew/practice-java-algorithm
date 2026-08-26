@@ -14,10 +14,8 @@ public class ValidParentheses {
     private static boolean isValid(String s) {
         var stack = new Stack<Character>();
 
-        for (int i = 0; i < s.length(); i++) {
-            var c = s.charAt(i);
-
-            if (c == '{' || c == '[' || c == '(') {
+        for (var c : s.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
                 stack.push(c);
                 continue;
             }
@@ -28,7 +26,7 @@ public class ValidParentheses {
 
             var pop = stack.pop();
 
-            if (c == '}' && pop != '{') {
+            if (c == ')' && pop != '(') {
                 return false;
             }
 
@@ -36,7 +34,7 @@ public class ValidParentheses {
                 return false;
             }
 
-            if (c == ')' && pop != '(') {
+            if (c == '}' && pop != '{') {
                 return false;
             }
         }
