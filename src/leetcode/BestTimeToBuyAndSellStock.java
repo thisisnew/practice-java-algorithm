@@ -6,21 +6,14 @@ public class BestTimeToBuyAndSellStock {
     }
 
     private static int maxProfit(int[] prices) {
-
-        var profit = 0;
-        var buy = prices[0];
+        var max = 0;
+        var min = prices[0];
 
         for (int i = 1; i < prices.length; i++) {
-            var sell = prices[i];
-
-            if (sell > buy) {
-                profit = Math.max(profit, sell - buy);
-                continue;
-            }
-
-            buy = sell;
+            min = Math.min(min, prices[i]);
+            max = Math.max(max, prices[i] - min);
         }
 
-        return profit;
+        return max;
     }
 }
