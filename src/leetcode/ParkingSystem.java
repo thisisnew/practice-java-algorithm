@@ -5,24 +5,23 @@ import java.util.Map;
 
 public class ParkingSystem {
 
-    private final Map<Integer, Integer> carMap;
+    private final Map<Integer, Integer> slot;
 
-    public ParkingSystem(int big, int medium, int small) {
-        this.carMap = new HashMap<>();
-        carMap.put(1, big);
-        carMap.put(2, medium);
-        carMap.put(3, small);
+    public static void main(String[] args) {
+        ParkingSystem parkingSystem = new ParkingSystem(1,1,0);
     }
 
-    public boolean addCar(int carType) {
+    ParkingSystem(int big, int medium, int small) {
+        this.slot = new HashMap<>();
+        this.slot.put(1, big);
+        this.slot.put(2, medium);
+        this.slot.put(3, small);
+    }
 
-        int count = carMap.get(carType);
+    private boolean addCar(int carType) {
+        int count = this.slot.get(carType);
 
-        if (count == 0) {
-            return false;
-        }
-
-        carMap.put(carType, count - 1);
-        return true;
+        this.slot.put(carType, count - 1);
+        return count > 0;
     }
 }
